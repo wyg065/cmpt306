@@ -4,15 +4,15 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-
-    public Rigidbody2D rBody;
+	public float attackCooldown;
+	public bool attack;
+	public Rigidbody2D rBody;
     public float walkSpeed;
-    public float maxSpeed;
+	public int directionFacing;
    
-    public Animator directionFacing;
-    public Animator isMoving;
-    public Vector3 charPosition;
-    
+	public Animator playerAnimation;
+
+	public Vector3 charPosition;
 
     // Use this for initialization
 	void Start ()
@@ -20,31 +20,48 @@ public class PlayerController : MonoBehaviour {
         rBody = GetComponent<Rigidbody2D>();
         charPosition = transform.position;
 
-        isMoving = GetComponent<Animator>();
-        directionFacing = GetComponent<Animator>();
-        isMoving.SetBool("isMoving", false);
-        directionFacing.SetInteger("DirectionFacing", 3);
-    }
+        playerAnimation = GetComponent<Animator>();
+        playerAnimation.SetBool("isMoving", false);
+		playerAnimation.SetBool ("Attack", false);
+		playerAnimation.SetInteger("DirectionFacing", 3);
+		attackCooldown = 0.0f;
+	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         charPosition = transform.position;
-        //Checking if the character is moving or not.
+		attackCooldown -= Time.deltaTime;
+
+		//Checking if the character is moving or not.
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            isMoving.SetBool("isMoving", true);
+            playerAnimation.SetBool("isMoving", true);
         }
         else
         {
-            isMoving.SetBool("isMoving", false);
+            playerAnimation.SetBool("isMoving", false);
         }
         
-        //Move Player Up
+		if (Input.GetKeyDown(KeyCode.Space) && (attackCooldown <= 0.0f)) 
+		{
+			playerAnimation.SetBool ("Attack", true);
+			attack = true;
+			attackCooldown =0.5f;
+		} 
+		else 
+		{
+			playerAnimation.SetBool ("Attack", false);	
+			attack = false;
+
+		}
+
+		//Move Player Up
         if (Input.GetKey(KeyCode.W))
         {
             rBody.AddForce(Vector3.up * walkSpeed);
-            directionFacing.SetInteger("DirectionFacing", 1);
+            playerAnimation.SetInteger("DirectionFacing", 1);
+			directionFacing = 1;
         }
 
         //Move Player Left
@@ -56,14 +73,16 @@ public class PlayerController : MonoBehaviour {
             }
 
             rBody.AddForce(Vector3.left * walkSpeed);
-            directionFacing.SetInteger("DirectionFacing", 2);
+            playerAnimation.SetInteger("DirectionFacing", 2);
+			directionFacing = 2;
         }
 
         //Move Player Down
         if (Input.GetKey(KeyCode.S))
         {
             rBody.AddForce(Vector3.down * walkSpeed);
-            directionFacing.SetInteger("DirectionFacing", 3);
+            playerAnimation.SetInteger("DirectionFacing", 3);
+			directionFacing = 3;
         }
 
         //Move Player Right
@@ -75,7 +94,8 @@ public class PlayerController : MonoBehaviour {
             }
             
             rBody.AddForce(Vector3.right * walkSpeed);
-            directionFacing.SetInteger("DirectionFacing", 4);
+            playerAnimation.SetInteger("DirectionFacing", 4);
+			directionFacing = 4;
 
         }
     }
