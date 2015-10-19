@@ -54,6 +54,16 @@ public class enemyController : MonoBehaviour {
             currentWaypoint = 0;
         }
     }
+
+	void OnTriggerEnter2D (Collision2D col)
+	{
+		print ("test");
+		if(col.gameObject.name == "Slice(Clone)")
+		{
+			Destroy(gameObject);
+		}
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () {
         if (path == null)
