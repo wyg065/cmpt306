@@ -1,0 +1,9 @@
+git clone (url here)
+
+git pull
+
+git add test.txt
+
+git commit -m 'changed test document to try git functionality'
+
+git push -u origin master
