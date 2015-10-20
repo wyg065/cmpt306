@@ -28,7 +28,7 @@ public class SliceScript : MonoBehaviour {
 
         if (destroy == false)
         {
-            StartCoroutine(waitinFunction(0.8f));
+            StartCoroutine(waitinFunction(0.2f));
         }
         if(destroy == true)
         {
