@@ -4,7 +4,9 @@ using Pathfinding;
 
 public class enemyController : MonoBehaviour {
 
+	public PlayerController myScript;
 	public Transform target;
+	public GameObject player;
 
     public float updateRate = 1.0f;
 
@@ -24,6 +26,7 @@ public class enemyController : MonoBehaviour {
     private int currentWaypoint = 0;
 	// Use this for initialization
 	void Start () {
+		myScript = FindObjectOfType<PlayerController>();
 		target = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ().transform;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
@@ -54,6 +57,25 @@ public class enemyController : MonoBehaviour {
             currentWaypoint = 0;
         }
     }
+
+	void OnTriggerEnter2D (Collider2D col)
+	{
+		if(col.gameObject.name == "Slice(Clone)")
+		{
+			Vector3 dir = (transform.position - myScript.charPosition).normalized;
+			dir *= speed * Time.fixedDeltaTime * 120f;
+			
+			rb.AddForce(dir, fMode);
+		}
+	}
+
+	void OnCollisionEnter2D (Collision2D col)
+	{
+		if (col.gameObject.tag == "collider") {
+			Destroy(gameObject);
+		}
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () {
         if (path == null)
