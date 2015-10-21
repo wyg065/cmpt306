@@ -2,10 +2,16 @@
 using System.Collections;
 
 public class attackScript : MonoBehaviour {
-	public PlayerController myScript;
+    //Class to instantiate slash hitbox for the sword, will be separated later into a specific weapon.
 
+    //We need the players direction facing
+    public PlayerController myScript;
+    
+    //Clone variable
 	public GameObject slashSpawn;
-	public GameObject slashPrefab;
+
+    //The slashprefab with collider size and sprite
+    public GameObject slashPrefab;
 
 	// Use this for initialization
 	void Start () 
@@ -16,8 +22,10 @@ public class attackScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-
-		if(myScript.directionFacing == 1 && (myScript.attack == true))
+        //Checking variables in player script that tell us direction facing and if they have inputted an attack
+        //Decides rotation of sprite and instantiates prefab.
+        //Directions: Up = 1, Left = 2, Down = 3, Right = 4
+        if (myScript.directionFacing == 1 && (myScript.attack == true))
 		{
 			slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x+0.5f, myScript.charPosition.y+1.5f, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -90)))as GameObject;
 		}
