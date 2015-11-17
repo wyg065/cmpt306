@@ -41,7 +41,7 @@ public class ZombieAnimation : MonoBehaviour {
 		if (y > x)
 		{
 			//if y velocity is positive
-			if (enemy.GetComponent<Rigidbody2D> ().velocity.y > 0)
+			if (enemy.GetComponent<Rigidbsody2D> ().velocity.y > 0)
 			{
 				//set the move up boolean value to true
 				anim.SetBool("moveUp", true);
