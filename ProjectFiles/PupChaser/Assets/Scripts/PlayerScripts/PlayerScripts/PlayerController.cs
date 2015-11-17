@@ -7,6 +7,15 @@ public class PlayerController : MonoBehaviour {
     //Attack cooldown for character, might want to change this system later, not sure if there is a better way.
 	public float attackCooldown;
 
+    //Time for charge attack to charge
+    public float chargeTime;
+
+    //Boolean for if player has charged attack long enough
+    public bool isCharge;
+
+    //Bool for attack script to know when to charge attack
+    public bool chargeAttack;
+
     //Bool used for attack scripts and cooldowns
     public bool attack;
 
@@ -33,6 +42,10 @@ public class PlayerController : MonoBehaviour {
         rBody = GetComponent<Rigidbody2D>();
         charPosition = transform.position;
 
+        isCharge = false;
+        chargeTime = 0.0f;
+
+
         playerAnimation = GetComponent<Animator>();
         playerAnimation.SetBool("isMoving", false);
 		playerAnimation.SetBool ("Attack", false);
@@ -47,9 +60,22 @@ public class PlayerController : MonoBehaviour {
         charPosition = transform.position;
 
         //Lower attack cooldown. Is there a better  way for this?
-        attackCooldown -= Time.deltaTime;
+        if(attackCooldown > 0.0f)
+        {
+            attackCooldown -= Time.deltaTime;
+        }
 
-		//Checking if the character is moving or not, used for moving and idle animations
+        if (chargeTime >= 1.0f)
+        {
+            isCharge = true;
+            GetComponent<SpriteRenderer>().color = Color.cyan;
+        }
+        if(chargeTime > 1.2)
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+
+        //Checking if the character is moving or not, used for moving and idle animations
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             playerAnimation.SetBool("isMoving", true);
@@ -58,21 +84,61 @@ public class PlayerController : MonoBehaviour {
         {
             playerAnimation.SetBool("isMoving", false);
         }
-        
-        //Statement used to check if attack has been input, if so we tell the animator, update our global variable and reset the cooldown
-		if (Input.GetKeyDown(KeyCode.Space) && (attackCooldown <= 0.0f)) 
-		{
-			playerAnimation.SetBool ("Attack", true);
-			attack = true;
-			attackCooldown =0.5f;
-		}
-        //Letting the animator know that we arent attacking.
-        else 
-		{
-			playerAnimation.SetBool ("Attack", false);	
-			attack = false;
 
+        //Code for attack and charge attack.
+        if (Input.GetKeyUp(KeyCode.Space) && isCharge && attackCooldown < 0)
+        {
+            //do charged attack animation
+            isCharge = false;
+            chargeAttack = true;
+            chargeTime = 0.0f;
+
+            if(directionFacing == 1)
+            {
+                playerAnimation.SetBool("ChargeAttack", true);
+                rBody.AddForce(Vector3.up * 5000);
+            }
+            if (directionFacing == 2)
+            {
+                playerAnimation.SetBool("ChargeAttack", true);
+                rBody.AddForce(Vector3.left * 5000);
+            }
+            if (directionFacing == 3)
+            {
+                playerAnimation.SetBool("ChargeAttack", true);
+                rBody.AddForce(Vector3.down * 5000);
+            }
+            if (directionFacing == 4)
+            {
+                playerAnimation.SetBool("ChargeAttack", true);
+                rBody.AddForce(Vector3.right * 5000);
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.Space) && !isCharge && attackCooldown < 0)
+        {
+            playerAnimation.SetBool ("Attack", true);
+			attack = true;
+            chargeTime = 0;
+            attackCooldown = 0.5f;
+        }
+        //Letting the animator know that we arent attacking.
+        else
+        {
+            playerAnimation.SetBool("Attack", false);
+            playerAnimation.SetBool("ChargeAttack", false);
+            //Leave charge attack animation here (???)
+            attack = false;
+            chargeAttack = false;
+            attackCooldown -= Time.deltaTime;
+        }
+
+
+        //Statement used to check if attack has been input, if so we tell the animator, update our global variable and reset the cooldown
+        if (Input.GetKey(KeyCode.Space) && (attackCooldown <= 0.0f))
+        {      
+            chargeTime += Time.deltaTime; 
 		}
+
 
         //Moving Player in all directions. We update the direction facing, add our force, and let our animator know what direction we are facing. For side walking I flip the image.
         //Directions: Up = 1, Left = 2, Down = 3, Right = 4
