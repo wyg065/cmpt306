@@ -13,33 +13,56 @@ public class attackScript : MonoBehaviour {
     //The slashprefab with collider size and sprite
     public GameObject slashPrefab;
 
+    public GameObject chargeAttackSpawn;
+    public GameObject chargeAttackPrefab;
+
 	// Use this for initialization
 	void Start () 
 	{
 		myScript = FindObjectOfType<PlayerController>();
 	}
 	
-	// Update is called once per frame
-	void Update () 
-	{
-        //Checking variables in player script that tell us direction facing and if they have inputted an attack
-        //Decides rotation of sprite and instantiates prefab.
-        //Directions: Up = 1, Left = 2, Down = 3, Right = 4
-        if (myScript.directionFacing == 1 && (myScript.attack == true))
-		{
-			slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x+0.5f, myScript.charPosition.y+1.5f, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -90)))as GameObject;
-		}
-		if(myScript.directionFacing == 2 && (myScript.attack == true))
-		{
-            slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x - 0.9f, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0))) as GameObject;
+
+    void Update()
+    {
+        if (myScript.attack == true)
+        {
+            if (myScript.directionFacing == 1)
+            {
+                slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x + 0.5f, myScript.charPosition.y + 1.5f, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -90))) as GameObject;
+            }
+            if (myScript.directionFacing == 2)
+            {
+                slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x - 0.9f, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0))) as GameObject;
+            }
+            if (myScript.directionFacing == 3)
+            {
+                slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x, myScript.charPosition.y - 1.5f, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 90))) as GameObject;
+            }
+            if (myScript.directionFacing == 4)
+            {
+                slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x + 0.9f, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -180))) as GameObject;
+            }
         }
-		if(myScript.directionFacing == 3 && (myScript.attack == true))
-		{
-            slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x, myScript.charPosition.y - 1.5f, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 90))) as GameObject;
+        if (myScript.chargeAttack == true)
+        {
+            if (myScript.directionFacing == 1)
+            {
+                chargeAttackSpawn = Instantiate(chargeAttackPrefab, new Vector3(myScript.charPosition.x, myScript.charPosition.y + 1.0f, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0))) as GameObject;
+            }
+            if (myScript.directionFacing == 2)
+            {
+                chargeAttackSpawn = Instantiate(chargeAttackPrefab, new Vector3(myScript.charPosition.x, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0))) as GameObject;
+            }
+            if (myScript.directionFacing == 3)
+            {
+                chargeAttackSpawn = Instantiate(chargeAttackPrefab, new Vector3(myScript.charPosition.x, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0))) as GameObject;
+            }
+            if (myScript.directionFacing == 4)
+            {
+                chargeAttackSpawn = Instantiate(chargeAttackPrefab, new Vector3(myScript.charPosition.x, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0))) as GameObject;
+            }
         }
-		if(myScript.directionFacing == 4 && (myScript.attack == true))
-		{
-            slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x + 0.9f, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -180))) as GameObject;
-        }
-	}
+
+    }
 }
