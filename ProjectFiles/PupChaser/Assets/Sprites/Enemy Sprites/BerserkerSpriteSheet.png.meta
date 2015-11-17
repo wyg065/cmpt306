@@ -1,21 +1,22 @@
 fileFormatVersion: 2
-guid: d5b40aeb56d9b7a40ae45903b8844de7
-timeCreated: 1447706854
+guid: 09c73f27a652a7a4b9cd5e1ef08efa9b
+timeCreated: 1447797871
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: BattleSprites_0
-    21300002: BattleSprites_1
-    21300004: BattleSprites_2
-    21300006: BattleSprites_3
-    21300008: BattleSprites_4
-    21300010: BattleSprites_5
-    21300012: BattleSprites_6
-    21300014: BattleSprites_7
-    21300016: BattleSprites_8
-    21300018: BattleSprites_9
-    21300020: BattleSprites_10
-    21300022: BattleSprites_11
+    21300000: BerserkerSpriteSheet_0
+    21300002: BerserkerSpriteSheet_1
+    21300004: BerserkerSpriteSheet_2
+    21300006: BerserkerSpriteSheet_3
+    21300008: BerserkerSpriteSheet_4
+    21300010: BerserkerSpriteSheet_5
+    21300012: BerserkerSpriteSheet_6
+    21300014: BerserkerSpriteSheet_7
+    21300016: BerserkerSpriteSheet_8
+    21300018: BerserkerSpriteSheet_9
+    21300020: BerserkerSpriteSheet_10
+    21300022: BerserkerSpriteSheet_11
+    21300024: BerserkerSpriteSheet_12
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -41,7 +42,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -62,123 +63,133 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: BattleSprites_0
+    - name: BerserkerSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 202
-        y: 170
-        width: 32
-        height: 29
+        x: 5
+        y: 567
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BattleSprites_1
+    - name: BerserkerSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 162
-        y: 170
-        width: 32
-        height: 28
+        x: 21
+        y: 567
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BattleSprites_2
+    - name: BerserkerSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 122
-        y: 170
-        width: 32
-        height: 28
+        x: 40
+        y: 567
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BattleSprites_3
+    - name: BerserkerSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 82
-        y: 170
-        width: 32
-        height: 28
+        x: 56
+        y: 567
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BattleSprites_4
+    - name: BerserkerSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 41
-        y: 170
-        width: 32
-        height: 28
+        x: 56
+        y: 583
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BattleSprites_5
+    - name: BerserkerSpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 1
-        y: 170
-        width: 32
-        height: 28
+        x: 40
+        y: 583
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BattleSprites_6
+    - name: BerserkerSpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 242
-        y: 170
-        width: 32
-        height: 28
+        x: 21
+        y: 583
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BattleSprites_7
+    - name: BerserkerSpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 282
-        y: 170
-        width: 32
-        height: 28
+        x: 5
+        y: 583
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BattleSprites_8
+    - name: BerserkerSpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 322
-        y: 170
-        width: 32
-        height: 28
+        x: 81
+        y: 583
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BattleSprites_9
+    - name: BerserkerSpriteSheet_9
       rect:
         serializedVersion: 2
-        x: 366
-        y: 170
-        width: 32
-        height: 28
+        x: 97
+        y: 583
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BattleSprites_10
+    - name: BerserkerSpriteSheet_10
       rect:
         serializedVersion: 2
-        x: 6
-        y: 132
-        width: 32
-        height: 28
+        x: 81
+        y: 566
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BattleSprites_11
+    - name: BerserkerSpriteSheet_11
       rect:
         serializedVersion: 2
-        x: 46
-        y: 132
-        width: 32
-        height: 28
+        x: 95
+        y: 566
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BerserkerSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 566
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
