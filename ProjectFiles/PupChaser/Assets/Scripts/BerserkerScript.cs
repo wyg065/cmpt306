@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BerserkerScript : MonoBehaviour {
-    public Vector3 targetPlayer;
-    public Vector3 targetSpawn;
+public class BerserkerScript : MonoBehaviour
+{
     public PlayerController Player;
     public Rigidbody2D rBody;
     public Animator anim;
+
+    public float test;
 
     delegate void MyDelagate();
     MyDelagate beserkerAction;
 
 
     public int healthPoints;
-    public float zombieSpeed;
+    public float healthValue;
 
 
     //Function to handle collisions.
@@ -30,7 +31,25 @@ public class BerserkerScript : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-	
-	}
+	void Update ()
+    {
+        test += Time.deltaTime;
+        if (test > 0.0f)
+        {
+            rBody.AddForce(Vector3.up * 200);
+        }
+        if (test > 2.0f)
+        {
+            rBody.AddForce(Vector3.left * 200);
+        }
+        if (test > 4.0f)
+        {
+            rBody.AddForce(Vector3.down * 200);
+        }
+        if (test > 6.0f)
+        {
+            rBody.AddForce(Vector3.right * 200);
+            test = 0.0f;
+        }
+    }
 }
