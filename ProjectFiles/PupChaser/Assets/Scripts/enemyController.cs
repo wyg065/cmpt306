@@ -72,7 +72,7 @@ public class enemyController : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D col)
 	{
 		if (col.gameObject.tag == "collider") {
-			Destroy(gameObject);
+			//Destroy(gameObject);
 		}
 	}
 
