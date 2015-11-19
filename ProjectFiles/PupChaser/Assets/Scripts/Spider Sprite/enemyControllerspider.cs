@@ -57,7 +57,7 @@ public class enemyControllerspider : MonoBehaviour {
 			currentWaypoint = 0;
 		}
 	}
-	
+	/**
 	void OnTriggerEnter2D (Collider2D col)
 	{
 		if(col.gameObject.name == "Slice(Clone)")
@@ -75,7 +75,7 @@ public class enemyControllerspider : MonoBehaviour {
 			//Destroy(gameObject);
 		}
 	}
-	
+	**/
 	// Update is called once per frame
 	void FixedUpdate () {
 

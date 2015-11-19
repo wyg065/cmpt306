@@ -76,21 +76,11 @@ public class SpiderDecisionTree : MonoBehaviour {
 			sw.enabled = true; 
 			ec.enabled = false; 
 		}
+		if (Dplayer2.die == true) {
+			Destroy(gameObject);
+		}
 
 	}
 
-	void OnTriggerEnter2D (Collider2D other )
-	{
-		if (other.gameObject.name == "Slice(Clone)") {
 
-			Destroy (gameObject) ; 
-		}
-        if (other.gameObject.name == "ChargeAttack(Clone)")
-        {
-
-            Destroy(gameObject);
-        }
-
-
-    }
 }

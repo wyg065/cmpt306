@@ -3,12 +3,12 @@ using System.Collections;
 
 public class Dplayer2 : MonoBehaviour {
 
-	public static bool inrange ;
+	public static bool die ;
 
 	// Use this for initialization
 	void Start () {
 	
-		inrange = false;
+		die = false;
 	}
 	
 	// Update is called once per frame
@@ -18,17 +18,16 @@ public class Dplayer2 : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other )
 	{
-		if (other.tag == "Player") {
+		if (other.gameObject.name == "Slice(Clone)") {
 			
-			inrange = true; 
+			die = true ;  
 		}
-	}
-
-	void OnTriggerExit2D(Collider2D other)
-	{
-		if (other.tag == "Player") {
+		if (other.gameObject.name == "ChargeAttack(Clone)")
+		{
 			
-			inrange = false; 
+			die = true ; 
 		}
+		
+		
 	}
 }
