@@ -90,6 +90,30 @@ public class PlayerController : MonoBehaviour {
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
 		}
+		if (other.gameObject.name == "weakAttack(Clone)")
+		{
+			healthPoints--;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
+		if (other.gameObject.name == "mediumAttack(Clone)")
+		{
+			healthPoints = healthPoints -2;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
+		if (other.gameObject.name == "strongAttack(Clone)")
+		{
+			healthPoints = healthPoints -3;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
+		if (other.gameObject.name == "explosion(Clone)")
+		{
+			healthPoints = healthPoints -3;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
 
     }
 

@@ -64,8 +64,6 @@ public class GoblinController : MonoBehaviour {
 
 		seeker = GetComponent<Seeker>();
 		//rb = GetComponent<Rigidbody2D>();
-
-		goblinDamage = 0;
 		
 		if (target == null)
 		{
@@ -105,15 +103,15 @@ public class GoblinController : MonoBehaviour {
 
 			if (col.gameObject.name == "Slice(Clone)")
 			{
-				goblinDamage++;
-				if (goblinDamage >= 5)
+				goblinDamage--;
+				if (goblinDamage <= 0)
 				{
 					killGoblin ();
 				}
 			}else if (col.gameObject.name == "ChargeAttack(Clone)")
 			{
-				goblinDamage++;
-				if (goblinDamage >= 5)
+				goblinDamage = goblinDamage -2;
+				if (goblinDamage <=0)
 				{
 					killGoblin ();
 				}
