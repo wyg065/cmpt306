@@ -30,8 +30,6 @@ public class SpawnEnemies : MonoBehaviour {
 		
 			nextspawn = Time.time + SpawnRate;
 
-			a = 15 ;
-
 			if ((a == 1)||(a == 2)||(a == 3)||(a == 11)) {
 			
 				spawnedenemy = GameObject.Instantiate(SnakePrefab ,  transform.position , transform.rotation) as GameObject  ;
