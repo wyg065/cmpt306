@@ -48,18 +48,72 @@ public class PlayerController : MonoBehaviour {
             invincible = true;
             invincibilityCoolDown = 0.5f;
         }
-        if(other.gameObject.name == "spider web(Clone)")
+        if(other.gameObject.name == "leaf(Clone)")
         {
             healthPoints = healthPoints--;
             invincible = true;
             invincibilityCoolDown = 0.5f;
         }
-        if (other.gameObject.name == "Spider Enemy(Clone)")
+        if (other.gameObject.name == "rock(Clone)")
         {
             healthPoints = healthPoints--;
             invincible = true;
             invincibilityCoolDown = 0.5f;
         }
+		if (other.gameObject.name == "fireBall(Clone)")
+		{
+			healthPoints = healthPoints--;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
+		if (other.gameObject.name == "iceShard(Clone)")
+		{
+			healthPoints = healthPoints--;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
+		if (other.gameObject.name == "lightning(Clone)")
+		{
+			healthPoints = healthPoints--;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
+		if (other.gameObject.name == "Spider Enemy(Clone)")
+		{
+			healthPoints = healthPoints--;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
+		if (other.gameObject.name == "Spider Enemy(Clone)")
+		{
+			healthPoints = healthPoints--;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
+		if (other.gameObject.name == "weakAttack(Clone)")
+		{
+			healthPoints--;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
+		if (other.gameObject.name == "mediumAttack(Clone)")
+		{
+			healthPoints = healthPoints -2;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
+		if (other.gameObject.name == "strongAttack(Clone)")
+		{
+			healthPoints = healthPoints -3;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
+		if (other.gameObject.name == "explosion(Clone)")
+		{
+			healthPoints = healthPoints -3;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
 
     }
 

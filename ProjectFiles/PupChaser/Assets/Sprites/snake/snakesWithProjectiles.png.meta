@@ -1,0 +1,1211 @@
+fileFormatVersion: 2
+guid: bf37b11611259ca4e8a67265657aef27
+timeCreated: 1447795865
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: snakesWithProjectiles_0
+    21300002: snakesWithProjectiles_1
+    21300004: snakesWithProjectiles_2
+    21300006: snakesWithProjectiles_3
+    21300008: snakesWithProjectiles_4
+    21300010: snakesWithProjectiles_5
+    21300012: snakesWithProjectiles_6
+    21300014: snakesWithProjectiles_7
+    21300016: snakesWithProjectiles_8
+    21300018: snakesWithProjectiles_9
+    21300020: snakesWithProjectiles_10
+    21300022: snakesWithProjectiles_11
+    21300024: snakesWithProjectiles_12
+    21300026: snakesWithProjectiles_13
+    21300028: snakesWithProjectiles_14
+    21300030: snakesWithProjectiles_15
+    21300032: snakesWithProjectiles_16
+    21300034: snakesWithProjectiles_17
+    21300036: snakesWithProjectiles_18
+    21300038: snakesWithProjectiles_19
+    21300040: snakesWithProjectiles_20
+    21300042: snakesWithProjectiles_21
+    21300044: snakesWithProjectiles_22
+    21300046: snakesWithProjectiles_23
+    21300048: snakesWithProjectiles_24
+    21300050: snakesWithProjectiles_25
+    21300052: snakesWithProjectiles_26
+    21300054: snakesWithProjectiles_27
+    21300056: snakesWithProjectiles_28
+    21300058: snakesWithProjectiles_29
+    21300060: snakesWithProjectiles_30
+    21300062: snakesWithProjectiles_31
+    21300064: snakesWithProjectiles_32
+    21300066: snakesWithProjectiles_33
+    21300068: snakesWithProjectiles_34
+    21300070: snakesWithProjectiles_35
+    21300072: snakesWithProjectiles_36
+    21300074: snakesWithProjectiles_37
+    21300076: snakesWithProjectiles_38
+    21300078: snakesWithProjectiles_39
+    21300080: snakesWithProjectiles_40
+    21300082: snakesWithProjectiles_41
+    21300084: snakesWithProjectiles_42
+    21300086: snakesWithProjectiles_43
+    21300088: snakesWithProjectiles_44
+    21300090: snakesWithProjectiles_45
+    21300092: snakesWithProjectiles_46
+    21300094: snakesWithProjectiles_47
+    21300096: snakesWithProjectiles_48
+    21300098: snakesWithProjectiles_49
+    21300100: snakesWithProjectiles_50
+    21300102: snakesWithProjectiles_51
+    21300104: snakesWithProjectiles_52
+    21300106: snakesWithProjectiles_53
+    21300108: snakesWithProjectiles_54
+    21300110: snakesWithProjectiles_55
+    21300112: snakesWithProjectiles_56
+    21300114: snakesWithProjectiles_57
+    21300116: snakesWithProjectiles_58
+    21300118: snakesWithProjectiles_59
+    21300120: snakesWithProjectiles_60
+    21300122: snakesWithProjectiles_61
+    21300124: snakesWithProjectiles_62
+    21300126: snakesWithProjectiles_63
+    21300128: snakesWithProjectiles_64
+    21300130: snakesWithProjectiles_65
+    21300132: snakesWithProjectiles_66
+    21300134: snakesWithProjectiles_67
+    21300136: snakesWithProjectiles_68
+    21300138: snakesWithProjectiles_69
+    21300140: snakesWithProjectiles_70
+    21300142: snakesWithProjectiles_71
+    21300144: snakesWithProjectiles_72
+    21300146: snakesWithProjectiles_73
+    21300148: snakesWithProjectiles_74
+    21300150: snakesWithProjectiles_75
+    21300152: snakesWithProjectiles_76
+    21300154: snakesWithProjectiles_77
+    21300156: snakesWithProjectiles_78
+    21300158: snakesWithProjectiles_79
+    21300160: snakesWithProjectiles_80
+    21300162: snakesWithProjectiles_81
+    21300164: snakesWithProjectiles_82
+    21300166: snakesWithProjectiles_83
+    21300168: snakesWithProjectiles_84
+    21300170: snakesWithProjectiles_85
+    21300172: snakesWithProjectiles_86
+    21300174: snakesWithProjectiles_87
+    21300176: snakesWithProjectiles_88
+    21300178: snakesWithProjectiles_89
+    21300180: snakesWithProjectiles_90
+    21300182: snakesWithProjectiles_91
+    21300184: snakesWithProjectiles_92
+    21300186: snakesWithProjectiles_93
+    21300188: snakesWithProjectiles_94
+    21300190: snakesWithProjectiles_95
+    21300192: snakesWithProjectiles_96
+    21300194: snakesWithProjectiles_97
+    21300196: snakesWithProjectiles_98
+    21300198: snakesWithProjectiles_99
+    21300200: snakesWithProjectiles_100
+    21300202: snakesWithProjectiles_101
+    21300204: snakesWithProjectiles_102
+    21300206: snakesWithProjectiles_103
+    21300208: snakesWithProjectiles_104
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: snakesWithProjectiles_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 134
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 134
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 134
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 134
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_4
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 133
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_5
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 133
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_6
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 133
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_7
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 133
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_8
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 132
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_9
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 132
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_10
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 132
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_11
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 132
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_12
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 131
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_13
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 131
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_14
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 131
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_15
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 131
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_16
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 129
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_17
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 129
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_18
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 129
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_19
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 129
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_20
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 111
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_21
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 112
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_22
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 112
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_23
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 112
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_24
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 110
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_25
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 111
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_26
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 111
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_27
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 111
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_28
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 109
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_29
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 110
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_30
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 110
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_31
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 110
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_32
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 108
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_33
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 109
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_34
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 109
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_35
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 109
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_36
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 106
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_37
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 107
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_38
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 107
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_39
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 107
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_40
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 91
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_41
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 90
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_42
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 91
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_43
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 90
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_44
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 90
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_45
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 89
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_46
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 90
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_47
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 89
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_48
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 89
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_49
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 88
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_50
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 89
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_51
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 88
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_52
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 88
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_53
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 87
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_54
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 88
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_55
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 87
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_56
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 86
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_57
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 85
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_58
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 86
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_59
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 85
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_60
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 69
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_61
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 68
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_62
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 67
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_63
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 67
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_64
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 68
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_65
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 67
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_66
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 66
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_67
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 66
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_68
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 67
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_69
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 66
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_70
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 65
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_71
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 65
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_72
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 66
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_73
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 65
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_74
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 64
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_75
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 64
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_76
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 64
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_77
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 63
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_78
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 62
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_79
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 62
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_80
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 35
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_81
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 35
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_82
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 35
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_83
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 35
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_84
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 34
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_85
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 34
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_86
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 34
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_87
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 34
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_88
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 33
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_89
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 33
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_90
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 33
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_91
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 33
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_92
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 32
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_93
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 32
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_94
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 32
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_95
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 32
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_96
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 30
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_97
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 30
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_98
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 30
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_99
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 30
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_100
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 9
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_101
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 11
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_102
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 10
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_103
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 9
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: snakesWithProjectiles_104
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 8
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
