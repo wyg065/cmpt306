@@ -1,0 +1,420 @@
+﻿using UnityEngine;
+using System.Collections;
+using Pathfinding;
+
+public class fireSnakeController : MonoBehaviour {
+
+	private PlayerController playerScriptReference;
+	private Transform target;
+	public GameObject player;
+	private Animator anim;
+	public GameObject fireBall;
+	public GameObject iceShard;
+	public GameObject leaf;
+	public GameObject lightning;
+	public GameObject rock;
+
+    public float updateRate = 1.0f;
+
+    private Seeker seeker;
+    private Rigidbody2D rb;
+
+    public Path path;
+
+    public float speed = 100.0f;
+    public ForceMode2D fMode;
+
+	//variable to store the absolute value of goblin's y velocity
+	private float y = 0;
+	
+	//variable to store the absolute value of goblin's x velocity
+	private float x = 0;
+
+    [HideInInspector]
+    public bool pathIsEnded = false;
+
+    public float nextWaypoinyDistance = 1.0f;
+
+    private int currentWaypoint = 0;
+
+	private float rateOfFire = 2.2f;
+	private float fireTimer = 0.0f;
+	//bool used to control rate of fire
+	private bool canFire = false;
+	//distance enemy has to be from player to attack
+	private float threatDistance = 2.5f;
+
+	private float origX = 0.0f;
+	private float origY = 0.0f;
+
+	private float health = 10;
+	private float maxHealth = 10;
+
+	private GameObject randomLocation;
+	private GameObject spawnLocation;
+
+	private int snakeType = 0;
+
+	// Use this for initialization
+	void Start () {
+		snakeType = Random.Range(0,5);
+		if (snakeType == 0) {
+			GetComponent<SpriteRenderer> ().color = new Color32(200,0,0,255);
+			rateOfFire = 2.2f;
+			speed = 7500.0f;
+			health = 6;
+		} else if (snakeType == 1) {
+			GetComponent<SpriteRenderer> ().color = new Color32(0,76,153,255);
+			rateOfFire = 2.8f;
+			speed = 7500.0f;
+			health = 6;
+		} else if (snakeType == 2) {
+			GetComponent<SpriteRenderer> ().color = new Color32(210,210,0,255);
+			rateOfFire = 2.2f;
+			speed = 10000.0f;
+			health = 3;
+		} else if (snakeType == 3) {
+			GetComponent<SpriteRenderer> ().color = new Color32(0,170,0,255);
+			rateOfFire = 2.2f;
+			speed = 7500.0f;
+			health = 6;
+		} else {
+			GetComponent<SpriteRenderer> ().color = new Color32(102,51,0,255);
+			rateOfFire = 3.2f;
+			speed = 4000.0f;
+			health = 10;
+		}
+
+		maxHealth = health;
+		fireTimer = rateOfFire;
+		spawnLocation = new GameObject ();
+		randomLocation = new GameObject ();
+		origX = transform.position.x;
+		origY = transform.position.y;
+
+		playerScriptReference = FindObjectOfType<PlayerController>();
+
+		target = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ().transform;
+
+        seeker = GetComponent<Seeker>();
+        rb = GetComponent<Rigidbody2D>();
+		anim = GetComponent<Animator> ();
+
+        if (target == null)
+        {
+            print("no target.");
+            return;
+        }
+
+        seeker.StartPath(transform.position, target.position, onPathComplete);
+
+        StartCoroutine(UpdatePath());
+	}
+
+    IEnumerator UpdatePath()
+    {
+        seeker.StartPath(transform.position, target.position, onPathComplete);
+
+        yield return new WaitForSeconds(1f/updateRate);
+        StartCoroutine(UpdatePath());
+    }
+	
+    public void onPathComplete(Path p)
+    {
+        if (!p.error) {
+            path = p;
+            currentWaypoint = 0;
+        }
+    }
+
+	void OnTriggerEnter2D (Collider2D col)
+	{
+		if(col.gameObject.name == "Slice(Clone)")
+		{
+			Vector3 dir = (transform.position - playerScriptReference.charPosition).normalized;
+			dir *= speed * Time.fixedDeltaTime * 120f;
+			
+			rb.AddForce(dir, fMode);
+			health--;
+		}
+		if(col.gameObject.name == "ChargeAttack(Clone)")
+		{
+			Vector3 dir = (transform.position - playerScriptReference.charPosition).normalized;
+			dir *= speed * Time.fixedDeltaTime * 180f;
+			
+			rb.AddForce(dir, fMode);
+			health -=2;
+		}
+	}
+
+	void OnCollisionEnter2D (Collision2D col)
+	{
+		//future
+	}
+
+	void fire() {
+		if (snakeType == 0) {
+			Instantiate(fireBall, transform.position, Quaternion.identity);
+		} else if (snakeType == 1) {
+			Instantiate(iceShard, transform.position, Quaternion.identity);
+		} else if (snakeType == 2) {
+			Instantiate(lightning, transform.position, Quaternion.identity);
+		} else if (snakeType == 3) {
+			var obj = (GameObject)Instantiate(leaf, transform.position, Quaternion.identity);
+			obj.GetComponent<leafController>().setTarget(gameObject);
+		} else {
+			Instantiate(rock, transform.position, Quaternion.identity);
+		}
+	}
+
+	// Update is called once per frame
+	void FixedUpdate () {
+		if ((Vector3.Distance(transform.position,target.position) >= threatDistance) && canFire && 
+		Vector2.Distance (GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ().transform.position, transform.position) < 7f) {
+			fire();
+			canFire = false;
+		}
+		if (health <= 0) {
+			Destroy(randomLocation);
+			Destroy(spawnLocation);
+			Destroy(gameObject);
+		}
+		aiLoop();
+		updateMoveAnimation ();
+    }
+
+	void Update() {
+		fireTimer -= Time.deltaTime;
+		if (fireTimer < 0) {
+			canFire = true;
+			fireTimer = rateOfFire;
+		}
+	}
+
+
+	void aiLoop() {
+		//if (inSpawnArea) {
+		Vector3 playerPos = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ().transform.position;
+		Vector3 spawnPos = new Vector3 (origX, origY, 0);
+		float playerDistance = Vector2.Distance (transform.position, playerPos);
+		if (Vector2.Distance (transform.position, spawnPos) < 12f) { //if to far from spawn zone
+			if(playerDistance < 9f) {
+				// if able to see player
+				if(playerDistance > 6f) { //if too far to shoot from player
+					moveToTarget();
+				} else {
+					if(playerDistance < 5f) { //if to close to player
+						if (health/maxHealth > .6f) { //if health is above 50%
+							moveToTarget();
+							if (canFire) {
+								fire();
+								canFire = false;
+							}
+						} else {
+							//print ("retreating");
+							retreat();
+						}
+					} else {
+						if (canFire) {
+							fire();
+							canFire = false;
+						}
+					}
+				}
+			} else {
+				moveToRandom(); //move to random spot within spoawn are
+			}
+		} else {
+			if(playerDistance < 7f) {
+				if (health/maxHealth > .3f) {
+					moveToTarget();
+					if (canFire) {
+						fire();
+						canFire = false;
+					}
+				} else {
+					returnToSpawn();
+				}
+			} else {
+				returnToSpawn();
+			}
+		}
+	}
+	
+
+	void moveToTarget() {
+		target.position = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ().transform.position;
+		
+		if (path == null)
+			return;
+		
+		if (currentWaypoint >= path.vectorPath.Count) {
+			if (pathIsEnded)
+				return;
+			pathIsEnded = true;
+			return;
+		}
+		pathIsEnded = false;
+		
+		Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+		dir *= speed * Time.fixedDeltaTime;
+		
+		rb.AddForce(dir, fMode);
+		
+		if (Vector3.Distance (transform.position, path.vectorPath[currentWaypoint]) < nextWaypoinyDistance)
+		{
+			currentWaypoint++;
+			return;
+		}
+	}
+
+	void moveToRandom() {
+		float range = 6;
+		float x = Random.Range (transform.position.x-range, transform.position.x+range);
+		float y = Random.Range (transform.position.y-range, transform.position.y+range);
+
+		randomLocation.transform.position = new Vector3 (x,y,0);
+		target = randomLocation.transform;
+		
+		if (path == null)
+			return;
+		
+		if (currentWaypoint >= path.vectorPath.Count) {
+			if (pathIsEnded)
+				return;
+			pathIsEnded = true;
+			return;
+		}
+		pathIsEnded = false;
+		
+		Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+		dir *= speed * Time.fixedDeltaTime;
+		
+		rb.AddForce(dir, fMode);
+		
+		if (Vector3.Distance (transform.position, path.vectorPath[currentWaypoint]) < nextWaypoinyDistance)
+		{
+			currentWaypoint++;
+			return;
+		}
+	}
+
+	void retreat() {
+		target = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ().transform;
+		
+		if (path == null)
+			return;
+		
+		if (currentWaypoint >= path.vectorPath.Count) {
+			if (pathIsEnded)
+				return;
+			pathIsEnded = true;
+			return;
+		}
+		pathIsEnded = false;
+		
+		Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+		dir *= speed * Time.fixedDeltaTime;
+		
+		rb.AddForce(-dir, fMode);
+		
+		if (Vector3.Distance (transform.position, path.vectorPath[currentWaypoint]) < nextWaypoinyDistance)
+		{
+			currentWaypoint++;
+			return;
+		}
+	}
+
+	void returnToSpawn() {	
+		float range = 1;
+		float x = Random.Range (origX-range, origX+range);
+		float y = Random.Range (origY-range, origY+range);
+		
+		spawnLocation.transform.position = new Vector3 (x,y,0);
+		target = spawnLocation.transform;
+		
+		if (path == null)
+			return;
+		
+		if (currentWaypoint >= path.vectorPath.Count) {
+			if (pathIsEnded)
+				return;
+			pathIsEnded = true;
+			return;
+		}
+		pathIsEnded = false;
+		
+		Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+		dir *= speed * Time.fixedDeltaTime;
+		
+		rb.AddForce(dir, fMode);
+		
+		if (Vector3.Distance (transform.position, path.vectorPath[currentWaypoint]) < nextWaypoinyDistance)
+		{
+			currentWaypoint++;
+			return;
+		}
+	}
+
+	void updateMoveAnimation()
+	{
+		print("test");
+		//the absolute value of the target's y velocity
+		y = Mathf.Abs (rb.velocity.y);
+		//the absolute value of the target's x velocity
+		x = Mathf.Abs (rb.velocity.x);
+
+		//because the target could be moving left, right, and up or down we need a way to decide
+		//which animation to play. Therefore whichever is greater velocity, the animation for that
+		//direction will be played.  This is the reasoning for finding the absolute value of x and y
+		//velocity.
+		//If y is greater than x, play y animation
+		if (y > x)
+		{
+			//if y velocity is positive
+			if (rb.velocity.y > 0)
+			{
+				//set the move up boolean value to true
+				anim.SetBool("moveUp", true);
+				//set all other values to false
+				anim.SetBool("moveDown", false);
+				anim.SetBool("moveLeft", false);
+				anim.SetBool("moveRight", false);
+			}
+			//if the y velocity is negative
+			if (rb.velocity.y < 0)
+			{
+				//set the move down boolean value to true
+				anim.SetBool("moveDown", true);
+				//set all other values to false
+				anim.SetBool("moveUp", false);
+				anim.SetBool("moveLeft", false);
+				anim.SetBool("moveRight", false);
+			}
+		}
+		//otherwise if x is less than y, play x animation.
+		else
+		{
+			//if the x velocity is negative
+			if (rb.velocity.x < 0)
+			{
+				//set the move left boolean value to true
+				anim.SetBool("moveLeft", true);
+				//set all other values to false
+				anim.SetBool("moveUp", false);
+				anim.SetBool("moveDown", false);
+				anim.SetBool("moveRight", false);
+			}
+			//if the x velocity is positive
+			if (rb.velocity.x > 0)
+			{
+				//set the move right boolean value to true
+				anim.SetBool("moveRight", true);
+				//set all other values to false
+				anim.SetBool("moveUp", false);
+				anim.SetBool("moveDown", false);
+				anim.SetBool("moveLeft", false);
+			}
+		}
+	}
+}
