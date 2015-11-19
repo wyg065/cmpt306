@@ -85,8 +85,12 @@ public class SpiderDecisionTree : MonoBehaviour {
 
 			Destroy (gameObject) ; 
 		}
+        if (other.gameObject.name == "ChargeAttack(Clone)")
+        {
+
+            Destroy(gameObject);
+        }
 
 
-
-	}
+    }
 }
