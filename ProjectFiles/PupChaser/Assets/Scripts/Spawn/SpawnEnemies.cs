@@ -27,11 +27,11 @@ public class SpawnEnemies : MonoBehaviour {
 		int a = Random.Range (1 , 18);
 
 		if (Time.time > nextspawn) {
-		
+			
 			nextspawn = Time.time + SpawnRate;
 
 			if ((a == 1)||(a == 2)||(a == 3)||(a == 11)) {
-			
+
 				spawnedenemy = GameObject.Instantiate(SnakePrefab ,  transform.position , transform.rotation) as GameObject  ;
 			
 			} else if ((a == 4)||(a == 5)||(a == 6)||(a == 12)) {
