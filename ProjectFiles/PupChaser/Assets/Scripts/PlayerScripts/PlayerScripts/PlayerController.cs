@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour {
         //Get components and initialize variables
         rBody = GetComponent<Rigidbody2D>();
         charPosition = transform.position;
-        healthPoints = 10;
+        healthPoints = 20;
 
         dead = false;
         isCharge = false;
