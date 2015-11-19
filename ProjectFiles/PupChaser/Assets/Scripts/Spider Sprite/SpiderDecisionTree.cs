@@ -18,8 +18,7 @@ public class SpiderDecisionTree : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		sw3 = GetComponent<shootweb3> ();
 
-		int a = Random.Range (1 , 7);   
-		 
+		int a = Random.Range (1 , 7);    
 
 		if ((a == 1) || (a == 4)) {
 		
