@@ -4,7 +4,10 @@ using System.Collections;
 public class ZombieAnimation : MonoBehaviour {
 
 	//create an enemyController variable called enemy
-	public enemyController enemy;
+	public GoblinController enemy;
+
+	//create a spawn goblin bullet variable called spawnGoblinBullet.
+	public SpawnGoblinBullet spawnGoblinBullet;
 
 	//animator for the goblin enemy
 	private Animator anim;
@@ -15,14 +18,21 @@ public class ZombieAnimation : MonoBehaviour {
 	//variable to store the absolute value of goblin's x velocity
 	private float x = 0;
 
+	//variable to determine if the goblin should detonate
+	[HideInInspector]
+	public bool timeToDetonate;
+
 	// Use this for initialization
 	void Start ()
 	{
 		//find enemyController and assign it to enemy
-		enemy = FindObjectOfType<enemyController> ();
+		enemy = FindObjectOfType<GoblinController> ();
+		spawnGoblinBullet = FindObjectOfType<SpawnGoblinBullet> ();
 
 		//find the animator
 		anim = GetComponent<Animator> ();
+
+		timeToDetonate = false;
 	}
 	
 	// Update is called once per frame
@@ -37,8 +47,20 @@ public class ZombieAnimation : MonoBehaviour {
 		//which animation to play. Therefore whichever is greater velocity, the animation for that
 		//direction will be played.  This is the reasoning for finding the absolute value of x and y
 		//velocity.
+
+		//if its time to detonate, then detonate animation.
+		if (timeToDetonate)
+		{
+			//set all other values to false
+			anim.SetBool("moveLeft", false);
+			anim.SetBool("moveUp", false);
+			anim.SetBool("moveDown", false);
+			anim.SetBool("moveRight", false);
+			//set the detonateGoblin boolean value to true
+			anim.SetBool("detonateGoblin", true);
+		}
 		//If y is greater than x, play y animation
-		if (y > x)
+		else if (y > x)
 		{
 			//if y velocity is positive
 			if (enemy.GetComponent<Rigidbody2D> ().velocity.y > 0)
@@ -49,6 +71,12 @@ public class ZombieAnimation : MonoBehaviour {
 				anim.SetBool("moveDown", false);
 				anim.SetBool("moveLeft", false);
 				anim.SetBool("moveRight", false);
+
+				//set facing values for bullet instantiation.
+				spawnGoblinBullet.facingUp = true;
+				spawnGoblinBullet.facingDown = false;
+				spawnGoblinBullet.facingLeft = false;
+				spawnGoblinBullet.facingRight = false;
 			}
 			//if the y velocity is negative
 			if (enemy.GetComponent<Rigidbody2D> ().velocity.y < 0)
@@ -59,6 +87,12 @@ public class ZombieAnimation : MonoBehaviour {
 				anim.SetBool("moveUp", false);
 				anim.SetBool("moveLeft", false);
 				anim.SetBool("moveRight", false);
+
+				//set facing values for bullet instantiation.
+				spawnGoblinBullet.facingUp = false;
+				spawnGoblinBullet.facingDown = true;
+				spawnGoblinBullet.facingLeft = false;
+				spawnGoblinBullet.facingRight = false;
 			}
 		}
 		//otherwise if x is less than y, play x animation.
@@ -73,6 +107,12 @@ public class ZombieAnimation : MonoBehaviour {
 				anim.SetBool("moveUp", false);
 				anim.SetBool("moveDown", false);
 				anim.SetBool("moveRight", false);
+
+				//set facing values for bullet instantiation.
+				spawnGoblinBullet.facingUp = false;
+				spawnGoblinBullet.facingDown = false;
+				spawnGoblinBullet.facingLeft = true;
+				spawnGoblinBullet.facingRight = false;
 			}
 			//if the x velocity is positive
 			if (enemy.GetComponent<Rigidbody2D> ().velocity.x > 0)
@@ -83,6 +123,12 @@ public class ZombieAnimation : MonoBehaviour {
 				anim.SetBool("moveUp", false);
 				anim.SetBool("moveDown", false);
 				anim.SetBool("moveLeft", false);
+
+				//set facing values for bullet instantiation.
+				spawnGoblinBullet.facingUp = false;
+				spawnGoblinBullet.facingDown = false;
+				spawnGoblinBullet.facingLeft = false;
+				spawnGoblinBullet.facingRight = true;
 			}
 		}
 	}
