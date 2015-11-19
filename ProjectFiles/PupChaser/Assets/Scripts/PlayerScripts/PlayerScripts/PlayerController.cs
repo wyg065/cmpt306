@@ -18,9 +18,10 @@ public class PlayerController : MonoBehaviour {
 
     //Bool used for attack scripts and cooldowns
     public bool attack;
-
+    public float chargeCooldown;
     public int healthPoints;
     public bool dead;
+    public bool inCharge;
     public bool invincible;
     public float invincibilityCoolDown;
     public Rigidbody2D rBody;
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour {
             invincible = true;
             invincibilityCoolDown = 0.5f;
         }
-        if (other.tag == "spider")
+        if (other.gameObject.name == "Spider Enemy(Clone)")
         {
             healthPoints = healthPoints--;
             invincible = true;
@@ -106,6 +107,14 @@ public class PlayerController : MonoBehaviour {
             invincible = false;
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
+        if(inCharge)
+        {
+            chargeCooldown -= Time.deltaTime;
+        }
+        if(chargeCooldown < 0)
+        {
+            inCharge = false;
+        }
 
         if (!dead)
         {
@@ -124,7 +133,14 @@ public class PlayerController : MonoBehaviour {
             {
                 GetComponent<SpriteRenderer>().color = Color.white;
             }
-
+            if (inCharge)
+            {
+                chargeCooldown -= Time.deltaTime;
+            }
+            if (chargeCooldown < 0)
+            {
+                inCharge = false;
+            }
             //Checking if the character is moving or not, used for moving and idle animations
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
@@ -146,6 +162,8 @@ public class PlayerController : MonoBehaviour {
                 if (directionFacing == 1)
                 {
                     invincible = true;
+                    inCharge = true;
+                    chargeCooldown = 0.5f;
                     invincibilityCoolDown = 0.5f;
                     playerAnimation.SetBool("ChargeAttack", true);
                     rBody.AddForce(Vector3.up * 5000);
@@ -153,6 +171,8 @@ public class PlayerController : MonoBehaviour {
                 if (directionFacing == 2)
                 {
                     invincible = true;
+                    inCharge = true;
+                    chargeCooldown = 0.5f;
                     invincibilityCoolDown = 0.5f;
                     playerAnimation.SetBool("ChargeAttack", true);
                     rBody.AddForce(Vector3.left * 5000);
@@ -160,6 +180,8 @@ public class PlayerController : MonoBehaviour {
                 if (directionFacing == 3)
                 {
                     invincible = true;
+                    inCharge = true;
+                    chargeCooldown = 0.5f;
                     invincibilityCoolDown = 0.5f;
                     playerAnimation.SetBool("ChargeAttack", true);
                     rBody.AddForce(Vector3.down * 5000);
@@ -167,6 +189,8 @@ public class PlayerController : MonoBehaviour {
                 if (directionFacing == 4)
                 {
                     invincible = true;
+                    inCharge = true;
+                    chargeCooldown = 0.5f;
                     invincibilityCoolDown = 0.5f;
                     playerAnimation.SetBool("ChargeAttack", true);
                     rBody.AddForce(Vector3.right * 5000);
@@ -201,46 +225,50 @@ public class PlayerController : MonoBehaviour {
             //Moving Player in all directions. We update the direction facing, add our force, and let our animator know what direction we are facing. For side walking I flip the image.
             //Directions: Up = 1, Left = 2, Down = 3, Right = 4
 
-            //Move Player Up
-            if (Input.GetKey(KeyCode.W))
+            if (!inCharge)
             {
-                rBody.AddForce(Vector3.up * walkSpeed);
-                playerAnimation.SetInteger("DirectionFacing", 1);
-                directionFacing = 1;
-            }
-
-            //Move Player Left
-            if (Input.GetKey(KeyCode.A))
-            {
-                if (transform.localScale.x < 0)
+                //Move Player Up
+                if (Input.GetKey(KeyCode.W))
                 {
-                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                    rBody.AddForce(Vector3.up * walkSpeed);
+                    playerAnimation.SetInteger("DirectionFacing", 1);
+                    directionFacing = 1;
                 }
 
-                rBody.AddForce(Vector3.left * walkSpeed);
-                playerAnimation.SetInteger("DirectionFacing", 2);
-                directionFacing = 2;
-            }
-
-            //Move Player Down
-            if (Input.GetKey(KeyCode.S))
-            {
-                rBody.AddForce(Vector3.down * walkSpeed);
-                playerAnimation.SetInteger("DirectionFacing", 3);
-                directionFacing = 3;
-            }
-
-            //Move Player Right
-            if (Input.GetKey(KeyCode.D))
-            {
-                if (transform.localScale.x > 0)
+                //Move Player Left
+                if (Input.GetKey(KeyCode.A))
                 {
-                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                    if (transform.localScale.x < 0)
+                    {
+                        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                    }
+
+                    rBody.AddForce(Vector3.left * walkSpeed);
+                    playerAnimation.SetInteger("DirectionFacing", 2);
+                    directionFacing = 2;
                 }
 
-                rBody.AddForce(Vector3.right * walkSpeed);
-                playerAnimation.SetInteger("DirectionFacing", 4);
-                directionFacing = 4;
+                //Move Player Down
+                if (Input.GetKey(KeyCode.S))
+                {
+                    rBody.AddForce(Vector3.down * walkSpeed);
+                    playerAnimation.SetInteger("DirectionFacing", 3);
+                    directionFacing = 3;
+                }
+
+                //Move Player Right
+                if (Input.GetKey(KeyCode.D))
+                {
+                    if (transform.localScale.x > 0)
+                    {
+                        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                    }
+
+                    rBody.AddForce(Vector3.right * walkSpeed);
+                    playerAnimation.SetInteger("DirectionFacing", 4);
+                    directionFacing = 4;
+
+                }
 
             }
         }
