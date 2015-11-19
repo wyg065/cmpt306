@@ -8,7 +8,7 @@ public class BerserkerScript : MonoBehaviour
     //Stuff for A*
     public PlayerController myScript;
     public Transform target;
-    private Transform t;
+    private GameObject t;
     public GameObject player;
 
     public float updateRate = 1.0f;
@@ -112,7 +112,7 @@ public class BerserkerScript : MonoBehaviour
 
         Player = FindObjectOfType<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
-        t = new GameObject().transform;
+        t = new GameObject();
         target = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().transform;
         seeker = GetComponent<Seeker>();
         seeker.StartPath(transform.position, target.position, onPathComplete);
@@ -162,6 +162,7 @@ public class BerserkerScript : MonoBehaviour
     {
         if (healthPoints < 1)
         {
+            Destroy(t);
             Destroy(gameObject);
         }
         berserkerAction();
@@ -219,8 +220,8 @@ public class BerserkerScript : MonoBehaviour
         float range = 6;
         float x = Random.Range(transform.position.x - range, transform.position.x + range);
         float y = Random.Range(transform.position.y - range, transform.position.y + range);
-        t.position = new Vector3(x, y, 0);
-        target = t;
+        t.transform.position = new Vector3(x, y, 0);
+        target = t.transform;
 
         if (path == null)
             return;

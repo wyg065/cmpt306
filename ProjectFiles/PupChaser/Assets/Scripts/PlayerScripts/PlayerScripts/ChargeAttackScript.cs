@@ -23,25 +23,25 @@ public class ChargeAttackScript : MonoBehaviour {
     {
         time += Time.deltaTime;
         //transform.position = new Vector3(Player.charPosition.x, Player.charPosition.y, 0);
-
-        if (Player.directionFacing == 1)
-        {
-            transform.position = new Vector3(Player.charPosition.x, Player.charPosition.y+2.0f, 0);
-        }
-        if (Player.directionFacing == 2)
-        {
-            transform.position = new Vector3(Player.charPosition.x - 2.0f, Player.charPosition.y, 0);
-        }
-        if (Player.directionFacing == 3)
-        {
-            transform.position = new Vector3(Player.charPosition.x, Player.charPosition.y - 2.0f, 0);
-        }
-        if (Player.directionFacing == 4)
-        {
-            transform.position = new Vector3(Player.charPosition.x + 2.0f, Player.charPosition.y, 0);
-        }
-
-        if (time > 0.3)
+        
+            if (Player.directionFacing == 1)
+            {
+                transform.position = new Vector3(Player.charPosition.x, Player.charPosition.y + 2.0f, 0);
+            }
+            if (Player.directionFacing == 2)
+            {
+                transform.position = new Vector3(Player.charPosition.x - 2.0f, Player.charPosition.y, 0);
+            }
+            if (Player.directionFacing == 3)
+            {
+                transform.position = new Vector3(Player.charPosition.x, Player.charPosition.y - 2.0f, 0);
+            }
+            if (Player.directionFacing == 4)
+            {
+                transform.position = new Vector3(Player.charPosition.x + 2.0f, Player.charPosition.y, 0);
+            }
+        
+        if (time > 0.2)
         {
             destroy = true;
         }
