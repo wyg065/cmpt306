@@ -24,6 +24,7 @@ public class playerController : MonoBehaviour {
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, speed);
+
         } else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
