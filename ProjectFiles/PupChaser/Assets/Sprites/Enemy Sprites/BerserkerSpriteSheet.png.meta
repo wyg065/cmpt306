@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 09c73f27a652a7a4b9cd5e1ef08efa9b
-timeCreated: 1447797871
+timeCreated: 1447879623
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -17,6 +17,16 @@ TextureImporter:
     21300020: BerserkerSpriteSheet_10
     21300022: BerserkerSpriteSheet_11
     21300024: BerserkerSpriteSheet_12
+    21300026: BerserkerSpriteSheet_13
+    21300028: BerserkerSpriteSheet_14
+    21300030: BerserkerSpriteSheet_15
+    21300032: BerserkerSpriteSheet_16
+    21300034: BerserkerSpriteSheet_17
+    21300036: BerserkerSpriteSheet_18
+    21300038: BerserkerSpriteSheet_19
+    21300040: BerserkerSpriteSheet_20
+    21300042: BerserkerSpriteSheet_21
+    21300044: BerserkerSpriteSheet_22
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -66,7 +76,7 @@ TextureImporter:
     - name: BerserkerSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 6
         y: 567
         width: 12
         height: 16
@@ -76,7 +86,7 @@ TextureImporter:
     - name: BerserkerSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 21
+        x: 22
         y: 567
         width: 12
         height: 16
@@ -86,8 +96,8 @@ TextureImporter:
     - name: BerserkerSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 40
-        y: 567
+        x: 41
+        y: 566
         width: 12
         height: 16
       alignment: 0
@@ -96,8 +106,8 @@ TextureImporter:
     - name: BerserkerSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 56
-        y: 567
+        x: 57
+        y: 566
         width: 12
         height: 16
       alignment: 0
@@ -106,8 +116,8 @@ TextureImporter:
     - name: BerserkerSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 56
-        y: 583
+        x: 57
+        y: 582
         width: 12
         height: 16
       alignment: 0
@@ -116,8 +126,8 @@ TextureImporter:
     - name: BerserkerSpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 40
-        y: 583
+        x: 41
+        y: 582
         width: 12
         height: 16
       alignment: 0
@@ -126,7 +136,7 @@ TextureImporter:
     - name: BerserkerSpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 21
+        x: 22
         y: 583
         width: 12
         height: 16
@@ -136,7 +146,7 @@ TextureImporter:
     - name: BerserkerSpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 5
+        x: 6
         y: 583
         width: 12
         height: 16
@@ -146,8 +156,8 @@ TextureImporter:
     - name: BerserkerSpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 81
-        y: 583
+        x: 77
+        y: 582
         width: 12
         height: 16
       alignment: 0
@@ -156,8 +166,8 @@ TextureImporter:
     - name: BerserkerSpriteSheet_9
       rect:
         serializedVersion: 2
-        x: 97
-        y: 583
+        x: 93
+        y: 582
         width: 12
         height: 16
       alignment: 0
@@ -166,8 +176,8 @@ TextureImporter:
     - name: BerserkerSpriteSheet_10
       rect:
         serializedVersion: 2
-        x: 81
-        y: 566
+        x: 76
+        y: 564
         width: 12
         height: 16
       alignment: 0
@@ -176,8 +186,8 @@ TextureImporter:
     - name: BerserkerSpriteSheet_11
       rect:
         serializedVersion: 2
-        x: 95
-        y: 566
+        x: 92
+        y: 564
         width: 12
         height: 16
       alignment: 0
@@ -186,8 +196,58 @@ TextureImporter:
     - name: BerserkerSpriteSheet_12
       rect:
         serializedVersion: 2
-        x: 109
-        y: 566
+        x: 107
+        y: 564
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BerserkerSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 564
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BerserkerSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 547
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BerserkerSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 547
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BerserkerSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 547
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BerserkerSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 547
         width: 12
         height: 16
       alignment: 0
