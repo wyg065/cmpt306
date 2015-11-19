@@ -6,6 +6,7 @@ using Pathfinding;
 public class GoblinController : MonoBehaviour {
 	
 	public PlayerController playerController;
+	public GoblinAI goblin;
 
 
 	//What the goblin enemy is walking towards
@@ -55,6 +56,7 @@ public class GoblinController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerController = FindObjectOfType<PlayerController>();
+		goblin = FindObjectOfType<GoblinAI> ();
 
 		player = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ().transform;
 
@@ -78,6 +80,11 @@ public class GoblinController : MonoBehaviour {
 	
 	IEnumerator UpdatePath()
 	{
+		if (goblin.destroyRandomLocationGameObject)
+		{
+			Destroy(randomLocation);
+		}
+
 		seeker.StartPath(transform.position, target.position, onPathComplete);
 		
 		yield return new WaitForSeconds(1f/updateRate);
@@ -123,7 +130,7 @@ public class GoblinController : MonoBehaviour {
 	{
 		Destroy(gameObject);
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
