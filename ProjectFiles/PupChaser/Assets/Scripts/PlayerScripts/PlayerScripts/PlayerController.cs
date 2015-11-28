@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour {
     public bool inCharge;
     public bool invincible;
     public float invincibilityCoolDown;
+    public bool canShoot;
+    public float shootCooldown;
+
     public Rigidbody2D rBody;
 
     //Movement speed of character
@@ -128,6 +131,8 @@ public class PlayerController : MonoBehaviour {
 
         dead = false;
         isCharge = false;
+        canShoot = true;
+        chargeTime = -1;
         chargeTime = 0.0f;
         invincible = false;
         invincibilityCoolDown = 0.5f;
@@ -150,6 +155,11 @@ public class PlayerController : MonoBehaviour {
             dead = true;
         }
 
+        if(!canShoot && shootCooldown > 0)
+        {
+            shootCooldown -= Time.deltaTime;
+            canShoot = true;
+        }
 
         if (invincible)
         {
@@ -196,7 +206,7 @@ public class PlayerController : MonoBehaviour {
                 inCharge = false;
             }
             //Checking if the character is moving or not, used for moving and idle animations
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow))
             {
                 playerAnimation.SetBool("isMoving", true);
             }
@@ -206,7 +216,7 @@ public class PlayerController : MonoBehaviour {
             }
 
             //Code for attack and charge attack.
-            if (Input.GetKeyUp(KeyCode.Space) && isCharge && attackCooldown < 0)
+            if (Input.GetKeyUp(KeyCode.X) && isCharge && attackCooldown < 0)
             {
                 //do charged attack animation
                 isCharge = false;
@@ -250,19 +260,26 @@ public class PlayerController : MonoBehaviour {
                     rBody.AddForce(Vector3.right * 5000);
                 }
             }
-            else if (Input.GetKeyUp(KeyCode.Space) && !isCharge && attackCooldown < 0)
+            else if (Input.GetKeyUp(KeyCode.X) && !isCharge && attackCooldown < 0 && shootCooldown > 0)
             {
                 playerAnimation.SetBool("Attack", true);
                 attack = true;
                 chargeTime = 0;
                 attackCooldown = 0.5f;
             }
+            
+            else if(Input.GetKeyDown(KeyCode.Z) && canShoot && attackCooldown < 0)
+            {
+                canShoot = false;
+                playerAnimation.SetBool("isShooting", true);
+                shootCooldown = 0.3f;
+            }
             //Letting the animator know that we arent attacking.
             else
             {
                 playerAnimation.SetBool("Attack", false);
                 playerAnimation.SetBool("ChargeAttack", false);
-                //Leave charge attack animation here (???)
+                playerAnimation.SetBool("isShooting", false);
                 attack = false;
                 chargeAttack = false;
                 attackCooldown -= Time.deltaTime;
@@ -270,7 +287,7 @@ public class PlayerController : MonoBehaviour {
 
 
             //Statement used to check if attack has been input, if so we tell the animator, update our global variable and reset the cooldown
-            if (Input.GetKey(KeyCode.Space) && (attackCooldown <= 0.0f))
+            if (Input.GetKey(KeyCode.X) && (attackCooldown <= 0.0f))
             {
                 chargeTime += Time.deltaTime;
             }
@@ -282,7 +299,7 @@ public class PlayerController : MonoBehaviour {
             if (!inCharge)
             {
                 //Move Player Up
-                if (Input.GetKey(KeyCode.W))
+                if (Input.GetKey(KeyCode.UpArrow))
                 {
                     rBody.AddForce(Vector3.up * walkSpeed);
                     playerAnimation.SetInteger("DirectionFacing", 1);
@@ -290,7 +307,7 @@ public class PlayerController : MonoBehaviour {
                 }
 
                 //Move Player Left
-                if (Input.GetKey(KeyCode.A))
+                if (Input.GetKey(KeyCode.LeftArrow))
                 {
                     if (transform.localScale.x < 0)
                     {
@@ -303,7 +320,7 @@ public class PlayerController : MonoBehaviour {
                 }
 
                 //Move Player Down
-                if (Input.GetKey(KeyCode.S))
+                if (Input.GetKey(KeyCode.DownArrow))
                 {
                     rBody.AddForce(Vector3.down * walkSpeed);
                     playerAnimation.SetInteger("DirectionFacing", 3);
@@ -311,7 +328,7 @@ public class PlayerController : MonoBehaviour {
                 }
 
                 //Move Player Right
-                if (Input.GetKey(KeyCode.D))
+                if (Input.GetKey(KeyCode.RightArrow))
                 {
                     if (transform.localScale.x > 0)
                     {

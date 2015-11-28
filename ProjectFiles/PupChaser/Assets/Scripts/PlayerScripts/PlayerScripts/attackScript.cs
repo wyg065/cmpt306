@@ -10,6 +10,8 @@ public class attackScript : MonoBehaviour {
     //Clone variable
 	public GameObject slashSpawn;
 
+    public GameObject fireballSpawn;
+    public GameObject fireballPrefab;
     //The slashprefab with collider size and sprite
     public GameObject slashPrefab;
 
@@ -42,6 +44,25 @@ public class attackScript : MonoBehaviour {
             if (myScript.directionFacing == 4)
             {
                 slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x + 0.9f, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -180))) as GameObject;
+            }
+        }
+        if(!myScript.canShoot)
+        {
+            if (myScript.directionFacing == 1)
+            {
+                fireballSpawn = Instantiate(fireballPrefab, new Vector3(myScript.charPosition.x, myScript.charPosition.y + 1.5f, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 90))) as GameObject;
+            }
+            if (myScript.directionFacing == 2)
+            {
+                fireballSpawn = Instantiate(fireballPrefab, new Vector3(myScript.charPosition.x - 0.9f, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 180))) as GameObject;
+            }
+            if (myScript.directionFacing == 3)
+            {
+                fireballSpawn = Instantiate(fireballPrefab, new Vector3(myScript.charPosition.x, myScript.charPosition.y - 1.5f, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -90))) as GameObject;
+            }
+            if (myScript.directionFacing == 4)
+            {
+                fireballSpawn = Instantiate(fireballPrefab, new Vector3(myScript.charPosition.x + 0.9f, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0))) as GameObject;
             }
         }
         if (myScript.chargeAttack == true)
