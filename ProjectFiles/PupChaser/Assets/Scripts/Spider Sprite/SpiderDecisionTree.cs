@@ -8,11 +8,13 @@ public class SpiderDecisionTree : MonoBehaviour {
 	private Animator anim ; 
 	private shootweb3 sw3 ; 
 
-
+	public GameObject healthBar;
+	private GameObject spiderHealthBar;
 
 	// Use this for initialization
 	void Start () {
-	
+		spiderHealthBar = (GameObject)Instantiate (healthBar, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+
 		ec = GetComponent<enemyControllerspider>(); 
 		sw = GetComponent<shootweb>();
 		anim = GetComponent<Animator> ();
@@ -83,12 +85,14 @@ public class SpiderDecisionTree : MonoBehaviour {
 	{
 		if (other.gameObject.name == "Slice(Clone)") {
 
-			Destroy (gameObject) ; 
+			Destroy (gameObject) ;
+			Destroy(spiderHealthBar);
 		}
         if (other.gameObject.name == "ChargeAttack(Clone)")
         {
 
             Destroy(gameObject);
+			Destroy(spiderHealthBar);
         }
 
 

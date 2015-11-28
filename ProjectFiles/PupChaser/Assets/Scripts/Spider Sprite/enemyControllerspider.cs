@@ -7,7 +7,7 @@ public class enemyControllerspider : MonoBehaviour {
 	public PlayerController myScript;
 	public Transform target;
 	public GameObject player;
-	
+
 	public float updateRate = 1.0f;
 	
 	private Seeker seeker;
@@ -103,3 +103,4 @@ public class enemyControllerspider : MonoBehaviour {
 		//}
 	}
 }
+
