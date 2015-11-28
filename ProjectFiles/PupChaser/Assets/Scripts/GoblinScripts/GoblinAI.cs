@@ -151,7 +151,7 @@ public class GoblinAI : MonoBehaviour {
 
 	private void HPLow()
 	{
-		if (goblinController.goblinDamage >= 3)
+		if (goblinController.goblinDamage <= 2)
 		{
 			Debug.Log("HP is low");
 			enemyAction = FriendsNear;
