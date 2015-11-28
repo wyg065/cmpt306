@@ -6,6 +6,7 @@ using Pathfinding;
 public class GoblinController : MonoBehaviour {
 	
 	public PlayerController playerController;
+	public GoblinAI goblin;
 
 
 	//What the goblin enemy is walking towards
@@ -55,6 +56,7 @@ public class GoblinController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerController = FindObjectOfType<PlayerController>();
+		goblin = FindObjectOfType<GoblinAI> ();
 
 		player = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ().transform;
 
@@ -64,8 +66,6 @@ public class GoblinController : MonoBehaviour {
 
 		seeker = GetComponent<Seeker>();
 		//rb = GetComponent<Rigidbody2D>();
-
-		goblinDamage = 0;
 		
 		if (target == null)
 		{
@@ -80,6 +80,11 @@ public class GoblinController : MonoBehaviour {
 	
 	IEnumerator UpdatePath()
 	{
+		if (goblin.destroyRandomLocationGameObject)
+		{
+			Destroy(randomLocation);
+		}
+
 		seeker.StartPath(transform.position, target.position, onPathComplete);
 		
 		yield return new WaitForSeconds(1f/updateRate);
@@ -105,15 +110,15 @@ public class GoblinController : MonoBehaviour {
 
 			if (col.gameObject.name == "Slice(Clone)")
 			{
-				goblinDamage++;
-				if (goblinDamage >= 5)
+				goblinDamage--;
+				if (goblinDamage <= 0)
 				{
 					killGoblin ();
 				}
 			}else if (col.gameObject.name == "ChargeAttack(Clone)")
 			{
-				goblinDamage++;
-				if (goblinDamage >= 5)
+				goblinDamage = goblinDamage -2;
+				if (goblinDamage <=0)
 				{
 					killGoblin ();
 				}
@@ -125,7 +130,7 @@ public class GoblinController : MonoBehaviour {
 	{
 		Destroy(gameObject);
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate ()
 	{

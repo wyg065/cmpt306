@@ -24,7 +24,7 @@ public class GoblinBulletMedium : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		//killBullet
-		if (other.gameObject.tag == "Player" || other.gameObject.tag == "wall") //(other.name != "weakAttack(Clone)" || other.name != "goblinEnemy")
+		if (other.gameObject.tag == "Player" || other.gameObject.tag == "wall" || other.gameObject.name == "Slice(Clone)" || other.gameObject.name == "ChargeAttack(Clone)") //(other.name != "weakAttack(Clone)" || other.name != "goblinEnemy")
 		{
 			Debug.Log ("destroy bullet");
 			Destroy (this.gameObject, .2f);
@@ -33,7 +33,7 @@ public class GoblinBulletMedium : MonoBehaviour {
 
 	IEnumerator waitForColour()
 	{
-		yield return new WaitForSeconds (0.15f);
+		yield return new WaitForSeconds (0.2f);
 		canChangeColour = true;
 	}
 }

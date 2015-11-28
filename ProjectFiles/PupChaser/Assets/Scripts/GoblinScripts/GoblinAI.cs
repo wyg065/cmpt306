@@ -48,6 +48,7 @@ public class GoblinAI : MonoBehaviour {
 	delegate void myDelegate();
 	myDelegate enemyAction;
 
+	public bool destroyRandomLocationGameObject;
 
 
 	// Use this for initialization
@@ -150,7 +151,7 @@ public class GoblinAI : MonoBehaviour {
 
 	private void HPLow()
 	{
-		if (goblinController.goblinDamage >= 3)
+		if (goblinController.goblinDamage <= 2)
 		{
 			Debug.Log("HP is low");
 			enemyAction = FriendsNear;
@@ -396,7 +397,8 @@ public class GoblinAI : MonoBehaviour {
 		if (canKillGoblin)
 		{
 			timeToDie = true;
-			Destroy(goblinController.randomLocation);
+			//Destroy(goblinController.randomLocation);
+			destroyRandomLocationGameObject = true;
 			goblinController.killGoblin ();
 		}
 	}
