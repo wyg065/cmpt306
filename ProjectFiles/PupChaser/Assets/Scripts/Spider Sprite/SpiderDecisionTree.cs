@@ -69,12 +69,12 @@ public class SpiderDecisionTree : MonoBehaviour {
 		} else if (Dplayer.otherber == true) {
 
 			sw.enabled = true; 
-			ec.enabled = false; 
+			ec.enabled = true; 
 		}
 		else if (Dplayer.othergoblin == true)
 		{
 			sw.enabled = true; 
-			ec.enabled = false; 
+			ec.enabled = true; 
 		}
 
 	}
