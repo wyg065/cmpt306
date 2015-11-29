@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: d618d409337d6404e98a43bfbab8e040
-timeCreated: 1445035978
+guid: 1af9324dfb57da04cb5d907fb6d2b1a4
+timeCreated: 1448735554
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: sprite-cyan - walk (left)_0
-    21300002: sprite-cyan - walk (left)_1
-    21300004: sprite-cyan - walk (left)_2
-    21300006: sprite-cyan - walk (left)_3
+    21300000: FireBall_0
+    21300002: FireBall_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -54,43 +52,23 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: sprite-cyan - walk (left)_0
+    - name: FireBall_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 33
-        height: 48
+        width: 18
+        height: 11
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprite-cyan - walk (left)_1
+    - name: FireBall_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 18
         y: 0
-        width: 31
-        height: 48
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprite-cyan - walk (left)_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 33
-        height: 48
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprite-cyan - walk (left)_3
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 0
-        width: 31
-        height: 48
+        width: 18
+        height: 11
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

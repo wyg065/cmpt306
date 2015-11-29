@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3981b773b18b63b419d0475ae580144c
-timeCreated: 1445230814
+timeCreated: 1448741602
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,6 +13,9 @@ TextureImporter:
     21300012: AttackSheet_6
     21300014: AttackSheet_7
     21300016: AttackSheet_8
+    21300018: AttackSheet_9
+    21300020: AttackSheet_10
+    21300022: AttackSheet_11
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,7 +41,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -148,6 +151,36 @@ TextureImporter:
         height: 78
       alignment: 9
       pivot: {x: .759995997, y: .389287114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackSheet_9
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 99
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackSheet_10
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 98
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackSheet_11
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 101
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
