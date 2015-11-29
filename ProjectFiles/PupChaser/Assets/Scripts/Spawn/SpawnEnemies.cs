@@ -25,6 +25,8 @@ public class SpawnEnemies : MonoBehaviour {
 
 		int a = Random.Range (1 , 18);
 
+		a = 16; 
+
 		if (Time.time > nextspawn) {
 			
 			nextspawn = Time.time + SpawnRate;

@@ -3,13 +3,13 @@ using System.Collections;
 
 public class Dplayer : MonoBehaviour {
 
-	public static bool inrange ; 
+	public  bool inrange ; 
 
-	public static bool otherspiders  ; 
+	public  bool otherspiders  ; 
 
-	public static bool otherber  ;
+	public  bool otherber  ;
 
-	public static bool othergoblin ; 
+	public  bool othergoblin ; 
 
 	// Use this for initialization
 	void Start () {
@@ -25,39 +25,39 @@ public class Dplayer : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter2D (Collider2D other )
+	void OnTriggerEnter2D (Collider2D othera )
 	{
-		if (other.tag == "Player") {
+		if (othera.tag == "Player") {
 			
 			inrange = true; 
 
-		} else if (other.tag == "otherspiders") {
+		} else if (othera.tag == "otherspiders") {
 			
 			otherspiders = true; 
 			
-		} else if (other.tag == "Berserker") {
+		} else if (othera.tag == "Berserker") {
 
 			otherber = true; 
-		} else if (other.tag == "goblin") {
+		} else if (othera.tag == "goblin") {
 			othergoblin = true ;
 		}
 	}
 
 
-	void OnTriggerExit2D(Collider2D other)
+	void OnTriggerExit2D(Collider2D otherb)
 	{
-		if (other.tag == "Player") {
+		if (otherb.tag == "Player") {
 			
 			inrange = false; 
-		} else if (other.tag == "otherspiders") {
+		} else if (otherb.tag == "otherspiders") {
 			
 			otherspiders = false; 
 			
-		} else if (other.tag == "Berserker") {
+		} else if (otherb.tag == "Berserker") {
 			
 			otherber = false; 
 		}
-		else if (other.tag == "goblin") {
+		else if (otherb.tag == "goblin") {
 			othergoblin = false ;
 		}
 	}
