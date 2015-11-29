@@ -57,25 +57,7 @@ public class enemyControllerspider : MonoBehaviour {
 			currentWaypoint = 0;
 		}
 	}
-	/**
-	void OnTriggerEnter2D (Collider2D col)
-	{
-		if(col.gameObject.name == "Slice(Clone)")
-		{
-			Vector3 dir = (transform.position - myScript.charPosition).normalized;
-			dir *= speed * Time.fixedDeltaTime * 120f;
-			
-			rb.AddForce(dir, fMode);
-		}
-	}
-	
-	void OnCollisionEnter2D (Collision2D col)
-	{
-		if (col.gameObject.tag == "collider") {
-			//Destroy(gameObject);
-		}
-	}
-	**/
+
 	// Update is called once per frame
 	void FixedUpdate () {
 

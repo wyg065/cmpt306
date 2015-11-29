@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Dplayer2 : MonoBehaviour {
 
-	public static bool die ;
+	public bool die ;
 
 	// Use this for initialization
 	void Start () {

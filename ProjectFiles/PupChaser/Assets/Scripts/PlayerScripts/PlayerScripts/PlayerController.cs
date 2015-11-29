@@ -85,12 +85,14 @@ public class PlayerController : MonoBehaviour {
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
 		}
+
 		if (other.gameObject.name == "Spider Enemy(Clone)")
 		{
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
 		}
+
 		if (other.gameObject.name == "spider web(Clone)")
 		{
 			healthPoints = healthPoints--;

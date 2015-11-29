@@ -8,11 +8,16 @@ public class SpiderDecisionTree : MonoBehaviour {
 	private Animator anim ; 
 	private shootweb3 sw3 ; 
 
+	Dplayer2 d ; 
+	Dplayer dd ;
 
 
 	// Use this for initialization
 	void Start () {
-	
+
+		d = GetComponentInChildren<Dplayer2> ();
+		dd = GetComponentInChildren<Dplayer> ();
+
 		ec = GetComponent<enemyControllerspider>(); 
 		sw = GetComponent<shootweb>();
 		anim = GetComponent<Animator> ();
@@ -38,8 +43,8 @@ public class SpiderDecisionTree : MonoBehaviour {
 
 	void rapidattack ()
 	{
-			ec.enabled = true;
-			anim.SetBool ("Moving", false);
+		ec.enabled = true;
+		anim.SetBool ("Moving", false);
 	}
 
 	void shootweb() 
@@ -64,20 +69,22 @@ public class SpiderDecisionTree : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		if (Dplayer.otherspiders == true) {
+
+		if (dd.otherspiders == true) {
 			ec.enabled = true; 
-		} else if (Dplayer.otherber == true) {
+		} else if (dd.otherber == true) {
 
 			sw.enabled = true; 
 			ec.enabled = true; 
 		}
-		else if (Dplayer.othergoblin == true)
+		else if (dd.othergoblin == true)
 		{
 			sw.enabled = true; 
 			ec.enabled = true; 
 		}
-		if (Dplayer2.die == true) {
-			Destroy(gameObject);
+		if (d.die == true) {
+
+			Destroy(this.gameObject);
 		}
 
 	}
