@@ -14,6 +14,8 @@ public class fireSnakeController : MonoBehaviour {
 	public GameObject lightning;
 	public GameObject rock;
 
+	public GameObject healthBar;
+
     public float updateRate = 1.0f;
 
     private Seeker seeker;
@@ -44,6 +46,9 @@ public class fireSnakeController : MonoBehaviour {
 	//distance enemy has to be from player to attack
 	private float threatDistance = 2.5f;
 
+	private float aiUpdateTimer;
+	private float aiUpdateInterval = 0.25f;
+
 	private float origX = 0.0f;
 	private float origY = 0.0f;
 
@@ -52,8 +57,14 @@ public class fireSnakeController : MonoBehaviour {
 
 	private GameObject randomLocation;
 	private GameObject spawnLocation;
+	private GameObject snakeHealthBar;
 
 	private int snakeType = 0;
+
+	private bool keepMovingtoPlayer = false;
+	private bool keepMovingRandom = false;
+	private bool keepRetreating = false;
+	private bool keepReturningToSpawn = false;
 
 	// Use this for initialization
 	void Start () {
@@ -62,35 +73,36 @@ public class fireSnakeController : MonoBehaviour {
 			GetComponent<SpriteRenderer> ().color = new Color32(200,0,0,255);
 			rateOfFire = 2.2f;
 			speed = 7500.0f;
-			health = 6;
+			maxHealth = 3;
 		} else if (snakeType == 1) {
 			GetComponent<SpriteRenderer> ().color = new Color32(0,76,153,255);
 			rateOfFire = 2.8f;
 			speed = 7500.0f;
-			health = 6;
+			maxHealth = 3;
 		} else if (snakeType == 2) {
 			GetComponent<SpriteRenderer> ().color = new Color32(210,210,0,255);
 			rateOfFire = 2.2f;
 			speed = 10000.0f;
-			health = 3;
+			maxHealth = 2;
 		} else if (snakeType == 3) {
 			GetComponent<SpriteRenderer> ().color = new Color32(0,170,0,255);
 			rateOfFire = 2.2f;
 			speed = 7500.0f;
-			health = 6;
+			maxHealth = 3;
 		} else {
 			GetComponent<SpriteRenderer> ().color = new Color32(102,51,0,255);
 			rateOfFire = 3.2f;
 			speed = 4000.0f;
-			health = 10;
+			maxHealth = 6;
 		}
 
-		maxHealth = health;
+		health = maxHealth;
 		fireTimer = rateOfFire;
 		spawnLocation = new GameObject ();
 		randomLocation = new GameObject ();
 		origX = transform.position.x;
 		origY = transform.position.y;
+		aiUpdateTimer = aiUpdateInterval;
 
 		playerScriptReference = FindObjectOfType<PlayerController>();
 
@@ -105,6 +117,10 @@ public class fireSnakeController : MonoBehaviour {
             print("no target.");
             return;
         }
+
+		//loads health bar, and gives reference tho that specific health bar a.k.a snakeHelathBar
+		snakeHealthBar = (GameObject)Instantiate (healthBar, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+		updateHealthBar ();
 
         seeker.StartPath(transform.position, target.position, onPathComplete);
 
@@ -136,6 +152,7 @@ public class fireSnakeController : MonoBehaviour {
 			
 			rb.AddForce(dir, fMode);
 			health--;
+			updateHealthBar ();
 		}
 		if(col.gameObject.name == "ChargeAttack(Clone)")
 		{
@@ -144,6 +161,7 @@ public class fireSnakeController : MonoBehaviour {
 			
 			rb.AddForce(dir, fMode);
 			health -=2;
+			updateHealthBar ();
 		}
 	}
 
@@ -177,13 +195,30 @@ public class fireSnakeController : MonoBehaviour {
 		if (health <= 0) {
 			Destroy(randomLocation);
 			Destroy(spawnLocation);
+			Destroy(snakeHealthBar);
 			Destroy(gameObject);
 		}
-		aiLoop();
-		updateMoveAnimation ();
+		//updates the AI less frequently.
+		//DO NOT CHANGE
+		//Drastically reduces lag
+		aiUpdateTimer -= Time.fixedDeltaTime;
+		if (aiUpdateTimer < 0) {
+			aiUpdateTimer = aiUpdateInterval;
+			aiLoop();
+			updateMoveAnimation ();
+		} else if (keepMovingtoPlayer) {
+			moveToTarget();
+		} else if (keepRetreating) {
+			retreat();
+		} else if (keepMovingRandom) {
+			moveToRandom();
+		} else if (keepReturningToSpawn) {
+			returnToSpawn();
+		}
     }
 
 	void Update() {
+		snakeHealthBar.transform.position = new Vector3 (transform.position.x, transform.position.y + 1, transform.position.z);
 		fireTimer -= Time.deltaTime;
 		if (fireTimer < 0) {
 			canFire = true;
@@ -191,8 +226,17 @@ public class fireSnakeController : MonoBehaviour {
 		}
 	}
 
+	void updateHealthBar() {
+		float barSize = (health / maxHealth) * 150;
+		snakeHealthBar.transform.localScale = new Vector3(barSize, 3, 0);
+	}
+
 
 	void aiLoop() {
+		keepMovingtoPlayer = false;
+		keepMovingRandom = false;
+		keepRetreating = false;
+		keepReturningToSpawn = false;
 		//if (inSpawnArea) {
 		Vector3 playerPos = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ().transform.position;
 		Vector3 spawnPos = new Vector3 (origX, origY, 0);
@@ -201,17 +245,20 @@ public class fireSnakeController : MonoBehaviour {
 			if(playerDistance < 9f) {
 				// if able to see player
 				if(playerDistance > 6f) { //if too far to shoot from player
+					keepMovingtoPlayer = true;
 					moveToTarget();
 				} else {
 					if(playerDistance < 5f) { //if to close to player
 						if (health/maxHealth > .6f) { //if health is above 50%
 							moveToTarget();
+							keepMovingtoPlayer = true;
 							if (canFire) {
 								fire();
 								canFire = false;
 							}
 						} else {
 							//print ("retreating");
+							keepRetreating = true;
 							retreat();
 						}
 					} else {
@@ -222,20 +269,24 @@ public class fireSnakeController : MonoBehaviour {
 					}
 				}
 			} else {
+				keepMovingRandom = true;
 				moveToRandom(); //move to random spot within spoawn are
 			}
 		} else {
 			if(playerDistance < 7f) {
 				if (health/maxHealth > .3f) {
+					keepMovingtoPlayer = true;
 					moveToTarget();
 					if (canFire) {
 						fire();
 						canFire = false;
 					}
 				} else {
+					keepReturningToSpawn = true;
 					returnToSpawn();
 				}
 			} else {
+				keepReturningToSpawn = true;
 				returnToSpawn();
 			}
 		}
