@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour {
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound (sounds.playerHurt);
 		}
-		if (other.gameObject.name == "Spider Enemy(Clone)")
+		if (other.gameObject.name == "spider web(Clone)")
 		{
 			healthPoints = healthPoints--;
 			invincible = true;
