@@ -17,6 +17,10 @@ public class enemyControllerspider : MonoBehaviour {
 	
 	public float speed = 100.0f;
 	public ForceMode2D fMode;
+
+	public bool alreadysaw ; 
+
+	Dplayer dd ; 
 	
 	[HideInInspector]
 	public bool pathIsEnded = false;
@@ -26,6 +30,8 @@ public class enemyControllerspider : MonoBehaviour {
 	private int currentWaypoint = 0;
 	// Use this for initialization
 	void Start () {
+		alreadysaw = false; 
+		dd = GetComponentInChildren<Dplayer> ();
 		myScript = FindObjectOfType<PlayerController>();
 		target = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ().transform;
 		seeker = GetComponent<Seeker>();
@@ -38,9 +44,12 @@ public class enemyControllerspider : MonoBehaviour {
 		}
 		
 		seeker.StartPath(transform.position, target.position, onPathComplete);
+	
 		
 		StartCoroutine(UpdatePath());
 	}
+
+
 	
 	IEnumerator UpdatePath()
 	{
@@ -61,6 +70,9 @@ public class enemyControllerspider : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
+		if ((dd.inrange == true)||(alreadysaw == true))
+		{
+			alreadysaw = true ;
 		//if (Dplayer2.inrange == true) {
 			if (path == null)
 				return;
@@ -82,6 +94,6 @@ public class enemyControllerspider : MonoBehaviour {
 				currentWaypoint++;
 				return;
 			}
-		//}
+		}
 	}
 }
