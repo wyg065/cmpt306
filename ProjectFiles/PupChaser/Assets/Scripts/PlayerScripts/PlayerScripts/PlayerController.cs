@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 
 public class PlayerController : MonoBehaviour {
@@ -46,41 +47,49 @@ public class PlayerController : MonoBehaviour {
     //Global variable of character position
 	public Vector3 charPosition;
 
+	//slider 
+	public Slider healthBarSlider; 
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Berserker")
         {
+			healthBarSlider.value -=3f;
             healthPoints = healthPoints -3;
             invincible = true;
             invincibilityCoolDown = 0.5f;
         }
         if(other.gameObject.name == "leaf(Clone)")
         {
+			healthBarSlider.value -=1f;
             healthPoints = healthPoints--;
             invincible = true;
             invincibilityCoolDown = 0.5f;
         }
         if (other.gameObject.name == "rock(Clone)")
         {
+			healthBarSlider.value -=1f;
             healthPoints = healthPoints--;
             invincible = true;
             invincibilityCoolDown = 0.5f;
         }
 		if (other.gameObject.name == "fireBall(Clone)")
 		{
+			healthBarSlider.value -=1f;
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
 		}
 		if (other.gameObject.name == "iceShard(Clone)")
 		{
+			healthBarSlider.value -=1f;
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
 		}
 		if (other.gameObject.name == "lightning(Clone)")
 		{
+			healthBarSlider.value -=1f;
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
@@ -88,6 +97,7 @@ public class PlayerController : MonoBehaviour {
 
 		if (other.gameObject.name == "Spider Enemy(Clone)")
 		{
+			healthBarSlider.value -=1f;
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
@@ -95,30 +105,35 @@ public class PlayerController : MonoBehaviour {
 
 		if (other.gameObject.name == "spider web(Clone)")
 		{
+			healthBarSlider.value -=1f;
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
 		}
 		if (other.gameObject.name == "weakAttack(Clone)")
 		{
+			healthBarSlider.value -=1f;
 			healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
 		}
 		if (other.gameObject.name == "mediumAttack(Clone)")
 		{
+			healthBarSlider.value -=2f;
 			healthPoints = healthPoints -2;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
 		}
 		if (other.gameObject.name == "strongAttack(Clone)")
 		{
+			healthBarSlider.value -=3f;
 			healthPoints = healthPoints -3;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
 		}
 		if (other.gameObject.name == "explosion(Clone)")
 		{
+			healthBarSlider.value -=3f;
 			healthPoints = healthPoints -3;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
@@ -154,6 +169,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+
         xMovement = Input.GetAxis("LeftStickHorizontal");
         yMovement = Input.GetAxis("LeftStickVertical");
 

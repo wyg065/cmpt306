@@ -1,0 +1,23 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class changelevel : MonoBehaviour {
+
+	// Use this for initialization
+	void Start () {
+	
+	}
+
+	void OnTriggerEnter2D (Collider2D other )
+	{
+		if (other.tag == "BossRoom") {
+
+			Application.LoadLevel("bossRoom1") ; 
+		}
+	}
+
+	// Update is called once per frame
+	void Update () {
+	
+	}
+}
