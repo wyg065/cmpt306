@@ -54,72 +54,84 @@ public class PlayerController : MonoBehaviour {
             healthPoints = healthPoints -3;
             invincible = true;
             invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound (sounds.playerHurt);
         }
         if(other.gameObject.name == "leaf(Clone)")
         {
             healthPoints = healthPoints--;
             invincible = true;
             invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound (sounds.playerHurt);
         }
         if (other.gameObject.name == "rock(Clone)")
         {
             healthPoints = healthPoints--;
             invincible = true;
             invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound (sounds.playerHurt);
         }
 		if (other.gameObject.name == "fireBall(Clone)")
 		{
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound (sounds.playerHurt);
 		}
 		if (other.gameObject.name == "iceShard(Clone)")
 		{
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound (sounds.playerHurt);
 		}
 		if (other.gameObject.name == "lightning(Clone)")
 		{
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound (sounds.playerHurt);
 		}
 		if (other.gameObject.name == "Spider Enemy(Clone)")
 		{
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound (sounds.playerHurt);
 		}
 		if (other.gameObject.name == "Spider Enemy(Clone)")
 		{
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound (sounds.playerHurt);
 		}
 		if (other.gameObject.name == "weakAttack(Clone)")
 		{
 			healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound (sounds.playerHurt);
 		}
 		if (other.gameObject.name == "mediumAttack(Clone)")
 		{
 			healthPoints = healthPoints -2;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound (sounds.playerHurt);
 		}
 		if (other.gameObject.name == "strongAttack(Clone)")
 		{
 			healthPoints = healthPoints -3;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound (sounds.playerHurt);
 		}
 		if (other.gameObject.name == "explosion(Clone)")
 		{
 			healthPoints = healthPoints -3;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound (sounds.playerHurt);
 		}
 
     }
@@ -159,6 +171,7 @@ public class PlayerController : MonoBehaviour {
         charPosition = transform.position;
         if (healthPoints < 1)
         {
+			SoundController.PlaySound (sounds.playerDie);
             playerAnimation.SetBool("isDead", true);
             dead = true;
         }
@@ -233,7 +246,7 @@ public class PlayerController : MonoBehaviour {
                 isCharge = false;
                 chargeAttack = true;
                 chargeTime = 0.0f;
-
+				SoundController.PlaySound (sounds.playerDash);
                 if (directionFacing == 1)
                 {
                     invincible = true;
@@ -277,6 +290,7 @@ public class PlayerController : MonoBehaviour {
                 attack = true;
                 chargeTime = 0;
                 attackCooldown = 0.5f;
+				SoundController.PlaySound (sounds.playerSword);
             }
             
             else if((Input.GetKeyDown(KeyCode.Z)  || Input.GetButtonDown("BButton")) && attackCooldown < 0 && shootCooldown < 0)
