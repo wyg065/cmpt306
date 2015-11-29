@@ -13,18 +13,19 @@ public class shootweb3 : MonoBehaviour {
 	public float nextfire = 200F ;
 	
 	public int  temp = 0 ; 
-	
+	Dplayer dd ;
 	
 	
 	// Use this for initialization
 	void Start () {
-		
+	
+		dd = GetComponentInChildren<Dplayer> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-		if (Dplayer.inrange == true) {
+		if (dd.inrange == true) {
 			
 			if ((Time.time > nextfire )&&(temp == 0))
 			{
