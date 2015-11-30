@@ -5,7 +5,19 @@ public enum sounds{
 	playerHurt,
 	playerDie,
 	playerSword,
-	playerDash
+	playerDash,
+	playerCharged,
+	playerFireball,
+	goblinHurt,
+	goblinDie,
+	goblinExplode,
+	goblinShoot,
+	spiderDie,
+	spiderShoot,
+	snakeDie,
+	snakeShoot,
+	berserkerDie,
+	berserkerAttack
 }
 
 public class SoundController : MonoBehaviour {
@@ -17,6 +29,18 @@ public class SoundController : MonoBehaviour {
 	public AudioClip soundPlayerSword2;
 	public AudioClip soundPlayerSword3;
 	public AudioClip soundPlayerDash;
+	public AudioClip soundPlayerCharged;
+	public AudioClip soundPlayerFireball;
+	public AudioClip soundGoblinHurt;
+	public AudioClip soundGoblinDie;
+	public AudioClip soundGoblinExplode;
+	public AudioClip soundGoblinShoot;
+	public AudioClip soundSpiderDie;
+	public AudioClip soundSpiderShoot;
+	public AudioClip soundSnakeDie;
+	public AudioClip soundSnakeShoot;
+	public AudioClip soundBerserkerDie;
+	public AudioClip soundBerserkerAttack;
 
 	public AudioSource aSource;
 
@@ -56,16 +80,21 @@ public class SoundController : MonoBehaviour {
 			break;
 		case sounds.playerHurt:
 		{
-			instance.aSource.PlayOneShot (instance.soundPlayerDash);
+			instance.aSource.PlayOneShot (instance.soundPlayerHurt);
 				
 		}
 			break;
 		case sounds.playerDie:
 		{
-			instance.aSource.PlayOneShot (instance.soundPlayerDash);
+			instance.aSource.PlayOneShot (instance.soundPlayerDie);
 				
 		}
 			break;
+		case sounds.playerFireball:
+		{
+			instance.aSource.PlayOneShot(instance.soundPlayerFireball);
 		}
+		break;
 	}
+}
 }

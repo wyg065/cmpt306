@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour {
             healthPoints = healthPoints -3;
             invincible = true;
             invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
         }
         if(other.gameObject.name == "leaf(Clone)")
         {
@@ -65,6 +66,7 @@ public class PlayerController : MonoBehaviour {
             healthPoints = healthPoints--;
             invincible = true;
             invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
         }
         if (other.gameObject.name == "rock(Clone)")
         {
@@ -72,6 +74,7 @@ public class PlayerController : MonoBehaviour {
             healthPoints = healthPoints--;
             invincible = true;
             invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
         }
 		if (other.gameObject.name == "fireBall(Clone)")
 		{
@@ -79,6 +82,7 @@ public class PlayerController : MonoBehaviour {
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "iceShard(Clone)")
 		{
@@ -86,6 +90,7 @@ public class PlayerController : MonoBehaviour {
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "lightning(Clone)")
 		{
@@ -93,6 +98,7 @@ public class PlayerController : MonoBehaviour {
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 
 		if (other.gameObject.name == "Spider Enemy(Clone)")
@@ -101,6 +107,7 @@ public class PlayerController : MonoBehaviour {
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 
 		if (other.gameObject.name == "spider web(Clone)")
@@ -109,6 +116,7 @@ public class PlayerController : MonoBehaviour {
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "weakAttack(Clone)")
 		{
@@ -116,6 +124,7 @@ public class PlayerController : MonoBehaviour {
 			healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "mediumAttack(Clone)")
 		{
@@ -123,6 +132,7 @@ public class PlayerController : MonoBehaviour {
 			healthPoints = healthPoints -2;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "strongAttack(Clone)")
 		{
@@ -130,6 +140,7 @@ public class PlayerController : MonoBehaviour {
 			healthPoints = healthPoints -3;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "explosion(Clone)")
 		{
@@ -137,6 +148,7 @@ public class PlayerController : MonoBehaviour {
 			healthPoints = healthPoints -3;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 
     }
@@ -176,9 +188,10 @@ public class PlayerController : MonoBehaviour {
         //Update character position for other scripts
         charPosition = transform.position;
         if (healthPoints < 1)
-        {
+		{
             playerAnimation.SetBool("isDead", true);
             dead = true;
+			SoundController.PlaySound(sounds.playerDie);
         }
 
         if (invincible)
@@ -251,7 +264,7 @@ public class PlayerController : MonoBehaviour {
                 isCharge = false;
                 chargeAttack = true;
                 chargeTime = 0.0f;
-
+				SoundController.PlaySound(sounds.playerDash);
                 if (directionFacing == 1)
                 {
                     invincible = true;
@@ -295,6 +308,7 @@ public class PlayerController : MonoBehaviour {
                 attack = true;
                 chargeTime = 0;
                 attackCooldown = 0.5f;
+				SoundController.PlaySound(sounds.playerSword);
             }
             
             else if((Input.GetKeyDown(KeyCode.Z)  || Input.GetButtonDown("BButton")) && attackCooldown < 0 && shootCooldown < 0)
@@ -302,6 +316,7 @@ public class PlayerController : MonoBehaviour {
                 canShoot = false;
                 playerAnimation.SetBool("isShooting", true);
                 shootCooldown = 0.2f;
+				SoundController.PlaySound(sounds.playerFireball);
             }
             //Letting the animator know that we arent attacking.
             else
