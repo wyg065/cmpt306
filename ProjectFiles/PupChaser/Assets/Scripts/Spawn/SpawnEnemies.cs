@@ -10,6 +10,8 @@ public class SpawnEnemies : MonoBehaviour
     public GameObject SpiderPrefab;
     public GameObject BerserkerPrefab;
 
+    public float counter;
+    public float spawnSpeed;
     public int difficultyMax;
     public int enemiesInList;
     public int currentDifficulty;
@@ -73,11 +75,10 @@ public class SpawnEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        counter += Time.deltaTime;
+        int a = Random.Range(1, 100);
 
-        int a = Random.Range(1, 18);
         enemiesInList = enemyList.Count;
-
-        checkList += Time.deltaTime;
 
         if (checkList > 6)
         {
@@ -85,26 +86,26 @@ public class SpawnEnemies : MonoBehaviour
             checkList = 0;
         }
 
-        if (Time.time > nextspawn && currentDifficulty <= difficultyMax)
+        if (counter > spawnSpeed && currentDifficulty <= difficultyMax)
         {
-
-            nextspawn = Time.time + SpawnRate;
-
-            if ((a == 1) || (a == 2) || (a == 3) || (a == 11))
+            counter = 0;
+            if (a <= 25)
             {
 
                 GameObject spawnedenemy = GameObject.Instantiate(SnakePrefab, transform.position, transform.rotation) as GameObject;
                 enemyList.Add(spawnedenemy);
+                currentDifficulty += 2;
 
             }
-            else if ((a == 4) || (a == 5) || (a == 6) || (a == 12))
+            else if (a <= 50 && a > 25)
             {
 
                 GameObject spawnedenemy = GameObject.Instantiate(GoblinPrefab, transform.position, transform.rotation) as GameObject;
                 enemyList.Add(spawnedenemy);
+                currentDifficulty += 2;
 
             }
-            else if ((a == 15) || (a == 16) || (a == 17) || (a == 7) || (a == 8) || (a == 13) || (a == 14))
+            else if (a <= 85 && a > 50)
             {
 
                 GameObject spawnedenemy = GameObject.Instantiate(SpiderPrefab, transform.position, transform.rotation) as GameObject;
@@ -112,11 +113,12 @@ public class SpawnEnemies : MonoBehaviour
                 currentDifficulty += 1;
 
             }
-            else if ((a == 9) || (a == 10))
+            else if (a <= 100 && a > 85)
             {
 
                 GameObject spawnedenemy = GameObject.Instantiate(BerserkerPrefab, transform.position, transform.rotation) as GameObject;
                 enemyList.Add(spawnedenemy);
+                currentDifficulty += 3;
             }
         }
     }
