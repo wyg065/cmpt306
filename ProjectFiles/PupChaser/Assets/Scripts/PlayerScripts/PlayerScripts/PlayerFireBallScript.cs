@@ -21,7 +21,22 @@ public class PlayerFireBallScript : MonoBehaviour {
         {
             destroy = true;
         }
-
+        if (other.tag == "Berserker")
+        {
+            destroy = true;
+        }
+        if (other.tag == "spider")
+        {
+            destroy = true;
+        }
+        if (other.tag == "snake")
+        {
+            destroy = true;
+        }
+        if (other.tag == "goblin")
+        {
+            destroy = true;
+        }
     }
 
     // Use this for initialization

@@ -27,7 +27,10 @@ public class Dplayer2 : MonoBehaviour {
 			
 			die = true ; 
 		}
-		
+		if(other.gameObject.name == "PlayerFireBall(Clone)")
+        {
+            die = true;
+        }
 		
 	}
 }
