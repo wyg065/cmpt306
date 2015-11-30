@@ -68,11 +68,11 @@ public class SoundController : MonoBehaviour {
 				
 		}
 			break;
-		}
 		case sounds.playerFireball:
 		{
 			instance.aSource.PlayOneShot(instance.soundPlayerFireball);
 		}
 		break;
 	}
+}
 }
