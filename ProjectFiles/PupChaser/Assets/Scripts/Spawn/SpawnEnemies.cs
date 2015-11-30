@@ -10,15 +10,24 @@ public class SpawnEnemies : MonoBehaviour
     public GameObject SpiderPrefab;
     public GameObject BerserkerPrefab;
 
+    public float counter;
+    public float spawnSpeed;
     public int difficultyMax;
     public int enemiesInList;
     public int currentDifficulty;
     public List<GameObject> enemyList;
+    public float distFromPlayer;
 
     public int berserkerCount;
     public int goblinCount;
     public int snakeCount;
     public int spiderCount;
+    public PlayerController Player;
+
+    public bool playerInZone;
+    public int spawnRadius;
+    public int stopSpawnRadius;
+    public bool stopSpawning;
 
     public float SpawnRate = 0.05F;
     public float nextspawn = 0.05F;
@@ -28,7 +37,31 @@ public class SpawnEnemies : MonoBehaviour
     void Start()
     {
         enemyList = new List<GameObject>();
+        Player = FindObjectOfType<PlayerController>();
+        spawnRadius = 50;
+        stopSpawnRadius = 25;
         currentDifficulty = 0;
+    }
+
+    private void checkZone()
+    {
+        distFromPlayer = Vector2.Distance(Player.charPosition, transform.position);
+        if (distFromPlayer <= spawnRadius)
+        {
+            playerInZone = true;
+        }
+        else
+        {
+            playerInZone = false;
+        }
+        if(distFromPlayer <= stopSpawnRadius)
+        {
+            stopSpawning = true;
+        }
+        else
+        {
+            stopSpawning = false;
+        }
     }
 
     void handleList()
@@ -39,12 +72,18 @@ public class SpawnEnemies : MonoBehaviour
         snakeCount = 0;
         spiderCount = 0;
 
+        if(distFromPlayer > 60)
+        {
+            for (int i = 0; i < enemiesInList; i++)
+            {
+                enemyList.RemoveAt(i);
+            }
+        }
+
         for (int i = 0; i < enemiesInList; i++)
         {
             if (enemyList[i].gameObject)
             {
-
-
                 if (enemyList[i].gameObject.name == "Berserker(Clone)")
                 {
                     berserkerCount++;
@@ -73,38 +112,39 @@ public class SpawnEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        int a = Random.Range(1, 18);
-        enemiesInList = enemyList.Count;
-
+        counter += Time.deltaTime;
         checkList += Time.deltaTime;
+        int a = Random.Range(1, 100);
+
+        enemiesInList = enemyList.Count;
 
         if (checkList > 6)
         {
             handleList();
+            checkZone();
             checkList = 0;
         }
 
-        if (Time.time > nextspawn && currentDifficulty <= difficultyMax)
+        if (counter > spawnSpeed && currentDifficulty <= difficultyMax && playerInZone && !stopSpawning)
         {
-
-            nextspawn = Time.time + SpawnRate;
-
-            if ((a == 1) || (a == 2) || (a == 3) || (a == 11))
+            counter = 0;
+            if (a <= 25)
             {
 
                 GameObject spawnedenemy = GameObject.Instantiate(SnakePrefab, transform.position, transform.rotation) as GameObject;
                 enemyList.Add(spawnedenemy);
+                currentDifficulty += 2;
 
             }
-            else if ((a == 4) || (a == 5) || (a == 6) || (a == 12))
+            else if (a <= 50 && a > 25)
             {
 
                 GameObject spawnedenemy = GameObject.Instantiate(GoblinPrefab, transform.position, transform.rotation) as GameObject;
                 enemyList.Add(spawnedenemy);
+                currentDifficulty += 2;
 
             }
-            else if ((a == 15) || (a == 16) || (a == 17) || (a == 7) || (a == 8) || (a == 13) || (a == 14))
+            else if (a <= 85 && a > 50)
             {
 
                 GameObject spawnedenemy = GameObject.Instantiate(SpiderPrefab, transform.position, transform.rotation) as GameObject;
@@ -112,11 +152,12 @@ public class SpawnEnemies : MonoBehaviour
                 currentDifficulty += 1;
 
             }
-            else if ((a == 9) || (a == 10))
+            else if (a <= 100 && a > 85)
             {
 
                 GameObject spawnedenemy = GameObject.Instantiate(BerserkerPrefab, transform.position, transform.rotation) as GameObject;
                 enemyList.Add(spawnedenemy);
+                currentDifficulty += 3;
             }
         }
     }
