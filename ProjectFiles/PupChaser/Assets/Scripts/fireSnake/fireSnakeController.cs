@@ -163,6 +163,15 @@ public class fireSnakeController : MonoBehaviour {
 			health -=2;
 			updateHealthBar ();
 		}
+		if(col.gameObject.name == "PlayerFireBall(Clone)")
+		{
+			Vector3 dir = (transform.position - playerScriptReference.charPosition).normalized;
+			dir *= speed * Time.fixedDeltaTime * 180f;
+			
+			rb.AddForce(dir, fMode);
+			health--;
+			updateHealthBar ();
+		}
 	}
 
 	void OnCollisionEnter2D (Collision2D col)

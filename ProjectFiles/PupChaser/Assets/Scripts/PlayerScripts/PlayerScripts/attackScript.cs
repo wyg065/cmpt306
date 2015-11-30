@@ -35,7 +35,7 @@ public class attackScript : MonoBehaviour {
             }
             if (myScript.directionFacing == 2)
             {
-                slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x - 0.9f, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0))) as GameObject;
+                slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x - 1.5f, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0))) as GameObject;
             }
             if (myScript.directionFacing == 3)
             {
@@ -43,7 +43,7 @@ public class attackScript : MonoBehaviour {
             }
             if (myScript.directionFacing == 4)
             {
-                slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x + 0.9f, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -180))) as GameObject;
+                slashSpawn = Instantiate(slashPrefab, new Vector3(myScript.charPosition.x + 1.5f, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -180))) as GameObject;
             }
         }
         if(!myScript.canShoot)

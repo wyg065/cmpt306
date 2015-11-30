@@ -123,6 +123,14 @@ public class GoblinController : MonoBehaviour {
 					killGoblin ();
 				}
 			}
+            else if(col.gameObject.name == "PlayerFireBall(Clone)")
+            {
+                goblinDamage--;
+                if(goblinDamage <= 0)
+                {
+                    killGoblin();
+                }
+            }
 		}
 	}
 
