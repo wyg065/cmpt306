@@ -316,6 +316,7 @@ public class PlayerController : MonoBehaviour {
                 canShoot = false;
                 playerAnimation.SetBool("isShooting", true);
                 shootCooldown = 0.2f;
+				SoundController.PlaySound(sounds.playerFireball);
             }
             //Letting the animator know that we arent attacking.
             else
