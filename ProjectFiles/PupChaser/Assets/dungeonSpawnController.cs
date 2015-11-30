@@ -6,14 +6,18 @@ public class dungeonSpawnController : MonoBehaviour {
 	public GameObject[] spawners;
 	private GameObject player;
 
+<<<<<<< HEAD
 	private GameObject currentSpawner;
 
+=======
+>>>>>>> origin/wyattBranch3
 	// Use this for initialization
 	void Start () {
 		spawners = GameObject.FindGameObjectsWithTag("spawner");
 		player = GameObject.FindWithTag("Player");
 		if (spawners.Length > 0) {
 			print ("success, there are "+spawners.Length+" spawners");
+<<<<<<< HEAD
 			currentSpawner = findClosestToPlayer();
 			stopAllSpawnersExceptOne(currentSpawner);
 			currentSpawner.GetComponent<SpawnEnemies>().currentDifficulty = 10;
@@ -30,6 +34,9 @@ public class dungeonSpawnController : MonoBehaviour {
 			currentSpawner = findClosestToPlayer();
 			stopAllSpawnersExceptOne(currentSpawner);
 			currentSpawner.GetComponent<SpawnEnemies>().currentDifficulty = 10;
+=======
+			print(findClosestToPlayer().transform.position);
+>>>>>>> origin/wyattBranch3
 		} else {
 			print ("failure");
 		}
@@ -48,6 +55,7 @@ public class dungeonSpawnController : MonoBehaviour {
 
 		return closest;
 	}
+<<<<<<< HEAD
 
 	void stopAllSpawnersExceptOne(GameObject s) {
 		for (int i = 0; i < spawners.Length; i++) {
@@ -59,6 +67,8 @@ public class dungeonSpawnController : MonoBehaviour {
 			}
 		}
 	}
+=======
+>>>>>>> origin/wyattBranch3
 	
 	// Update is called once per frame
 	void Update () {

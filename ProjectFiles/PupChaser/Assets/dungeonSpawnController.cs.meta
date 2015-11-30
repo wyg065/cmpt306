@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e3d9e97d986e6df42bd6be775117b41d
 timeCreated: 1448843115
+=======
+guid: c3faface2e03dd74189778d5f3746544
+timeCreated: 1448830175
+>>>>>>> origin/wyattBranch3
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
