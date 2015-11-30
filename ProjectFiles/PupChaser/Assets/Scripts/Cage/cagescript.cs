@@ -16,7 +16,7 @@ public class cagescript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		health = 50; 
+		health = 100; 
 		snakeHealthBar = (GameObject)Instantiate (healthBar, new Vector3 (transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
 		updateHealthBar ();
 	}

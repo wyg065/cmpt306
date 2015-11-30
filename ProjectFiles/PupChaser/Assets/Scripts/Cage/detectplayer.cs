@@ -3,7 +3,7 @@ using System.Collections;
 
 public class detectplayer : MonoBehaviour {
 
-	public  bool inrange ; 
+	public static  bool inrange ; 
 
 	// Use this for initialization
 	void Start () {
@@ -24,5 +24,14 @@ public class detectplayer : MonoBehaviour {
 			
 		} 
 
+	}
+
+	void OnTriggerExit2D(Collider2D othera)
+	{
+		if (othera.tag == "Player") {
+			
+			inrange = false; 
+			
+		} 
 	}
 }
