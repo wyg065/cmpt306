@@ -10,7 +10,7 @@ public class changelevel : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other )
 	{
-		if (other.tag == "BossRoom") {
+		if (other.tag == "Player") {
 
 			Application.LoadLevel("bossRoom1") ; 
 		}
