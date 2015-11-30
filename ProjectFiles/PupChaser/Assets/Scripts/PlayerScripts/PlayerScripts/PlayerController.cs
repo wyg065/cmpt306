@@ -188,10 +188,10 @@ public class PlayerController : MonoBehaviour {
         //Update character position for other scripts
         charPosition = transform.position;
         if (healthPoints < 1)
-        {
-			SoundController.PlaySound(sounds.playerDie);
+		{
             playerAnimation.SetBool("isDead", true);
             dead = true;
+			SoundController.PlaySound(sounds.playerDie);
         }
 
         if (invincible)
