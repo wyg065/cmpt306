@@ -42,6 +42,9 @@ public class rockController : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
+		if (col.gameObject.name == "PlayerFireBall(Clone)") {
+			Destroy(gameObject);
+		}
 	}
 	
 	// Update is called once per frame
