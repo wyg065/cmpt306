@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 439c44ed7c1d247b896411530ff59d49
-timeCreated: 1448835349
+guid: d67b9722888c44ac1bf42fb964faf431
+timeCreated: 1448840228
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Sorceress_0
-    21300002: Sorceress_1
-    21300004: Sorceress_2
-    21300006: Sorceress_3
-    21300008: Sorceress_4
-    21300010: Sorceress_5
-    21300012: Sorceress_6
-    21300014: Sorceress_7
-    21300016: Sorceress_8
-    21300018: Sorceress_9
-    21300020: Sorceress_10
-    21300022: Sorceress_11
-    21300024: Sorceress_12
-    21300026: Sorceress_13
-    21300028: Sorceress_14
-    21300030: Sorceress_15
+    21300000: dog_0
+    21300002: dog_1
+    21300004: dog_2
+    21300006: dog_3
+    21300008: dog_4
+    21300010: dog_5
+    21300012: dog_6
+    21300014: dog_7
+    21300016: dog_8
+    21300018: dog_9
+    21300020: dog_10
+    21300022: dog_11
+    21300024: dog_12
+    21300026: dog_13
+    21300028: dog_14
+    21300030: dog_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -66,163 +66,163 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Sorceress_0
+    - name: dog_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 98
-        width: 24
-        height: 28
+        x: 11
+        y: 121
+        width: 15
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_1
+    - name: dog_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 98
-        width: 24
-        height: 28
+        x: 50
+        y: 119
+        width: 16
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_2
+    - name: dog_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 98
-        width: 24
-        height: 28
+        x: 91
+        y: 121
+        width: 15
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_3
+    - name: dog_3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 98
-        width: 24
-        height: 28
+        x: 131
+        y: 119
+        width: 16
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_4
+    - name: dog_4
       rect:
         serializedVersion: 2
-        x: 6
-        y: 66
-        width: 18
-        height: 28
+        x: 0
+        y: 81
+        width: 36
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_5
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 66
-        width: 18
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_6
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 66
-        width: 18
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_7
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 66
-        width: 18
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_8
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 34
-        width: 24
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_9
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 34
-        width: 24
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_10
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 34
-        width: 24
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_11
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 34
-        width: 24
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_12
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 2
-        width: 18
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_13
+    - name: dog_5
       rect:
         serializedVersion: 2
         x: 40
-        y: 2
-        width: 18
-        height: 28
+        y: 81
+        width: 38
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_14
+    - name: dog_6
       rect:
         serializedVersion: 2
-        x: 72
-        y: 2
-        width: 18
-        height: 28
+        x: 80
+        y: 81
+        width: 37
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sorceress_15
+    - name: dog_7
       rect:
         serializedVersion: 2
-        x: 104
-        y: 2
-        width: 18
-        height: 28
+        x: 120
+        y: 82
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dog_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 41
+        width: 36
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dog_9
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 41
+        width: 38
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dog_10
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 41
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dog_11
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 42
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dog_12
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dog_13
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dog_14
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 1
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dog_15
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 17
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

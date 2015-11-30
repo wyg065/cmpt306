@@ -56,13 +56,13 @@ public class SoundController : MonoBehaviour {
 			break;
 		case sounds.playerHurt:
 		{
-			instance.aSource.PlayOneShot (instance.soundPlayerDash);
+			instance.aSource.PlayOneShot (instance.soundPlayerHurt);
 				
 		}
 			break;
 		case sounds.playerDie:
 		{
-			instance.aSource.PlayOneShot (instance.soundPlayerDash);
+			instance.aSource.PlayOneShot (instance.soundPlayerDie);
 				
 		}
 			break;
