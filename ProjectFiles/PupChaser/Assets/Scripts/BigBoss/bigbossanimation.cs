@@ -16,9 +16,6 @@ public class bigbossanimation : MonoBehaviour {
 	//variable to store the absolute value of goblin's x velocity
 	private float x = 0;
 	
-	//variable to determine if the goblin should detonate
-	[HideInInspector]
-	public bool timeToDetonate;
 	
 	// Use this for initialization
 	void Start ()
@@ -28,8 +25,7 @@ public class bigbossanimation : MonoBehaviour {
 
 		//find the animator
 		anim = GetComponent<Animator> ();
-		
-		timeToDetonate = false;
+
 	}
 	
 	// Update is called once per frame
@@ -46,18 +42,9 @@ public class bigbossanimation : MonoBehaviour {
 		//velocity.
 		
 		//if its time to detonate, then detonate animation.
-		if (timeToDetonate)
-		{
-			//set all other values to false
-			anim.SetBool("moveLeft", false);
-			anim.SetBool("moveUp", false);
-			anim.SetBool("moveDown", false);
-			anim.SetBool("moveRight", false);
-			//set the detonateGoblin boolean value to true
-			anim.SetBool("detonateGoblin", true);
-		}
+
 		//If y is greater than x, play y animation
-		else if (y > x)
+		if (y > x)
 		{
 			//if y velocity is positive
 			if (enemy.GetComponent<Rigidbody2D> ().velocity.y > 0)
