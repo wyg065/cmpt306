@@ -60,7 +60,7 @@ public class BerserkerScript : MonoBehaviour
         {
             healthPoints--;
             Vector3 dir = (transform.position - Player.charPosition).normalized;
-            dir *= Time.fixedDeltaTime * 30000f;
+            dir *= Time.fixedDeltaTime * 40000f;
 
             rb.AddForce(dir, fMode);
         }
@@ -69,6 +69,13 @@ public class BerserkerScript : MonoBehaviour
             healthPoints = healthPoints - 3;
             Vector3 dir = (transform.position - Player.charPosition).normalized;
             dir *= Time.fixedDeltaTime * 120000f;
+            rb.AddForce(dir, fMode);
+        }
+        if(other.gameObject.name == "PlayerFireBall(Clone)")
+        {
+            healthPoints--;
+            Vector3 dir = (transform.position - Player.charPosition).normalized;
+            dir *= Time.fixedDeltaTime * 20000f;
             rb.AddForce(dir, fMode);
         }
     }
