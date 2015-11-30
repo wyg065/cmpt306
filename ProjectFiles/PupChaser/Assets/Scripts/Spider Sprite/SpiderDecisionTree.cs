@@ -11,6 +11,9 @@ public class SpiderDecisionTree : MonoBehaviour {
 	Dplayer2 d ; 
 	Dplayer dd ;
 
+	public GameObject healthBar;
+	private GameObject snakeHealthBar;
+
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +42,15 @@ public class SpiderDecisionTree : MonoBehaviour {
 		} else if (a == 7) {
 			shootweb3() ; 
 		}
+
+		//loads health bar, and gives reference tho that specific health bar a.k.a snakeHelathBar
+		snakeHealthBar = (GameObject)Instantiate (healthBar, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+		updateHealthBar ();
+	}
+
+	void updateHealthBar() {
+		float barSize = 150;
+		snakeHealthBar.transform.localScale = new Vector3(barSize, 3, 0);
 	}
 
 	void rapidattack ()
@@ -68,6 +80,8 @@ public class SpiderDecisionTree : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		snakeHealthBar.transform.position = new Vector3 (transform.position.x, transform.position.y + 1, transform.position.z);
 	
 
 		if (dd.otherspiders == true) {
@@ -85,6 +99,8 @@ public class SpiderDecisionTree : MonoBehaviour {
 		if (d.die == true) {
 
 			Destroy(this.gameObject);
+			Destroy (snakeHealthBar);
+
 		}
 
 	}

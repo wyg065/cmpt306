@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 
 public class PlayerController : MonoBehaviour {
@@ -46,82 +47,108 @@ public class PlayerController : MonoBehaviour {
     //Global variable of character position
 	public Vector3 charPosition;
 
+	//slider 
+	public Slider healthBarSlider; 
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Berserker")
         {
+			healthBarSlider.value -=3f;
             healthPoints = healthPoints -3;
             invincible = true;
             invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
         }
         if(other.gameObject.name == "leaf(Clone)")
         {
+			healthBarSlider.value -=1f;
             healthPoints = healthPoints--;
             invincible = true;
             invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
         }
         if (other.gameObject.name == "rock(Clone)")
         {
+			healthBarSlider.value -=1f;
             healthPoints = healthPoints--;
             invincible = true;
             invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
         }
 		if (other.gameObject.name == "fireBall(Clone)")
 		{
+			healthBarSlider.value -=1f;
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "iceShard(Clone)")
 		{
+			healthBarSlider.value -=1f;
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "lightning(Clone)")
 		{
+			healthBarSlider.value -=1f;
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 
 		if (other.gameObject.name == "Spider Enemy(Clone)")
 		{
+			healthBarSlider.value -=1f;
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 
 		if (other.gameObject.name == "spider web(Clone)")
 		{
+			healthBarSlider.value -=1f;
 			healthPoints = healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "weakAttack(Clone)")
 		{
+			healthBarSlider.value -=1f;
 			healthPoints--;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "mediumAttack(Clone)")
 		{
+			healthBarSlider.value -=2f;
 			healthPoints = healthPoints -2;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "strongAttack(Clone)")
 		{
+			healthBarSlider.value -=3f;
 			healthPoints = healthPoints -3;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "explosion(Clone)")
 		{
+			healthBarSlider.value -=3f;
 			healthPoints = healthPoints -3;
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
+			SoundController.PlaySound(sounds.playerHurt);
 		}
 
     }
@@ -154,15 +181,17 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+
         xMovement = Input.GetAxis("LeftStickHorizontal");
         yMovement = Input.GetAxis("LeftStickVertical");
 
         //Update character position for other scripts
         charPosition = transform.position;
         if (healthPoints < 1)
-        {
+		{
             playerAnimation.SetBool("isDead", true);
             dead = true;
+			SoundController.PlaySound(sounds.playerDie);
         }
 
         if (invincible)
@@ -235,7 +264,7 @@ public class PlayerController : MonoBehaviour {
                 isCharge = false;
                 chargeAttack = true;
                 chargeTime = 0.0f;
-
+				SoundController.PlaySound(sounds.playerDash);
                 if (directionFacing == 1)
                 {
                     invincible = true;
@@ -279,6 +308,7 @@ public class PlayerController : MonoBehaviour {
                 attack = true;
                 chargeTime = 0;
                 attackCooldown = 0.5f;
+				SoundController.PlaySound(sounds.playerSword);
             }
             
             else if((Input.GetKeyDown(KeyCode.Z)  || Input.GetButtonDown("BButton")) && attackCooldown < 0 && shootCooldown < 0)
@@ -286,6 +316,7 @@ public class PlayerController : MonoBehaviour {
                 canShoot = false;
                 playerAnimation.SetBool("isShooting", true);
                 shootCooldown = 0.2f;
+				SoundController.PlaySound(sounds.playerFireball);
             }
             //Letting the animator know that we arent attacking.
             else

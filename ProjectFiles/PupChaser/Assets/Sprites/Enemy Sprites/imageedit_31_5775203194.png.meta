@@ -1,0 +1,1178 @@
+fileFormatVersion: 2
+guid: 2a4683fd209d14de99f3348f836c8e81
+timeCreated: 1448838603
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: imageedit_31_5775203194_0
+    21300002: imageedit_31_5775203194_1
+    21300004: imageedit_31_5775203194_2
+    21300006: imageedit_31_5775203194_3
+    21300008: imageedit_31_5775203194_4
+    21300010: imageedit_31_5775203194_5
+    21300012: imageedit_31_5775203194_6
+    21300014: imageedit_31_5775203194_7
+    21300016: imageedit_31_5775203194_8
+    21300018: imageedit_31_5775203194_9
+    21300020: imageedit_31_5775203194_10
+    21300022: imageedit_31_5775203194_11
+    21300024: imageedit_31_5775203194_12
+    21300026: imageedit_31_5775203194_13
+    21300028: imageedit_31_5775203194_14
+    21300030: imageedit_31_5775203194_15
+    21300032: imageedit_31_5775203194_16
+    21300034: imageedit_31_5775203194_17
+    21300036: imageedit_31_5775203194_18
+    21300038: imageedit_31_5775203194_19
+    21300040: imageedit_31_5775203194_20
+    21300042: imageedit_31_5775203194_21
+    21300044: imageedit_31_5775203194_22
+    21300046: imageedit_31_5775203194_23
+    21300048: imageedit_31_5775203194_24
+    21300050: imageedit_31_5775203194_25
+    21300052: imageedit_31_5775203194_26
+    21300054: imageedit_31_5775203194_27
+    21300056: imageedit_31_5775203194_28
+    21300058: imageedit_31_5775203194_29
+    21300060: imageedit_31_5775203194_30
+    21300062: imageedit_31_5775203194_31
+    21300064: imageedit_31_5775203194_32
+    21300066: imageedit_31_5775203194_33
+    21300068: imageedit_31_5775203194_34
+    21300070: imageedit_31_5775203194_35
+    21300072: imageedit_31_5775203194_36
+    21300074: imageedit_31_5775203194_37
+    21300076: imageedit_31_5775203194_38
+    21300078: imageedit_31_5775203194_39
+    21300080: imageedit_31_5775203194_40
+    21300082: imageedit_31_5775203194_41
+    21300084: imageedit_31_5775203194_42
+    21300086: imageedit_31_5775203194_43
+    21300088: imageedit_31_5775203194_44
+    21300090: imageedit_31_5775203194_45
+    21300092: imageedit_31_5775203194_46
+    21300094: imageedit_31_5775203194_47
+    21300096: imageedit_31_5775203194_48
+    21300098: imageedit_31_5775203194_49
+    21300100: imageedit_31_5775203194_50
+    21300102: imageedit_31_5775203194_51
+    21300104: imageedit_31_5775203194_52
+    21300106: imageedit_31_5775203194_53
+    21300108: imageedit_31_5775203194_54
+    21300110: imageedit_31_5775203194_55
+    21300112: imageedit_31_5775203194_56
+    21300114: imageedit_31_5775203194_57
+    21300116: imageedit_31_5775203194_58
+    21300118: imageedit_31_5775203194_59
+    21300120: imageedit_31_5775203194_60
+    21300122: imageedit_31_5775203194_61
+    21300124: imageedit_31_5775203194_62
+    21300126: imageedit_31_5775203194_63
+    21300128: imageedit_31_5775203194_64
+    21300130: imageedit_31_5775203194_65
+    21300132: imageedit_31_5775203194_66
+    21300134: imageedit_31_5775203194_67
+    21300136: imageedit_31_5775203194_68
+    21300138: imageedit_31_5775203194_69
+    21300140: imageedit_31_5775203194_70
+    21300142: imageedit_31_5775203194_71
+    21300144: imageedit_31_5775203194_72
+    21300146: imageedit_31_5775203194_73
+    21300148: imageedit_31_5775203194_74
+    21300150: imageedit_31_5775203194_75
+    21300152: imageedit_31_5775203194_76
+    21300154: imageedit_31_5775203194_77
+    21300156: imageedit_31_5775203194_78
+    21300158: imageedit_31_5775203194_79
+    21300160: imageedit_31_5775203194_80
+    21300162: imageedit_31_5775203194_81
+    21300164: imageedit_31_5775203194_82
+    21300166: imageedit_31_5775203194_83
+    21300168: imageedit_31_5775203194_84
+    21300170: imageedit_31_5775203194_85
+    21300172: imageedit_31_5775203194_86
+    21300174: imageedit_31_5775203194_87
+    21300176: imageedit_31_5775203194_88
+    21300178: imageedit_31_5775203194_89
+    21300180: imageedit_31_5775203194_90
+    21300182: imageedit_31_5775203194_91
+    21300184: imageedit_31_5775203194_92
+    21300186: imageedit_31_5775203194_93
+    21300188: imageedit_31_5775203194_94
+    21300190: imageedit_31_5775203194_95
+    21300192: imageedit_31_5775203194_96
+    21300194: imageedit_31_5775203194_97
+    21300196: imageedit_31_5775203194_98
+    21300198: imageedit_31_5775203194_99
+    21300200: imageedit_31_5775203194_100
+    21300202: imageedit_31_5775203194_101
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: imageedit_31_5775203194_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 288
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 288
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_2
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 288
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_3
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 288
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_4
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 288
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_5
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 288
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_6
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 288
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_7
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 288
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_8
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 288
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_9
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 288
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_10
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 256
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_11
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 256
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_12
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 256
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_13
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 256
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_14
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 256
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_15
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 256
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_16
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 256
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_17
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 256
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_18
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 256
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_19
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 256
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_20
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 224
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_21
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 224
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_22
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 225
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_23
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 226
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_24
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 224
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_25
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 224
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_26
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 224
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_27
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 225
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_28
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 226
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_29
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 225
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_30
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 192
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_31
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 192
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_32
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 192
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_33
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 192
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_34
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 192
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_35
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 192
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_36
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 192
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_37
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 192
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_38
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 192
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_39
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 192
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_40
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 160
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_41
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 160
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_42
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 160
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_43
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 160
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_44
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 175
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_45
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 160
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_46
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 174
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_47
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 160
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_48
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 160
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_49
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 160
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_50
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 160
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_51
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 160
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_52
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 128
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_53
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 128
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_54
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 128
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_55
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 128
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_56
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 128
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_57
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 128
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_58
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 128
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_59
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 128
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_60
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 128
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_61
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 128
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_62
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 96
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_63
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 96
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_64
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 96
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_65
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 96
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_66
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 96
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_67
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 96
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_68
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 96
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_69
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 96
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_70
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 96
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_71
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 96
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_72
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 64
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_73
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 64
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_74
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 65
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_75
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 65
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_76
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 64
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_77
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 64
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_78
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 64
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_79
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 65
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_80
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 65
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_81
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 64
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_82
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 32
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_83
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 32
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_84
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 32
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_85
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 32
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_86
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 32
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_87
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 32
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_88
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 32
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_89
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 32
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_90
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 32
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_91
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 32
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_92
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_93
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_94
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_95
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_96
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 0
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_97
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 0
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_98
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_99
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_100
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: imageedit_31_5775203194_101
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

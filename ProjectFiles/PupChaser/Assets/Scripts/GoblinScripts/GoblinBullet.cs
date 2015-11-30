@@ -18,7 +18,7 @@ public class GoblinBullet : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		//killBullet
-		if (other.gameObject.tag == "Player" || other.gameObject.tag == "wall" || other.gameObject.name == "Slice(Clone)" || other.gameObject.name == "ChargeAttack(Clone)") //(other.name != "weakAttack(Clone)" || other.name != "goblinEnemy")
+		if (other.gameObject.tag == "Player" || other.gameObject.tag == "collider" || other.gameObject.name == "Slice(Clone)" || other.gameObject.name == "ChargeAttack(Clone)") //(other.name != "weakAttack(Clone)" || other.name != "goblinEnemy")
 		{
 			Debug.Log ("destroy bullet");
 			Destroy (this.gameObject, .2f);
