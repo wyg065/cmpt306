@@ -72,12 +72,18 @@ public class SpawnEnemies : MonoBehaviour
         snakeCount = 0;
         spiderCount = 0;
 
+        if(distFromPlayer > 60)
+        {
+            for (int i = 0; i < enemiesInList; i++)
+            {
+                enemyList.RemoveAt(i);
+            }
+        }
+
         for (int i = 0; i < enemiesInList; i++)
         {
             if (enemyList[i].gameObject)
             {
-
-
                 if (enemyList[i].gameObject.name == "Berserker(Clone)")
                 {
                     berserkerCount++;
