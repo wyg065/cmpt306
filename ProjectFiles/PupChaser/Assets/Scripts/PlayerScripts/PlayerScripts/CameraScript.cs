@@ -47,7 +47,9 @@ public class CameraScript : MonoBehaviour {
         //Move camera with global character position variable and sit high up on layer -10
         //transform.position =  new Vector3 (Player.charPosition.x, Player.charPosition.y, -10);
 
-		iTween.MoveUpdate(gameObject,new Vector3(Player.transform.position.x, Player.transform.position.y, transform.position.z), 1.75f);
+		//iTween.MoveUpdate(gameObject,new Vector3(Player.transform.position.x, Player.transform.position.y, transform.position.z), 1.75f);
     }
-
+	 void FixedUpdate() {
+		iTween.MoveUpdate(gameObject,new Vector3(Player.transform.position.x, Player.transform.position.y, transform.position.z), 1.75f);
+	}
 }
