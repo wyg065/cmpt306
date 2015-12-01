@@ -2,22 +2,24 @@
 using System.Collections;
 
 public class explosionColliderDie : MonoBehaviour {
-	
-	GoblinAI goblin;
+
+
+	public float timer;
 
 	// Use this for initialization
-	void Start () {
-		//timeToDie = false;
-		goblin = FindObjectOfType<GoblinAI> ();
+	void Start ()
+	{
+		timer = 1.5f;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
-		if (goblin.timeToDie)
+	void Update ()
+	{
+		timer -= Time.deltaTime;
+		if (timer < 0)
 		{
-			Destroy (this.gameObject);
+			Destroy(this.gameObject);
 		}
-	
 	}
+
 }

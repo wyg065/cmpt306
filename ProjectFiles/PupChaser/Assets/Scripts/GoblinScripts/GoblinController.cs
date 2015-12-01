@@ -47,6 +47,9 @@ public class GoblinController : MonoBehaviour {
 	public bool randomlyWalking;
 	public bool movingToKillArea;
 
+	//drob health
+	public GameObject heartPrefab;
+
 
 	//kill goblin stuff
 	//[HideInInspector]
@@ -80,11 +83,6 @@ public class GoblinController : MonoBehaviour {
 	
 	IEnumerator UpdatePath()
 	{
-		if (goblin.destroyRandomLocationGameObject)
-		{
-			Destroy(randomLocation);
-		}
-
 		seeker.StartPath(transform.position, target.position, onPathComplete);
 		
 		yield return new WaitForSeconds(1f/updateRate);
@@ -136,6 +134,14 @@ public class GoblinController : MonoBehaviour {
 
 	public void killGoblin()
 	{
+		i = Random.Range(1, 100);
+		
+		if(i > 25)
+		{
+			GameObject spawnedenemy = GameObject.Instantiate(heartPrefab, transform.position, transform.rotation) as GameObject;
+		}
+		
+		Destroy (randomLocation);
 		Destroy(gameObject);
 	}
 
