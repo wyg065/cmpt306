@@ -18,6 +18,7 @@ public class SpawnEnemies : MonoBehaviour
     public List<GameObject> enemyList;
     public float distFromPlayer;
 
+
     public int berserkerCount;
     public int goblinCount;
     public int snakeCount;
@@ -28,19 +29,19 @@ public class SpawnEnemies : MonoBehaviour
     public int spawnRadius;
     public int stopSpawnRadius;
     public bool stopSpawning;
-
-    public float SpawnRate = 0.05F;
-    public float nextspawn = 0.05F;
     public float checkList;
+    public int despawnRadius;
 
     // Use this for initialization
     void Start()
     {
         enemyList = new List<GameObject>();
         Player = FindObjectOfType<PlayerController>();
+        /*
         spawnRadius = 50;
         stopSpawnRadius = 25;
         currentDifficulty = 0;
+        */
     }
 
     private void checkZone()
@@ -72,7 +73,7 @@ public class SpawnEnemies : MonoBehaviour
         snakeCount = 0;
         spiderCount = 0;
 
-        if(distFromPlayer > 55)
+        if(distFromPlayer > despawnRadius)
         {
             for (int i = 0; i < enemiesInList; i++)
             {
@@ -105,6 +106,7 @@ public class SpawnEnemies : MonoBehaviour
             else
             {
                 enemyList.RemoveAt(i);
+               
             }
         }
         currentDifficulty = (berserkerCount * 3) + (goblinCount * 2) + (spiderCount) + (snakeCount * 2);
