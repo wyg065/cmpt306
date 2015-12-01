@@ -3,7 +3,10 @@ using System.Collections;
 
 public class bigbossanimation : MonoBehaviour {
 
-	
+	public GameObject healthBar;
+	private GameObject snakeHealthBar;
+	public float barSize ;
+
 	//create an enemyController variable called enemy
 	public GoblinController enemy;
 	
@@ -33,11 +36,22 @@ public class bigbossanimation : MonoBehaviour {
 
 		ec = GetComponent<bigbosscontrol>(); 
 
+		snakeHealthBar = (GameObject)Instantiate (healthBar, new Vector3 (transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+		updateHealthBar ();
+
 	}
-	
+
+	void updateHealthBar() {
+		barSize = health * 10; 
+		snakeHealthBar.transform.localScale = new Vector3(barSize, 3, 0);
+	}
+
 	// Update is called once per frame
 	void Update ()
 	{
+
+		snakeHealthBar.transform.position = new Vector3 (transform.position.x, transform.position.y + 2, transform.position.z);
+		updateHealthBar ();
 
 		if (health < 0) {
 			anim.SetBool("Die", true);
