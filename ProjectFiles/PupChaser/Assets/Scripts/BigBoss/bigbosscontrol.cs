@@ -25,7 +25,7 @@ public class bigbosscontrol : MonoBehaviour {
 	public bool pathIsEnded = false;
 	
 	public float nextWaypoinyDistance = 1.2f;
-	
+
 	private int currentWaypoint = 0;
 	// Use this for initialization
 	void Start () {
@@ -92,5 +92,10 @@ public class bigbosscontrol : MonoBehaviour {
 				currentWaypoint++;
 				return;
 			}
+
+
 	}
+
+
+
 }
