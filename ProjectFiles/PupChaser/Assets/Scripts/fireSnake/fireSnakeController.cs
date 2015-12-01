@@ -147,6 +147,7 @@ public class fireSnakeController : MonoBehaviour {
 	{
 		if(col.gameObject.name == "Slice(Clone)")
 		{
+			SoundController.PlaySound (sounds.snakeDie);
 			Vector3 dir = (transform.position - playerScriptReference.charPosition).normalized;
 			dir *= speed * Time.fixedDeltaTime * 120f;
 			
@@ -156,6 +157,7 @@ public class fireSnakeController : MonoBehaviour {
 		}
 		if(col.gameObject.name == "ChargeAttack(Clone)")
 		{
+			SoundController.PlaySound (sounds.snakeDie);
 			Vector3 dir = (transform.position - playerScriptReference.charPosition).normalized;
 			dir *= speed * Time.fixedDeltaTime * 180f;
 			
@@ -165,6 +167,7 @@ public class fireSnakeController : MonoBehaviour {
 		}
 		if(col.gameObject.name == "PlayerFireBall(Clone)")
 		{
+			SoundController.PlaySound (sounds.snakeDie);
 			Vector3 dir = (transform.position - playerScriptReference.charPosition).normalized;
 			dir *= speed * Time.fixedDeltaTime * 180f;
 			
@@ -180,6 +183,7 @@ public class fireSnakeController : MonoBehaviour {
 	}
 
 	void fire() {
+		SoundController.PlaySound (sounds.snakeShoot);
 		if (snakeType == 0) {
 			Instantiate(fireBall, transform.position, Quaternion.identity);
 		} else if (snakeType == 1) {

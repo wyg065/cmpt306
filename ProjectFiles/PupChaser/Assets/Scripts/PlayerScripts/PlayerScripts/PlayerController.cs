@@ -151,6 +151,14 @@ public class PlayerController : MonoBehaviour {
 			SoundController.PlaySound(sounds.playerHurt);
 		}
 
+		if (other.gameObject.name == "spikesup(Clone)")
+		{
+			healthBarSlider.value -=1f;
+			healthPoints = healthPoints -1;
+			invincible = true;
+			invincibilityCoolDown = 0.5f;
+		}
+
     }
 
 
