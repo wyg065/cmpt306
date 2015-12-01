@@ -49,6 +49,7 @@ public class GoblinController : MonoBehaviour {
 
 	//drob health
 	public GameObject heartPrefab;
+	public int chanceOfDropHeart;
 
 
 	//kill goblin stuff
@@ -57,7 +58,9 @@ public class GoblinController : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+		chanceOfDropHeart = Random.Range(1, 100);
 		playerController = FindObjectOfType<PlayerController>();
 		goblin = FindObjectOfType<GoblinAI> ();
 
@@ -108,38 +111,47 @@ public class GoblinController : MonoBehaviour {
 
 			if (col.gameObject.name == "Slice(Clone)")
 			{
+				SoundController.PlaySound(sounds.goblinHurt);
 				goblinDamage = goblinDamage - 2;
 				if (goblinDamage <= 0)
 				{
-					killGoblin ();
+					killGoblin (true);
 				}
-			}else if (col.gameObject.name == "ChargeAttack(Clone)")
+			}
+			else if (col.gameObject.name == "ChargeAttack(Clone)")
 			{
+				SoundController.PlaySound(sounds.goblinHurt);
 				goblinDamage = goblinDamage -3;
 				if (goblinDamage <=0)
 				{
-					killGoblin ();
+					killGoblin (true);
 				}
 			}
             else if(col.gameObject.name == "PlayerFireBall(Clone)")
             {
+				SoundController.PlaySound(sounds.goblinHurt);
                 goblinDamage--;
                 if(goblinDamage <= 0)
                 {
-                    killGoblin();
+                    killGoblin(true);
                 }
             }
 		}
 	}
 
-	public void killGoblin()
-	{
-		float i = Random.Range(1, 100);
-		
-		if(i > 25)
+	public void killGoblin(bool normalDeath)
+	{	
+		if(chanceOfDropHeart < 25)
 		{
 			GameObject spawnedenemy = GameObject.Instantiate(heartPrefab, transform.position, transform.rotation) as GameObject;
 		}
+
+		if (normalDeath) {
+			SoundController.PlaySound (sounds.goblinDie);
+		} else {
+			SoundController.PlaySound (sounds.goblinExplode);
+		}
+
 		
 		Destroy (randomLocation);
 		Destroy(gameObject);

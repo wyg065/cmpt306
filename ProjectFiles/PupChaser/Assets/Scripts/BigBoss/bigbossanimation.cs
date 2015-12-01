@@ -15,8 +15,11 @@ public class bigbossanimation : MonoBehaviour {
 	
 	//variable to store the absolute value of goblin's x velocity
 	private float x = 0;
+
+	public int health =  80 ; 
 	
-	
+	private bigbosscontrol ec  ;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -26,11 +29,20 @@ public class bigbossanimation : MonoBehaviour {
 		//find the animator
 		anim = GetComponent<Animator> ();
 
+		ec = GetComponent<bigbosscontrol>(); 
+
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+
+		if (health == 0) {
+			anim.SetBool("Die", true);
+
+			ec.enabled = false;
+		}
+
 		//the absolute value of the enemy's y velocity
 		y = Mathf.Abs (enemy.GetComponent<Rigidbody2D> ().velocity.y);
 		//the absolute value of the enemy's x velocity
@@ -95,5 +107,23 @@ public class bigbossanimation : MonoBehaviour {
 
 			}
 		}
+	}
+
+	void OnTriggerEnter2D (Collider2D other )
+	{
+		if (other.gameObject.name == "Slice(Clone)") {
+			
+			health -- ;   
+		}
+		if (other.gameObject.name == "ChargeAttack(Clone)")
+		{
+			
+			health = health -3 ; 
+		}
+		if(other.gameObject.name == "PlayerFireBall(Clone)")
+		{
+			health-- ; 
+		}
+		
 	}
 }

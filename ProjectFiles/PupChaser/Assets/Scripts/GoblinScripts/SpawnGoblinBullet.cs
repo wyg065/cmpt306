@@ -53,6 +53,7 @@ public class SpawnGoblinBullet : MonoBehaviour {
 		{
 			if(canSpawnWeak)
 			{
+				SoundController.PlaySound(sounds.goblinShoot);
 				Debug.Log ("fire weak bullet");
 				if(facingUp)
 				{
@@ -79,6 +80,7 @@ public class SpawnGoblinBullet : MonoBehaviour {
 		{
 			if(canSpawnMedium)
 			{
+				SoundController.PlaySound(sounds.goblinShoot);
 				Debug.Log ("fire medium bullet");
 				if(facingUp)
 				{
@@ -105,6 +107,7 @@ public class SpawnGoblinBullet : MonoBehaviour {
 		{
 			if(canSpawnStrong)
 			{
+				SoundController.PlaySound(sounds.goblinShoot);
 				Debug.Log ("fire strong bullet");
 				if(facingUp)
 				{
