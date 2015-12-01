@@ -230,6 +230,17 @@ public class PlayerController : MonoBehaviour {
 
     }
 
+	public void playDeadSound()
+	{
+		SoundController.PlaySound(sounds.playerDie);
+	}
+
+	IEnumerator waitForDeadSound()
+	{
+		yield return new WaitForSeconds (5.0f);
+		Application.LoadLevel(Application.loadedLevel);
+	}
+
 
     // Use this for initialization
     void Start ()
@@ -272,7 +283,8 @@ public class PlayerController : MonoBehaviour {
 		{
             playerAnimation.SetBool("isDead", true);
             dead = true;
-			SoundController.PlaySound(sounds.playerDie);
+			playDeadSound();
+			StartCoroutine(waitForDeadSound());
         }
 
         if (invincible)
