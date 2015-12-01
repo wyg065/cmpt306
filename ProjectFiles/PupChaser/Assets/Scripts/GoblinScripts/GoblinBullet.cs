@@ -24,4 +24,9 @@ public class GoblinBullet : MonoBehaviour {
 			Destroy (this.gameObject, .2f);
 		}
 	}
+
+	void OnBecameInvisible()
+	{
+		Destroy (gameObject);
+	}
 }
