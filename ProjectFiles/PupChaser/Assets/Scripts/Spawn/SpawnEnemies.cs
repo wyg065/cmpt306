@@ -18,7 +18,6 @@ public class SpawnEnemies : MonoBehaviour
     public List<GameObject> enemyList;
     public float distFromPlayer;
 
-
     public int berserkerCount;
     public int goblinCount;
     public int snakeCount;
@@ -72,15 +71,7 @@ public class SpawnEnemies : MonoBehaviour
         berserkerCount = 0;
         snakeCount = 0;
         spiderCount = 0;
-
-        if(distFromPlayer > despawnRadius)
-        {
-            for (int i = 0; i < enemiesInList; i++)
-            {
-                
-                Destroy(enemyList[i].gameObject);
-            }
-        }
+        enemiesInList = enemyList.Count;
 
         for (int i = 0; i < enemiesInList; i++)
         {
@@ -105,8 +96,7 @@ public class SpawnEnemies : MonoBehaviour
             }
             else
             {
-                enemyList.RemoveAt(i);
-               
+                enemyList.RemoveAt(i);             
             }
         }
         currentDifficulty = (berserkerCount * 3) + (goblinCount * 2) + (spiderCount) + (snakeCount * 2);

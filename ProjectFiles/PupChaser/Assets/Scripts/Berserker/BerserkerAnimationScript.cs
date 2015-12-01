@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BerserkerAnimationScript : MonoBehaviour {
     public BerserkerScript berserker;
+    public Rigidbody2D rBody;
     private Animator anim;
     private float y = 0;
     private float x = 0;
@@ -11,7 +12,7 @@ public class BerserkerAnimationScript : MonoBehaviour {
     void Start () {
         //find enemyController and assign it to enemy
         berserker = FindObjectOfType<BerserkerScript>();
-
+        rBody = berserker.GetComponent<Rigidbody2D>();
         //find the animator
         anim = GetComponent<Animator>();
     }
@@ -27,7 +28,7 @@ public class BerserkerAnimationScript : MonoBehaviour {
         if (y > x)
         {
             //if y velocity is positive
-            if (berserker.GetComponent<Rigidbody2D>().velocity.y > 0)
+            if (rBody.velocity.y > 0)
             {
                 //set the move up boolean value to true
                 anim.SetBool("moveUp", true);
@@ -37,7 +38,7 @@ public class BerserkerAnimationScript : MonoBehaviour {
                 anim.SetBool("moveRight", false);
             }
             //if the y velocity is negative
-            if (berserker.GetComponent<Rigidbody2D>().velocity.y < 0)
+            if (rBody.velocity.y < 0)
             {
                 //set the move down boolean value to true
                 anim.SetBool("moveDown", true);
@@ -50,7 +51,7 @@ public class BerserkerAnimationScript : MonoBehaviour {
         else
         {
             //if the x velocity is negative
-            if (berserker.GetComponent<Rigidbody2D>().velocity.x < 0)
+            if (rBody.velocity.x < 0)
             {
                 //set the move left boolean value to true
                 anim.SetBool("moveLeft", true);
@@ -60,7 +61,7 @@ public class BerserkerAnimationScript : MonoBehaviour {
                 anim.SetBool("moveRight", false);
             }
             //if the x velocity is positive
-            if (berserker.GetComponent<Rigidbody2D>().velocity.x > 0)
+            if (rBody.velocity.x > 0)
             {
                 //set the move right boolean value to true
                 anim.SetBool("moveRight", true);
