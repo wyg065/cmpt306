@@ -399,7 +399,7 @@ public class GoblinAI : MonoBehaviour {
 		}
 		if (canKillGoblin)
 		{
-			goblinController.killGoblin ();
+			goblinController.killGoblin (false);
 		}
 	}
 
