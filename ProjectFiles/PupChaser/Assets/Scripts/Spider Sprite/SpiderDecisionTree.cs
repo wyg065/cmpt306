@@ -107,7 +107,7 @@ public class SpiderDecisionTree : MonoBehaviour {
 
 			i = Random.Range(1, 100);
 			
-			if(i > 33)
+			if(i > 10)
 			{
 				GameObject spawnedenemy = GameObject.Instantiate(heartPrefab, transform.position, transform.rotation) as GameObject;
 			}
