@@ -14,10 +14,12 @@ public enum sounds{
 	goblinShoot,
 	spiderDie,
 	spiderShoot,
+	snakeHurt,
 	snakeDie,
 	snakeShoot,
 	berserkerDie,
-	berserkerAttack
+	berserkerAttack,
+	berserkerHurt
 }
 
 public class SoundController : MonoBehaviour {
@@ -37,10 +39,12 @@ public class SoundController : MonoBehaviour {
 	public AudioClip soundGoblinShoot;
 	public AudioClip soundSpiderDie;
 	public AudioClip soundSpiderShoot;
+	public AudioClip soundSnakeHurt;
 	public AudioClip soundSnakeDie;
 	public AudioClip soundSnakeShoot;
 	public AudioClip soundBerserkerDie;
 	public AudioClip soundBerserkerAttack;
+	public AudioClip soundBerserkerHurt;
 
 	public AudioSource aSource;
 
@@ -54,7 +58,9 @@ public class SoundController : MonoBehaviour {
 
 	public static void PlaySound(sounds currentSound)
 	{
-		switch (currentSound) {
+		switch (currentSound)
+		{
+			//player
 		case sounds.playerSword:
 		{
 			int randomNum =  Random.Range (1, 4);
@@ -94,7 +100,71 @@ public class SoundController : MonoBehaviour {
 		{
 			instance.aSource.PlayOneShot(instance.soundPlayerFireball);
 		}
-		break;
-	}
+			break;
+			//goblin
+		case sounds.goblinHurt:
+		{
+			instance.aSource.PlayOneShot(instance.soundGoblinHurt);
+		}
+			break;
+		case sounds.goblinDie:
+		{
+			instance.aSource.PlayOneShot(instance.soundGoblinDie);
+		}
+			break;
+		case sounds.goblinShoot:
+		{
+			instance.aSource.PlayOneShot(instance.soundGoblinShoot);
+		}
+			break;
+		case sounds.goblinExplode:
+		{
+			instance.aSource.PlayOneShot(instance.soundGoblinExplode);
+		}
+			break;
+			//spider
+		case sounds.spiderDie:
+		{
+			instance.aSource.PlayOneShot(instance.soundSpiderDie);
+		}
+			break;
+		case sounds.spiderShoot:
+		{
+			instance.aSource.PlayOneShot(instance.soundSpiderShoot);
+		}
+			break;
+			//snake
+		case sounds.snakeDie:
+		{
+			instance.aSource.PlayOneShot(instance.soundSnakeDie);
+		}
+			break;
+		case sounds.snakeHurt:
+		{
+			instance.aSource.PlayOneShot(instance.soundSnakeHurt);
+		}
+			break;
+		case sounds.snakeShoot:
+		{
+			instance.aSource.PlayOneShot(instance.soundSnakeShoot);
+		}
+			break;
+		case sounds.berserkerAttack:
+		{
+			instance.aSource.PlayOneShot(instance.soundBerserkerAttack);
+		}
+			break;
+		case sounds.berserkerDie:
+		{
+			instance.aSource.PlayOneShot(instance.soundBerserkerDie);
+		}
+			break;
+		case sounds.berserkerHurt:
+		{
+			instance.aSource.PlayOneShot(instance.soundBerserkerHurt);
+		}
+			break;
+			
+		}
 }
 }
