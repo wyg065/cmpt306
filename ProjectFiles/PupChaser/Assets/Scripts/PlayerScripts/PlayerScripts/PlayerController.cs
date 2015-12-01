@@ -48,7 +48,8 @@ public class PlayerController : MonoBehaviour {
 	public Vector3 charPosition;
 
 	//slider 
-	public Slider healthBarSlider; 
+	public Slider healthBarSlider;
+    public float triggerMovement;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -64,14 +65,17 @@ public class PlayerController : MonoBehaviour {
             SoundController.PlaySound(sounds.playerHurt);
         }
         if (other.tag == "heart")
-        {      
-            if(healthPoints + 3 > 20)
+        {
+            if (healthPoints + 3 > 20)
             {
                 healthBarSlider.value = 20;
                 healthPoints = 20;
             }
-            healthBarSlider.value += 3.0f;
-            healthPoints += 3;
+            else
+            {
+                healthBarSlider.value += 3.0f;
+                healthPoints += 3;
+            }
         }
         if (other.tag == "Berserker")
         {
@@ -258,6 +262,10 @@ public class PlayerController : MonoBehaviour {
         xMovement = Input.GetAxis("LeftStickHorizontal");
         yMovement = Input.GetAxis("LeftStickVertical");
 
+        triggerMovement = Input.GetAxis("RightTrigger");
+
+        print(triggerMovement);
+
         //Update character position for other scripts
         charPosition = transform.position;
         if (healthPoints < 1 || healthBarSlider.value < 1) 
@@ -403,7 +411,7 @@ public class PlayerController : MonoBehaviour {
 
 
             //Statement used to check if attack has been input, if so we tell the animator, update our global variable and reset the cooldown
-            if ((Input.GetKey(KeyCode.X) || Input.GetButton("AButton")) && (attackCooldown <= 0.0f))
+            if ((Input.GetKey(KeyCode.X) || triggerMovement > 0) && (attackCooldown <= 0.0f))
             {
                 chargeTime += Time.deltaTime;
             }
