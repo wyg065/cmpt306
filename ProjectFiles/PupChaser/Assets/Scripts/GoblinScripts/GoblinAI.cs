@@ -79,7 +79,7 @@ public class GoblinAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update ()
-	{
+	{	
 		//updates the AI less frequently.
 		//DO NOT CHANGE
 		//Drastically reduces lag

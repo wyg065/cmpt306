@@ -178,9 +178,18 @@ public class GoblinController : MonoBehaviour {
 		Destroy(gameObject);
 	}
 
+
 	void Update()
 	{
 		goblinHealthBar.transform.position = new Vector3 (transform.position.x, transform.position.y + 1.1f, transform.position.z);
+
+		float distFromPlayer = Vector2.Distance(playerController.transform.position, transform.position);
+		if (distFromPlayer >= 60)
+		{
+			Destroy(goblinHealthBar);
+			Destroy(randomLocation);
+			Destroy(this.gameObject);
+		}
 	}
 
 	// Update is called once per frame
