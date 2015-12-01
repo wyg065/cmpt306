@@ -134,7 +134,7 @@ public class GoblinController : MonoBehaviour {
 
 	public void killGoblin()
 	{
-		int i = Random.Range(1, 100);
+		float i = Random.Range(1, 100);
 		
 		if(i > 25)
 		{
