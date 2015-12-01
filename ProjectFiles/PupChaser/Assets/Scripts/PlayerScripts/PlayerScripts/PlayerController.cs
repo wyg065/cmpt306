@@ -64,7 +64,12 @@ public class PlayerController : MonoBehaviour {
             SoundController.PlaySound(sounds.playerHurt);
         }
         if (other.tag == "heart")
-        {
+        {      
+            if(healthPoints + 3 > 20)
+            {
+                healthBarSlider.value = 20;
+                healthPoints = 20;
+            }
             healthBarSlider.value += 3.0f;
             healthPoints += 3;
         }
@@ -255,7 +260,7 @@ public class PlayerController : MonoBehaviour {
 
         //Update character position for other scripts
         charPosition = transform.position;
-        if (healthPoints < 1)
+        if (healthPoints < 1 || healthBarSlider.value < 1) 
 		{
             playerAnimation.SetBool("isDead", true);
             dead = true;
