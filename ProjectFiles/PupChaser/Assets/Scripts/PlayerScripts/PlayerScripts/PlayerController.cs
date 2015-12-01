@@ -52,6 +52,22 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.name == "explosion(Clone)")
+        {
+            if(!invincible)
+            {
+                healthBarSlider.value -= 4.0f;
+                healthPoints -= 4;
+            }
+            invincible = true;
+            invincibilityCoolDown = 0.5f;
+            SoundController.PlaySound(sounds.playerHurt);
+        }
+        if (other.tag == "heart")
+        {
+            healthBarSlider.value += 3.0f;
+            healthPoints += 3;
+        }
         if (other.tag == "Berserker")
         {
             if (!invincible)
