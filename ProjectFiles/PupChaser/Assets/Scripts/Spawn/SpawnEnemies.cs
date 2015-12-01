@@ -72,11 +72,12 @@ public class SpawnEnemies : MonoBehaviour
         snakeCount = 0;
         spiderCount = 0;
 
-        if(distFromPlayer > 60)
+        if(distFromPlayer > 55)
         {
             for (int i = 0; i < enemiesInList; i++)
             {
-                enemyList.RemoveAt(i);
+                
+                Destroy(enemyList[i].gameObject);
             }
         }
 
