@@ -54,7 +54,9 @@ public class BerserkerScript : MonoBehaviour
     delegate void MyDelagate();
     MyDelagate berserkerAction;
 
-
+    public GameObject healthBar;
+    private GameObject berserkerHealthBar;
+    private float maxHealth;
 
     //Function to handle collisions.
     void OnTriggerEnter2D(Collider2D other)
@@ -64,6 +66,7 @@ public class BerserkerScript : MonoBehaviour
             healthPoints--;
             Vector3 dir = (transform.position - Player.charPosition).normalized;
             dir *= Time.fixedDeltaTime * 40000f;
+            updateHealthBar();
 
             rb.AddForce(dir, fMode);
         }
@@ -72,6 +75,7 @@ public class BerserkerScript : MonoBehaviour
             healthPoints = healthPoints - 3;
             Vector3 dir = (transform.position - Player.charPosition).normalized;
             dir *= Time.fixedDeltaTime * 120000f;
+            updateHealthBar();
             rb.AddForce(dir, fMode);
         }
         if(other.gameObject.name == "PlayerFireBall(Clone)")
@@ -79,6 +83,7 @@ public class BerserkerScript : MonoBehaviour
             healthPoints--;
             Vector3 dir = (transform.position - Player.charPosition).normalized;
             dir *= Time.fixedDeltaTime * 20000f;
+            updateHealthBar();
             rb.AddForce(dir, fMode);
         }
     }
@@ -164,16 +169,27 @@ public class BerserkerScript : MonoBehaviour
             chargeLag = 1;
             healthPoints = 5;
         }
+        maxHealth = healthPoints;
+        berserkerHealthBar = (GameObject)Instantiate(healthBar, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+        updateHealthBar();
 
+    }
+
+    void updateHealthBar()
+    {
+        float barSize = (healthPoints / maxHealth) * 150;
+        berserkerHealthBar.transform.localScale = new Vector3(barSize, 3, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
         distFromPlayer = Vector2.Distance(Player.charPosition, transform.position);
+        berserkerHealthBar.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
 
-        if(distFromPlayer >= 55)
+        if (distFromPlayer >= 40)
         {
+            Destroy(berserkerHealthBar);
             Destroy(target);
             Destroy(this.gameObject);
         }

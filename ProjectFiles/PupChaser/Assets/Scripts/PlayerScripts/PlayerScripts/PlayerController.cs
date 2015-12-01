@@ -57,8 +57,8 @@ public class PlayerController : MonoBehaviour {
         {
             if(!invincible)
             {
-                healthBarSlider.value -= 4.0f;
-                healthPoints -= 4;
+                healthBarSlider.value -= 8.0f;
+                healthPoints -= 8;
             }
             invincible = true;
             invincibilityCoolDown = 0.5f;
