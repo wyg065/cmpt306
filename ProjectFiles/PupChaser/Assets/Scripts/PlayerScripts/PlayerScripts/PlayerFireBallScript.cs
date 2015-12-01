@@ -82,7 +82,7 @@ public class PlayerFireBallScript : MonoBehaviour {
         }
         if(Mathf.Abs(rBody.velocity.y) == 0 && Mathf.Abs(rBody.velocity.y) == 0 && counter > 1.0f)
         {
-            Destroy(gameObject);
+            destroy = true;
         }
 	}
     void OnBecameInvisible()
