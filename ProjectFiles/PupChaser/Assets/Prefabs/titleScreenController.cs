@@ -26,7 +26,7 @@ public class titleScreenController : MonoBehaviour {
 			}
 		}
 		if (Input.anyKey) {
-			Application.LoadLevel("Level1");
+			Application.LoadLevel("Level2");
 		}
 	}
 }
