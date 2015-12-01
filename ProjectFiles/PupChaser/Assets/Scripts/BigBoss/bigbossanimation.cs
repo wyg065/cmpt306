@@ -8,7 +8,7 @@ public class bigbossanimation : MonoBehaviour {
 	public GoblinController enemy;
 	
 	//animator for the goblin enemy
-	private Animator anim;
+	public static Animator anim;
 	
 	//variable to store the absolute value of goblin's y velocity
 	private float y = 0;
@@ -18,7 +18,9 @@ public class bigbossanimation : MonoBehaviour {
 
 	public int health =  80 ; 
 	
-	private bigbosscontrol ec  ;
+	public static bigbosscontrol ec  ;
+
+	 
 
 	// Use this for initialization
 	void Start ()
@@ -37,10 +39,11 @@ public class bigbossanimation : MonoBehaviour {
 	void Update ()
 	{
 
-		if (health == 0) {
+		if (health < 0) {
 			anim.SetBool("Die", true);
 
 			ec.enabled = false;
+
 		}
 
 		//the absolute value of the enemy's y velocity

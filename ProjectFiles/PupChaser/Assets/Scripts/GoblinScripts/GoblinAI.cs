@@ -49,7 +49,7 @@ public class GoblinAI : MonoBehaviour {
 
 	//update timer stuff.
 	private float aiUpdateTimer;
-	private float aiUpdateInterval = 0.6f;
+	private float aiUpdateInterval = 0.3f;
 
 	// Use this for initialization
 	void Start ()
@@ -79,7 +79,7 @@ public class GoblinAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update ()
-	{
+	{	
 		//updates the AI less frequently.
 		//DO NOT CHANGE
 		//Drastically reduces lag
@@ -170,7 +170,7 @@ public class GoblinAI : MonoBehaviour {
 
 	private void HPLow()
 	{
-		if (goblinController.goblinDamage <= 2)
+		if (goblinController.currentGoblinHealth <= 2)
 		{
 			Debug.Log("HP is low");
 			enemyAction = FriendsNear;
@@ -402,6 +402,8 @@ public class GoblinAI : MonoBehaviour {
 			goblinController.killGoblin (false);
 		}
 	}
+
+
 
 	IEnumerator detonateLag()
 	{

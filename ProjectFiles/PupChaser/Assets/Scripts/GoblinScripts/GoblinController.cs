@@ -52,14 +52,22 @@ public class GoblinController : MonoBehaviour {
 	public int chanceOfDropHeart;
 
 
+	//health bar
+	public GameObject healthBar;
+	private GameObject goblinHealthBar;
+
+
 	//kill goblin stuff
 	//[HideInInspector]
-	public int goblinDamage;
+	public float maxGoblinHealth;
+	public float currentGoblinHealth;
 
 
 	// Use this for initialization
 	void Start ()
 	{
+		maxGoblinHealth = 5;
+		currentGoblinHealth = 5;
 		chanceOfDropHeart = Random.Range(1, 100);
 		playerController = FindObjectOfType<PlayerController>();
 		goblin = FindObjectOfType<GoblinAI> ();
@@ -78,7 +86,10 @@ public class GoblinController : MonoBehaviour {
 			print("no target.");
 			return;
 		}
-		
+
+		goblinHealthBar = (GameObject)Instantiate (healthBar, new Vector3(transform.position.x, transform.position.y + 1.1f, transform.position.z), Quaternion.identity);
+		updateHealthBar ();
+
 		seeker.StartPath(transform.position, target.position, onPathComplete);
 		
 		StartCoroutine(UpdatePath());
@@ -90,6 +101,13 @@ public class GoblinController : MonoBehaviour {
 		
 		yield return new WaitForSeconds(1f/updateRate);
 		StartCoroutine(UpdatePath());
+	}
+
+	void updateHealthBar()
+	{
+		float barSize = (currentGoblinHealth / maxGoblinHealth) * 150;
+		Debug.Log ("bar size: " + barSize);
+		goblinHealthBar.transform.localScale = new Vector3(barSize, 3, 0);
 	}
 	
 	public void onPathComplete(Path p)
@@ -112,8 +130,9 @@ public class GoblinController : MonoBehaviour {
 			if (col.gameObject.name == "Slice(Clone)")
 			{
 				SoundController.PlaySound(sounds.goblinHurt);
-				goblinDamage = goblinDamage - 2;
-				if (goblinDamage <= 0)
+				currentGoblinHealth = currentGoblinHealth - 2;
+				updateHealthBar();
+				if (currentGoblinHealth <= 0)
 				{
 					killGoblin (true);
 				}
@@ -121,8 +140,9 @@ public class GoblinController : MonoBehaviour {
 			else if (col.gameObject.name == "ChargeAttack(Clone)")
 			{
 				SoundController.PlaySound(sounds.goblinHurt);
-				goblinDamage = goblinDamage -3;
-				if (goblinDamage <=0)
+				currentGoblinHealth = currentGoblinHealth -3;
+				updateHealthBar();
+				if (currentGoblinHealth <=0)
 				{
 					killGoblin (true);
 				}
@@ -130,8 +150,9 @@ public class GoblinController : MonoBehaviour {
             else if(col.gameObject.name == "PlayerFireBall(Clone)")
             {
 				SoundController.PlaySound(sounds.goblinHurt);
-                goblinDamage--;
-                if(goblinDamage <= 0)
+				currentGoblinHealth = currentGoblinHealth -1;
+				updateHealthBar();
+				if(currentGoblinHealth <= 0)
                 {
                     killGoblin(true);
                 }
@@ -141,9 +162,9 @@ public class GoblinController : MonoBehaviour {
 
 	public void killGoblin(bool normalDeath)
 	{	
-		if(chanceOfDropHeart < 25)
+		if(chanceOfDropHeart < 12)
 		{
-			GameObject spawnedenemy = GameObject.Instantiate(heartPrefab, transform.position, transform.rotation) as GameObject;
+			GameObject spawnedHeart = GameObject.Instantiate(heartPrefab, transform.position, transform.rotation) as GameObject;
 		}
 
 		if (normalDeath) {
@@ -152,9 +173,23 @@ public class GoblinController : MonoBehaviour {
 			SoundController.PlaySound (sounds.goblinExplode);
 		}
 
-		
 		Destroy (randomLocation);
+		Destroy (goblinHealthBar);
 		Destroy(gameObject);
+	}
+
+
+	void Update()
+	{
+		goblinHealthBar.transform.position = new Vector3 (transform.position.x, transform.position.y + 1.1f, transform.position.z);
+
+		float distFromPlayer = Vector2.Distance(playerController.transform.position, transform.position);
+		if (distFromPlayer >= 60)
+		{
+			Destroy(goblinHealthBar);
+			Destroy(randomLocation);
+			Destroy(this.gameObject);
+		}
 	}
 
 	// Update is called once per frame
