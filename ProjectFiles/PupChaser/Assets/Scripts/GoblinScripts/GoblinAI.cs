@@ -49,27 +49,11 @@ public class GoblinAI : MonoBehaviour {
 
 	//update timer stuff.
 	private float aiUpdateTimer;
-	private float aiUpdateInterval = 0.25f;
-
-	private bool movingToKillArea;
-	private bool foolingAround;
-	private bool weakAttacking;
-	private bool mediumAttacking;
-	private bool strongAttacking;
-	private bool runningAway;
-
+	private float aiUpdateInterval = 0.6f;
 
 	// Use this for initialization
 	void Start ()
 	{
-		kamiKaziEngaged = false;
-		movingToKillArea = false;
-		foolingAround = false;
-		weakAttacking = false;
-		mediumAttacking = false;
-		strongAttacking = false;
-		runningAway = false;
-
 		originalSpawn = transform.position;
 		killArea = transform;
 		oddsOfKamiKazi++;
@@ -85,7 +69,7 @@ public class GoblinAI : MonoBehaviour {
 
 		goblinController.killAreaLocation = killArea;
 
-		goblinController.followingPlayer = true;
+		goblinController.followingPlayer = false;
 		goblinController.movingToKillArea = false;
 		goblinController.retreating = false;
 		goblinController.randomlyWalking = false;
@@ -116,13 +100,8 @@ public class GoblinAI : MonoBehaviour {
 			}
 			else
 			{
+				Debug.Log("Execute goblin AI Loop");
 				kamiKaziEngaged = false;
-				movingToKillArea = false;
-				foolingAround = false;
-				weakAttacking = false;
-				mediumAttacking = false;
-				strongAttacking = false;
-				runningAway = false;
 				goblinController.speed = normalSpeed;
 				spawnGoblinBullet.spawnWeakBullet = false;
 				spawnGoblinBullet.spawnMediumBullet = false;
@@ -141,30 +120,7 @@ public class GoblinAI : MonoBehaviour {
 				enemyAction = kamiKazi;
 			}
 		}
-		else if (movingToKillArea)
-		{
-			enemyAction = moveToKillArea;
-		}
-		else if (foolingAround)
-		{
-			enemyAction = foolAround;
-		}
-		else if (weakAttacking)
-		{
-			enemyAction = weakAttack;
-		}
-		else if(mediumAttacking)
-		{
-			enemyAction = mediumAttack;
-		}
-		else if(strongAttacking)
-		{
-			enemyAction = strongAttack;
-		}
-		else if (runningAway)
-		{
-			enemyAction = runAway;
-		}
+	
 	}
 
 
@@ -258,7 +214,6 @@ public class GoblinAI : MonoBehaviour {
 	{
 
 		Debug.Log("Moving to kill area");
-		movingToKillArea = true;
 		goblinController.followingPlayer = false;
 		goblinController.movingToKillArea = true;
 		goblinController.retreating = false;
@@ -282,7 +237,6 @@ public class GoblinAI : MonoBehaviour {
 	private void foolAround()
 	{
 		Debug.Log ("Fool around");
-		foolingAround = true;
 		goblinController.followingPlayer = false;
 		goblinController.movingToKillArea = false;
 		goblinController.retreating = false;
@@ -294,8 +248,6 @@ public class GoblinAI : MonoBehaviour {
 	private void weakAttack()
 	{
 		Debug.Log ("Weak Attack");
-
-		weakAttacking = true;
 
 		goblinController.followingPlayer = true;
 		goblinController.movingToKillArea = false;
@@ -314,8 +266,6 @@ public class GoblinAI : MonoBehaviour {
 	{
 		Debug.Log ("Medium Attack");
 
-		mediumAttacking = true;
-
 		goblinController.followingPlayer = true;
 		goblinController.movingToKillArea = false;
 		goblinController.retreating = false;
@@ -332,8 +282,6 @@ public class GoblinAI : MonoBehaviour {
 	{
 		Debug.Log ("Strong Attack");
 
-		strongAttacking = true;
-
 		goblinController.followingPlayer = true;
 		goblinController.movingToKillArea = false;
 		goblinController.retreating = false;
@@ -349,8 +297,6 @@ public class GoblinAI : MonoBehaviour {
 	private void runAway()
 	{
 		Debug.Log ("Run Away");
-
-		runningAway = true;
 
 		goblinController.followingPlayer = false;
 		goblinController.movingToKillArea = false;
