@@ -80,11 +80,6 @@ public class GoblinController : MonoBehaviour {
 	
 	IEnumerator UpdatePath()
 	{
-		if (goblin.destroyRandomLocationGameObject)
-		{
-			Destroy(randomLocation);
-		}
-
 		seeker.StartPath(transform.position, target.position, onPathComplete);
 		
 		yield return new WaitForSeconds(1f/updateRate);
@@ -101,7 +96,7 @@ public class GoblinController : MonoBehaviour {
 	
 	void OnTriggerEnter2D (Collider2D col)
 	{
-		if(col.gameObject.name == "Slice(Clone)")
+		if(col.gameObject.name == "Slice(Clone)" || col.gameObject.name == "ChargeAttack(Clone)" || col.gameObject.name == "PlayerFireBall(Clone)")
 		{
 			Vector3 dir = (transform.position - playerController.charPosition).normalized;
 			dir *= speed * Time.fixedDeltaTime * 120f;
@@ -110,14 +105,14 @@ public class GoblinController : MonoBehaviour {
 
 			if (col.gameObject.name == "Slice(Clone)")
 			{
-				goblinDamage--;
+				goblinDamage = goblinDamage - 2;
 				if (goblinDamage <= 0)
 				{
 					killGoblin ();
 				}
 			}else if (col.gameObject.name == "ChargeAttack(Clone)")
 			{
-				goblinDamage = goblinDamage -2;
+				goblinDamage = goblinDamage -3;
 				if (goblinDamage <=0)
 				{
 					killGoblin ();
@@ -136,6 +131,7 @@ public class GoblinController : MonoBehaviour {
 
 	public void killGoblin()
 	{
+		Destroy (randomLocation);
 		Destroy(gameObject);
 	}
 

@@ -36,4 +36,9 @@ public class GoblinBulletMedium : MonoBehaviour {
 		yield return new WaitForSeconds (0.2f);
 		canChangeColour = true;
 	}
+
+	void OnBecameInvisible()
+	{
+		Destroy (gameObject);
+	}
 }

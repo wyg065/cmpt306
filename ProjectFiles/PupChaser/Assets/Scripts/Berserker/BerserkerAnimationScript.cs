@@ -15,13 +15,15 @@ public class BerserkerAnimationScript : MonoBehaviour {
         //find the animator
         anim = GetComponent<Animator>();
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        y = Mathf.Abs(berserker.GetComponent<Rigidbody2D>().velocity.y);
-        x = Mathf.Abs(berserker.GetComponent<Rigidbody2D>().velocity.x);
 
+    // Update is called once per frame
+    void Update()
+    {
+        if (berserker != null)
+        { 
+            y = Mathf.Abs(berserker.GetComponent<Rigidbody2D>().velocity.y);
+            x = Mathf.Abs(berserker.GetComponent<Rigidbody2D>().velocity.x);
+        }
         if (y > x)
         {
             //if y velocity is positive

@@ -10,8 +10,6 @@ public class GoblinAI : MonoBehaviour {
 	SpawnGoblinBullet spawnGoblinBullet;
 
 	//decision making
-	private bool canMakeDecision;
-	public	float decisionBufferTime;
 	public float normalSpeed;
 
 	//threat zone stuff
@@ -38,7 +36,6 @@ public class GoblinAI : MonoBehaviour {
 	public GameObject explosionColliderPrefab;
 	public GameObject explosionCollider;
 	public bool explosionColliderCreated;
-	public bool timeToDie;
 
 	//friends stuff
 	public float friendsThreshold;
@@ -50,12 +47,29 @@ public class GoblinAI : MonoBehaviour {
 
 	public bool destroyRandomLocationGameObject;
 
+	//update timer stuff.
+	private float aiUpdateTimer;
+	private float aiUpdateInterval = 0.25f;
+
+	private bool movingToKillArea;
+	private bool foolingAround;
+	private bool weakAttacking;
+	private bool mediumAttacking;
+	private bool strongAttacking;
+	private bool runningAway;
+
 
 	// Use this for initialization
 	void Start ()
 	{
-		canMakeDecision = true;
 		kamiKaziEngaged = false;
+		movingToKillArea = false;
+		foolingAround = false;
+		weakAttacking = false;
+		mediumAttacking = false;
+		strongAttacking = false;
+		runningAway = false;
+
 		originalSpawn = transform.position;
 		killArea = transform;
 		oddsOfKamiKazi++;
@@ -63,7 +77,6 @@ public class GoblinAI : MonoBehaviour {
 		playDetonateAnim = false;
 		kamiKaziHasBeenInRange = false;
 		explosionColliderCreated = false;
-		timeToDie = false;
 
 		player = FindObjectOfType<PlayerController> ();
 		goblinController = FindObjectOfType<GoblinController> ();
@@ -83,24 +96,74 @@ public class GoblinAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (kamiKaziEngaged)
+		//updates the AI less frequently.
+		//DO NOT CHANGE
+		//Drastically reduces lag
+		aiUpdateTimer -= Time.fixedDeltaTime;
+		if (aiUpdateTimer < 0)
 		{
-			if(kamiKaziInRange() || kamiKaziHasBeenInRange)
+			aiUpdateTimer = aiUpdateInterval;
+			if (kamiKaziEngaged)
 			{
-				detonate();
+				if (kamiKaziInRange () || kamiKaziHasBeenInRange)
+				{
+					detonate ();
+				}
+				else
+				{
+					enemyAction = kamiKazi;
+				}
+			}
+			else
+			{
+				kamiKaziEngaged = false;
+				movingToKillArea = false;
+				foolingAround = false;
+				weakAttacking = false;
+				mediumAttacking = false;
+				strongAttacking = false;
+				runningAway = false;
+				goblinController.speed = normalSpeed;
+				spawnGoblinBullet.spawnWeakBullet = false;
+				spawnGoblinBullet.spawnMediumBullet = false;
+				spawnGoblinBullet.spawnStrongBullet = false;
+				enemyAction ();
+			}
+		}
+		else if (kamiKaziEngaged)
+		{
+			if (kamiKaziInRange () || kamiKaziHasBeenInRange)
+			{
+				detonate ();
 			}
 			else
 			{
 				enemyAction = kamiKazi;
 			}
 		}
-		else if(canMakeDecision)
+		else if (movingToKillArea)
 		{
-			goblinController.speed = normalSpeed;
-			spawnGoblinBullet.spawnWeakBullet = false;
-			spawnGoblinBullet.spawnMediumBullet = false;
-			spawnGoblinBullet.spawnStrongBullet = false;
-			enemyAction ();
+			enemyAction = moveToKillArea;
+		}
+		else if (foolingAround)
+		{
+			enemyAction = foolAround;
+		}
+		else if (weakAttacking)
+		{
+			enemyAction = weakAttack;
+		}
+		else if(mediumAttacking)
+		{
+			enemyAction = mediumAttack;
+		}
+		else if(strongAttacking)
+		{
+			enemyAction = strongAttack;
+		}
+		else if (runningAway)
+		{
+			enemyAction = runAway;
 		}
 	}
 
@@ -193,13 +256,13 @@ public class GoblinAI : MonoBehaviour {
 	//Action Functions
 	private void moveToKillArea()
 	{
+
 		Debug.Log("Moving to kill area");
+		movingToKillArea = true;
 		goblinController.followingPlayer = false;
 		goblinController.movingToKillArea = true;
 		goblinController.retreating = false;
 		goblinController.randomlyWalking = false;
-		canMakeDecision = false;
-		StartCoroutine (decisionBuffer ());
 		enemyAction = ThreatZone;
 	}
 
@@ -219,12 +282,11 @@ public class GoblinAI : MonoBehaviour {
 	private void foolAround()
 	{
 		Debug.Log ("Fool around");
+		foolingAround = true;
 		goblinController.followingPlayer = false;
 		goblinController.movingToKillArea = false;
 		goblinController.retreating = false;
 		goblinController.randomlyWalking = true;
-		canMakeDecision = false;
-		StartCoroutine (decisionBuffer ());
 		enemyAction = ThreatZone;
 	}
 
@@ -232,6 +294,8 @@ public class GoblinAI : MonoBehaviour {
 	private void weakAttack()
 	{
 		Debug.Log ("Weak Attack");
+
+		weakAttacking = true;
 
 		goblinController.followingPlayer = true;
 		goblinController.movingToKillArea = false;
@@ -242,8 +306,6 @@ public class GoblinAI : MonoBehaviour {
 		spawnGoblinBullet.spawnMediumBullet = false;
 		spawnGoblinBullet.spawnStrongBullet = false;
 
-		canMakeDecision = false;
-		StartCoroutine (decisionBuffer());
 		enemyAction = ThreatZone;
 
 	}
@@ -251,6 +313,8 @@ public class GoblinAI : MonoBehaviour {
 	private void mediumAttack()
 	{
 		Debug.Log ("Medium Attack");
+
+		mediumAttacking = true;
 
 		goblinController.followingPlayer = true;
 		goblinController.movingToKillArea = false;
@@ -260,9 +324,6 @@ public class GoblinAI : MonoBehaviour {
 		spawnGoblinBullet.spawnWeakBullet = false;
 		spawnGoblinBullet.spawnMediumBullet = true;
 		spawnGoblinBullet.spawnStrongBullet = false;
-
-		canMakeDecision = false;
-		StartCoroutine (decisionBuffer());
 		enemyAction = ThreatZone;
 
 	}
@@ -270,6 +331,8 @@ public class GoblinAI : MonoBehaviour {
 	private void strongAttack()
 	{
 		Debug.Log ("Strong Attack");
+
+		strongAttacking = true;
 
 		goblinController.followingPlayer = true;
 		goblinController.movingToKillArea = false;
@@ -280,20 +343,20 @@ public class GoblinAI : MonoBehaviour {
 		spawnGoblinBullet.spawnMediumBullet = false;
 		spawnGoblinBullet.spawnStrongBullet = true;
 
-		canMakeDecision = false;
-		StartCoroutine (decisionBuffer());
 		enemyAction = ThreatZone;
 	}
 
 	private void runAway()
 	{
 		Debug.Log ("Run Away");
+
+		runningAway = true;
+
 		goblinController.followingPlayer = false;
 		goblinController.movingToKillArea = false;
 		goblinController.retreating = true;
 		goblinController.randomlyWalking = false;
-		canMakeDecision = false;
-		StartCoroutine (decisionBuffer());
+
 		enemyAction = ThreatZone;
 	}
 
@@ -341,12 +404,6 @@ public class GoblinAI : MonoBehaviour {
 		{
 			return false;
 		}
-	}
-	
-	IEnumerator decisionBuffer()
-	{
-		yield return new WaitForSeconds (decisionBufferTime);
-		canMakeDecision = true;
 	}
 
 
@@ -396,9 +453,6 @@ public class GoblinAI : MonoBehaviour {
 		}
 		if (canKillGoblin)
 		{
-			timeToDie = true;
-			//Destroy(goblinController.randomLocation);
-			destroyRandomLocationGameObject = true;
 			goblinController.killGoblin ();
 		}
 	}
