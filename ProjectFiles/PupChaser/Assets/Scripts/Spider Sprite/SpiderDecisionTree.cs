@@ -8,11 +8,15 @@ public class SpiderDecisionTree : MonoBehaviour {
 	private Animator anim ; 
 	private shootweb3 sw3 ; 
 
+	int i ; 
+
 	Dplayer2 d ; 
 	Dplayer dd ;
 
 	public GameObject healthBar;
 	private GameObject snakeHealthBar;
+
+	public GameObject heartPrefab;
 
 
 	// Use this for initialization
@@ -100,6 +104,13 @@ public class SpiderDecisionTree : MonoBehaviour {
 
 			Destroy(this.gameObject);
 			Destroy (snakeHealthBar);
+
+			i = Random.Range(1, 100);
+			
+			if(i > 33)
+			{
+				GameObject spawnedenemy = GameObject.Instantiate(heartPrefab, transform.position, transform.rotation) as GameObject;
+			}
 
 		}
 
