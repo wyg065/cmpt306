@@ -36,7 +36,6 @@ public class GoblinAI : MonoBehaviour {
 	public GameObject explosionColliderPrefab;
 	public GameObject explosionCollider;
 	public bool explosionColliderCreated;
-	public bool timeToDie;
 
 	//friends stuff
 	public float friendsThreshold;
@@ -78,7 +77,6 @@ public class GoblinAI : MonoBehaviour {
 		playDetonateAnim = false;
 		kamiKaziHasBeenInRange = false;
 		explosionColliderCreated = false;
-		timeToDie = false;
 
 		player = FindObjectOfType<PlayerController> ();
 		goblinController = FindObjectOfType<GoblinController> ();
@@ -455,9 +453,6 @@ public class GoblinAI : MonoBehaviour {
 		}
 		if (canKillGoblin)
 		{
-			timeToDie = true;
-			//Destroy(goblinController.randomLocation);
-			destroyRandomLocationGameObject = true;
 			goblinController.killGoblin ();
 		}
 	}

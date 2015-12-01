@@ -80,11 +80,6 @@ public class GoblinController : MonoBehaviour {
 	
 	IEnumerator UpdatePath()
 	{
-		if (goblin.destroyRandomLocationGameObject)
-		{
-			Destroy(randomLocation);
-		}
-
 		seeker.StartPath(transform.position, target.position, onPathComplete);
 		
 		yield return new WaitForSeconds(1f/updateRate);
@@ -136,6 +131,7 @@ public class GoblinController : MonoBehaviour {
 
 	public void killGoblin()
 	{
+		Destroy (randomLocation);
 		Destroy(gameObject);
 	}
 
