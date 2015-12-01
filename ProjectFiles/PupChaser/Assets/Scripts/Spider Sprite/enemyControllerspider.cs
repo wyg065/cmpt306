@@ -30,7 +30,7 @@ public class enemyControllerspider : MonoBehaviour {
 	private int currentWaypoint = 0;
 	// Use this for initialization
 	void Start () {
-		alreadysaw = false; 
+		alreadysaw = true; 
 		dd = GetComponentInChildren<Dplayer> ();
 		myScript = FindObjectOfType<PlayerController>();
 		target = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ().transform;

@@ -210,7 +210,7 @@ public class fireSnakeController : MonoBehaviour {
 		if (health <= 0) {
 			int i = Random.Range(1, 100);
 			
-			if(i > 0)
+			if(i <= 10)
 			{
 				GameObject spawnedenemy = GameObject.Instantiate(heartPrefab, transform.position, transform.rotation) as GameObject;
 			}
