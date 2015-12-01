@@ -6,23 +6,29 @@ public class spikes : MonoBehaviour {
 	public GameObject webPrefab ; 
 	public GameObject spawnedweb ; 
 
+	private GameObject player ; 
+
 	public float fireRate = 2000F ; 
 	public float nextfire = 200F ;
 
 	public bool test ;
-
-	detectplayer d ;
+	
 
 	// Use this for initialization
 	void Start () {
 
 		test = false; 
-		d = GetComponentInChildren<detectplayer> ();
+		player = GameObject.FindWithTag ("Player");
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (detectplayer.inrange == false) {
+			test = false;
+		
+		}
 
 		if (Time.time > nextfire )
 		{
@@ -31,9 +37,21 @@ public class spikes : MonoBehaviour {
 			//spawnedweb.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0 , -1200 )) ; 
 			//StartCoroutine(Example());
 			Destroy (spawnedweb, 1);
-			if(d.inrange == true )
+
+
+
+			if(detectplayer.inrange == true)
 			{
-				test = true  ; 
+				//player.GetComponent<Rigidbody2D>().AddForce();
+
+				if (player.transform.position.y > 13)
+				{
+					player.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0 , 400));
+				}
+				else
+				{
+					player.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0 , -400));
+				}
 			}
 		}
 	
