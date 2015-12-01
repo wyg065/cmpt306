@@ -21,7 +21,7 @@ public class dungeonSpawnController : MonoBehaviour {
 			print (currentSpawner);
 
 			stopAllSpawnersExceptOne(currentSpawner);
-			currentSpawner.GetComponent<SpawnEnemies>().currentDifficulty = 10;
+			//currentSpawner.GetComponent<SpawnEnemies>().currentDifficulty = 10;
 		} else {
 			print ("failure");
 		}
@@ -33,7 +33,7 @@ public class dungeonSpawnController : MonoBehaviour {
 
 			currentSpawner = findClosestToPlayer();
 			stopAllSpawnersExceptOne(currentSpawner);
-			currentSpawner.GetComponent<SpawnEnemies>().currentDifficulty = 10;
+			//currentSpawner.GetComponent<SpawnEnemies>().currentDifficulty = 10;
 		} else {
 			print ("failure");
 		}
@@ -44,7 +44,8 @@ public class dungeonSpawnController : MonoBehaviour {
 		GameObject closest = spawners[0];
 
 		for (int i = 0; i < spawners.Length; i++) {
-			if(Mathf.Abs(Vector3.Distance(player.transform.position, spawners[i].transform.position)) < temp){
+			if(Mathf.Abs(Vector3.Distance(player.transform.position, spawners[i].transform.position)) < temp && Vector3.Distance(player.transform.position, spawners[i].transform.position) > 20)
+            {
 				temp = Vector3.Distance(player.transform.position, spawners[i].transform.position);
 				closest = spawners[i];
 			}

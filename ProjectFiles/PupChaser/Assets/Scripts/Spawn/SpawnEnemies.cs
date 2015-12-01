@@ -118,7 +118,7 @@ public class SpawnEnemies : MonoBehaviour
             checkList = 0;
         }
 
-        if (counter > spawnSpeed && currentDifficulty <= difficultyMax && playerInZone && !stopSpawning)
+        if (counter > spawnSpeed && currentDifficulty <= difficultyMax /*&& playerInZone && !stopSpawning*/)
         {
             counter = 0;
             if (a <= 25)
