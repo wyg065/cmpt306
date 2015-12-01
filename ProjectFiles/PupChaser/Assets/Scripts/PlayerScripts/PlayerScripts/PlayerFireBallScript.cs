@@ -10,6 +10,8 @@ public class PlayerFireBallScript : MonoBehaviour {
 
     public int direction;
 
+    public float counter;
+
     //Script grabbed for position
     public PlayerController Player;
 
@@ -47,11 +49,13 @@ public class PlayerFireBallScript : MonoBehaviour {
         rBody = FindObjectOfType<Rigidbody2D>();
         atSpawn = true;
         direction = Player.directionFacing;
+        counter = 0;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        counter += Time.deltaTime;
         if (atSpawn && direction == 1)
         {
             rBody.AddForce(Vector3.up * 1000);
@@ -73,6 +77,10 @@ public class PlayerFireBallScript : MonoBehaviour {
             atSpawn = false;
         }
         if (destroy)
+        {
+            Destroy(gameObject);
+        }
+        if(Mathf.Abs(rBody.velocity.y) == 0 && Mathf.Abs(rBody.velocity.y) == 0 && counter > 1.0f)
         {
             Destroy(gameObject);
         }

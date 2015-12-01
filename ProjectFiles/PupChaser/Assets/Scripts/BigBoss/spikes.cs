@@ -38,6 +38,8 @@ public class spikes : MonoBehaviour {
 			//StartCoroutine(Example());
 			Destroy (spawnedweb, 1);
 
+
+
 			if(detectplayer.inrange == true)
 			{
 				//player.GetComponent<Rigidbody2D>().AddForce();
