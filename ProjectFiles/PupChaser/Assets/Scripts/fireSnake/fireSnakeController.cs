@@ -14,6 +14,8 @@ public class fireSnakeController : MonoBehaviour {
 	public GameObject lightning;
 	public GameObject rock;
 
+	public GameObject heartPrefab;
+
 	public GameObject healthBar;
 
     public float updateRate = 1.0f;
@@ -206,6 +208,12 @@ public class fireSnakeController : MonoBehaviour {
 			canFire = false;
 		}
 		if (health <= 0) {
+			int i = Random.Range(1, 100);
+			
+			if(i > 0)
+			{
+				GameObject spawnedenemy = GameObject.Instantiate(heartPrefab, transform.position, transform.rotation) as GameObject;
+			}
 			Destroy(randomLocation);
 			Destroy(spawnLocation);
 			Destroy(snakeHealthBar);
