@@ -50,6 +50,31 @@ public class CameraScript : MonoBehaviour {
 		//iTween.MoveUpdate(gameObject,new Vector3(Player.transform.position.x, Player.transform.position.y, transform.position.z), 1.75f);
     }
 	 void FixedUpdate() {
-		iTween.MoveUpdate(gameObject,new Vector3(Player.transform.position.x, Player.transform.position.y, transform.position.z), 1.75f);
+		Rigidbody2D rb = Player.GetComponent<Rigidbody2D> ();
+
+		float y = Mathf.Abs (rb.velocity.y);
+		float x = Mathf.Abs (rb.velocity.x);
+		
+		//because the target could be moving left, right, and up or down we need a way to decide
+		//which animation to play. Therefore whichever is greater velocity, the animation for that
+		//direction will be played.  This is the reasoning for finding the absolute value of x and y
+		//velocity.
+		//If y is greater than x, play y animation
+		if (y > x) {
+			if (rb.velocity.y > 0) {
+				iTween.MoveUpdate(gameObject,new Vector3(Player.transform.position.x, Player.transform.position.y + 3, transform.position.z), 2.0f);
+			}
+			if (rb.velocity.y < 0) {
+				iTween.MoveUpdate(gameObject,new Vector3(Player.transform.position.x, Player.transform.position.y - 3, transform.position.z), 2.0f);
+			}
+		} else {
+			if (rb.velocity.x > 0) {
+				iTween.MoveUpdate(gameObject,new Vector3(Player.transform.position.x + 3, Player.transform.position.y, transform.position.z), 2.0f);
+				
+			}
+			if (rb.velocity.x < 0) {
+				iTween.MoveUpdate(gameObject,new Vector3(Player.transform.position.x - 3, Player.transform.position.y, transform.position.z), 2.0f);
+			}
+		}
 	}
 }
