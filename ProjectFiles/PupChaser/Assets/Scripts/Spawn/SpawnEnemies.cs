@@ -18,6 +18,7 @@ public class SpawnEnemies : MonoBehaviour
     public List<GameObject> enemyList;
     public float distFromPlayer;
 
+
     public int berserkerCount;
     public int goblinCount;
     public int snakeCount;
@@ -29,6 +30,7 @@ public class SpawnEnemies : MonoBehaviour
     public int stopSpawnRadius;
     public bool stopSpawning;
     public float checkList;
+    public int despawnRadius;
 
     // Use this for initialization
     void Start()
@@ -71,7 +73,7 @@ public class SpawnEnemies : MonoBehaviour
         snakeCount = 0;
         spiderCount = 0;
 
-        if(distFromPlayer > 55)
+        if(distFromPlayer > despawnRadius)
         {
             for (int i = 0; i < enemiesInList; i++)
             {
@@ -82,7 +84,7 @@ public class SpawnEnemies : MonoBehaviour
 
         for (int i = 0; i < enemiesInList; i++)
         {
-            if (enemyList[i].gameObject != null)
+            if (enemyList[i].gameObject)
             {
                 if (enemyList[i].gameObject.name == "Berserker(Clone)")
                 {
@@ -104,6 +106,7 @@ public class SpawnEnemies : MonoBehaviour
             else
             {
                 enemyList.RemoveAt(i);
+               
             }
         }
         currentDifficulty = (berserkerCount * 3) + (goblinCount * 2) + (spiderCount) + (snakeCount * 2);
