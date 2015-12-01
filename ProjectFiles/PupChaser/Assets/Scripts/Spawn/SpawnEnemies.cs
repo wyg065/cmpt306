@@ -28,9 +28,6 @@ public class SpawnEnemies : MonoBehaviour
     public int spawnRadius;
     public int stopSpawnRadius;
     public bool stopSpawning;
-
-    public float SpawnRate = 0.05F;
-    public float nextspawn = 0.05F;
     public float checkList;
 
     // Use this for initialization
@@ -38,9 +35,11 @@ public class SpawnEnemies : MonoBehaviour
     {
         enemyList = new List<GameObject>();
         Player = FindObjectOfType<PlayerController>();
+        /*
         spawnRadius = 50;
         stopSpawnRadius = 25;
         currentDifficulty = 0;
+        */
     }
 
     private void checkZone()
@@ -83,7 +82,7 @@ public class SpawnEnemies : MonoBehaviour
 
         for (int i = 0; i < enemiesInList; i++)
         {
-            if (enemyList[i].gameObject)
+            if (enemyList[i].gameObject != null)
             {
                 if (enemyList[i].gameObject.name == "Berserker(Clone)")
                 {

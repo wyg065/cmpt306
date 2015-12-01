@@ -54,57 +54,79 @@ public class PlayerController : MonoBehaviour {
     {
         if (other.tag == "Berserker")
         {
-			healthBarSlider.value -=3f;
-            healthPoints = healthPoints -3;
+            if (!invincible)
+            {
+                healthBarSlider.value -= 3f;
+                healthPoints = healthPoints-3;
+            }
             invincible = true;
             invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
         }
         if(other.gameObject.name == "leaf(Clone)")
         {
-			healthBarSlider.value -=1f;
-            healthPoints = healthPoints--;
+            if (!invincible)
+            {
+                healthBarSlider.value -= 1f;
+                healthPoints = healthPoints--;
+            }
             invincible = true;
             invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
         }
         if (other.gameObject.name == "rock(Clone)")
         {
-			healthBarSlider.value -=1f;
-            healthPoints = healthPoints--;
+            if (!invincible)
+            {
+                healthBarSlider.value -= 1f;
+                healthPoints = healthPoints--;
+            }
             invincible = true;
             invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
         }
 		if (other.gameObject.name == "fireBall(Clone)")
 		{
-			healthBarSlider.value -=1f;
-			healthPoints = healthPoints--;
-			invincible = true;
+            if (!invincible)
+            {
+                healthBarSlider.value -= 1f;
+                healthPoints = healthPoints--;
+            }
+            invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "iceShard(Clone)")
 		{
-			healthBarSlider.value -=1f;
-			healthPoints = healthPoints--;
-			invincible = true;
+            if (!invincible)
+            {
+                healthBarSlider.value -= 1f;
+                healthPoints = healthPoints--;
+            }
+            invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "lightning(Clone)")
 		{
-			healthBarSlider.value -=1f;
-			healthPoints = healthPoints--;
-			invincible = true;
+            if (!invincible)
+            {
+                healthBarSlider.value -= 1f;
+                healthPoints = healthPoints--;
+            }
+            invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
 		}
 
 		if (other.gameObject.name == "Spider Enemy(Clone)")
 		{
-			healthBarSlider.value -=1f;
-			healthPoints = healthPoints--;
+            if(!invincible)
+            {
+                healthBarSlider.value -=1f;
+                healthPoints = healthPoints--;
+            }
+
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
@@ -112,50 +134,72 @@ public class PlayerController : MonoBehaviour {
 
 		if (other.gameObject.name == "spider web(Clone)")
 		{
-			healthBarSlider.value -=1f;
-			healthPoints = healthPoints--;
+            if (!invincible)
+            {
+                healthBarSlider.value -= 1f;
+                healthPoints = healthPoints--;
+            }
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "weakAttack(Clone)")
 		{
-			healthBarSlider.value -=1f;
-			healthPoints--;
-			invincible = true;
+            if (!invincible)
+            {
+                healthBarSlider.value -= 1f;
+                healthPoints = healthPoints--;
+            }
+
+            invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "mediumAttack(Clone)")
 		{
-			healthBarSlider.value -=2f;
-			healthPoints = healthPoints -2;
-			invincible = true;
+            if (!invincible)
+            {
+                healthBarSlider.value -= 2f;
+                healthPoints = healthPoints-2;
+            }
+
+            invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "strongAttack(Clone)")
 		{
-			healthBarSlider.value -=3f;
-			healthPoints = healthPoints -3;
-			invincible = true;
+            if (!invincible)
+            {
+                healthBarSlider.value -= 3f;
+                healthPoints = healthPoints-3;
+            }
+
+            invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
 		}
 		if (other.gameObject.name == "explosion(Clone)")
 		{
-			healthBarSlider.value -=3f;
-			healthPoints = healthPoints -3;
-			invincible = true;
+            if (!invincible)
+            {
+                healthBarSlider.value -= 3f;
+                healthPoints = healthPoints - 3;
+            }
+            invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
 		}
 
 		if (other.gameObject.name == "spikesup(Clone)")
 		{
-			healthBarSlider.value -=1f;
-			healthPoints = healthPoints -1;
-			invincible = true;
+            if (!invincible)
+            {
+                healthBarSlider.value -= 1f;
+                healthPoints = healthPoints--;
+            }
+
+            invincible = true;
 			invincibilityCoolDown = 0.5f;
 		}
 
