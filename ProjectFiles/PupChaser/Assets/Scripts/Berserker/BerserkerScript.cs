@@ -11,6 +11,8 @@ public class BerserkerScript : MonoBehaviour
     private GameObject t;
     public GameObject player;
     public GameObject heartPrefab;
+
+    public float distFromPlayer;
     public int i;
     public float updateRate = 1.0f;
 
@@ -168,6 +170,14 @@ public class BerserkerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        distFromPlayer = Vector2.Distance(Player.charPosition, transform.position);
+
+        if(distFromPlayer >= 55)
+        {
+            Destroy(target);
+            Destroy(this.gameObject);
+        }
+
         if (healthPoints < 1)
         {
             i = Random.Range(1, 100);
