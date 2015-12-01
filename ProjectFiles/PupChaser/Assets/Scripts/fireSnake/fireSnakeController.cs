@@ -219,6 +219,13 @@ public class fireSnakeController : MonoBehaviour {
 			Destroy(snakeHealthBar);
 			Destroy(gameObject);
 		}
+
+		if (Vector3.Distance(transform.position, player.transform.position) > 55) {
+			Destroy(randomLocation);
+			Destroy(spawnLocation);
+			Destroy(snakeHealthBar);
+			Destroy(gameObject);
+		}
 		//updates the AI less frequently.
 		//DO NOT CHANGE
 		//Drastically reduces lag
