@@ -10,7 +10,8 @@ public class BerserkerScript : MonoBehaviour
     public Transform target;
     private GameObject t;
     public GameObject player;
-
+    public GameObject heartPrefab;
+    public int i;
     public float updateRate = 1.0f;
 
     private Seeker seeker;
@@ -169,6 +170,13 @@ public class BerserkerScript : MonoBehaviour
     {
         if (healthPoints < 1)
         {
+            i = Random.Range(1, 100);
+
+            if(i > 33)
+            {
+                GameObject spawnedenemy = GameObject.Instantiate(heartPrefab, transform.position, transform.rotation) as GameObject;
+            }
+
             Destroy(t);
             Destroy(gameObject);
         }
