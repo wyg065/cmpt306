@@ -72,7 +72,14 @@ public class BerserkerScript : MonoBehaviour
         }
         if (other.gameObject.name == "ChargeAttack(Clone)")
         {
-            healthPoints = healthPoints - 3;
+            if (healthPoints - 3 <= 0)
+            {
+                healthPoints = 0;
+            }
+            else
+            {
+                healthPoints = healthPoints - 3;
+            }
             Vector3 dir = (transform.position - Player.charPosition).normalized;
             dir *= Time.fixedDeltaTime * 120000f;
             updateHealthBar();
