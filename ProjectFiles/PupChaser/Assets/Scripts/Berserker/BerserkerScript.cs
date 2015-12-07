@@ -63,6 +63,7 @@ public class BerserkerScript : MonoBehaviour
     {
         if (other.gameObject.name == "Slice(Clone)")
         {
+            SoundController.PlaySound(sounds.berserkerHurt);
             healthPoints--;
             Vector3 dir = (transform.position - Player.charPosition).normalized;
             dir *= Time.fixedDeltaTime * 40000f;
@@ -72,6 +73,7 @@ public class BerserkerScript : MonoBehaviour
         }
         if (other.gameObject.name == "AreaAttackPrefab(Clone)")
         {
+            SoundController.PlaySound(sounds.berserkerHurt);
             healthPoints--;
             Vector3 dir = (transform.position - Player.charPosition).normalized;
             dir *= Time.fixedDeltaTime * 40000f;
@@ -80,6 +82,7 @@ public class BerserkerScript : MonoBehaviour
         }
         if (other.gameObject.name == "ChargedFireBall(Clone)")
         {
+            SoundController.PlaySound(sounds.berserkerHurt);
             if (healthPoints - 2 <= 0)
             {
                 healthPoints = 0;
@@ -96,6 +99,7 @@ public class BerserkerScript : MonoBehaviour
         }
         if (other.gameObject.name == "ChargeAttack(Clone)")
         {
+            SoundController.PlaySound(sounds.berserkerHurt);
             if (healthPoints - 3 <= 0)
             {
                 healthPoints = 0;
@@ -111,6 +115,7 @@ public class BerserkerScript : MonoBehaviour
         }
         if(other.gameObject.name == "PlayerFireBall(Clone)")
         {
+            SoundController.PlaySound(sounds.berserkerHurt);
             healthPoints--;
             Vector3 dir = (transform.position - Player.charPosition).normalized;
             dir *= Time.fixedDeltaTime * 20000f;
@@ -233,7 +238,7 @@ public class BerserkerScript : MonoBehaviour
             {
                 GameObject spawnedenemy = GameObject.Instantiate(heartPrefab, transform.position, transform.rotation) as GameObject;
             }
-
+            SoundController.PlaySound(sounds.berserkerDie);
             Destroy(t);
             Destroy(gameObject);
         }
@@ -349,6 +354,7 @@ public class BerserkerScript : MonoBehaviour
                 GetComponent<SpriteRenderer>().color = Color.red;
             }
 
+            SoundController.PlaySound(sounds.berserkerAttack);
             rb.AddForce(chargePosition * chargePower);
             time = 0;
             berserkerAction = chargeStun;

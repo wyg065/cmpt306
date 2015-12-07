@@ -114,6 +114,11 @@ public class SoundController : MonoBehaviour {
 			instance.aSource.PlayOneShot(instance.soundPlayerBigFireball);
 		}
 			break;
+       case sounds.playerCharged:
+       {
+                    instance.aSource.PlayOneShot(instance.soundPlayerCharged);
+       }
+                break;
 		case sounds.playerShield:
 		{
 			instance.aSource.PlayOneShot(instance.soundPlayerShield);
