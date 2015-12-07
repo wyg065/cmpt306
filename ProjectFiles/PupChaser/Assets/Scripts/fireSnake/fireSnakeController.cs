@@ -177,7 +177,27 @@ public class fireSnakeController : MonoBehaviour {
 			health--;
 			updateHealthBar ();
 		}
-	}
+        if (col.gameObject.name == "ChargedFireBall(Clone)")
+        {
+            SoundController.PlaySound(sounds.snakeDie);
+            Vector3 dir = (transform.position - playerScriptReference.charPosition).normalized;
+            dir *= speed * Time.fixedDeltaTime * 200f;
+
+            rb.AddForce(dir, fMode);
+            health--;
+            updateHealthBar();
+        }
+        if (col.gameObject.name == "AreaAttackPrefab(Clone)")
+        {
+            SoundController.PlaySound(sounds.snakeDie);
+            Vector3 dir = (transform.position - playerScriptReference.charPosition).normalized;
+            dir *= speed * Time.fixedDeltaTime * 180f;
+
+            rb.AddForce(dir, fMode);
+            health--;
+            updateHealthBar();
+        }
+    }
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
