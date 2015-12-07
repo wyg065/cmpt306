@@ -60,7 +60,7 @@ public class bigbossanimation : MonoBehaviour {
 
 		}
 
-		/**
+
 		//the absolute value of the enemy's y velocity
 		y = Mathf.Abs (enemy.GetComponent<Rigidbody2D> ().velocity.y);
 		//the absolute value of the enemy's x velocity
@@ -126,7 +126,6 @@ public class bigbossanimation : MonoBehaviour {
 			}
 		}
 
-**/
 	}
 
 	void OnTriggerEnter2D (Collider2D other )
