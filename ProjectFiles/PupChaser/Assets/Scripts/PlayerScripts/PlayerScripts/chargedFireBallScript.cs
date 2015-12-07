@@ -9,6 +9,8 @@ public class chargedFireBallScript : MonoBehaviour {
 
     public int direction;
 
+    public int destroyCount;
+
     public float counter;
 
     //Script grabbed for position
