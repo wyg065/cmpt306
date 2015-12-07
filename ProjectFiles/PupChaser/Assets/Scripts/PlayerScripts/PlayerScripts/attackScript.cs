@@ -12,8 +12,13 @@ public class attackScript : MonoBehaviour {
 
     public GameObject fireballSpawn;
     public GameObject fireballPrefab;
+    public GameObject chargeFireballSpawn;
+    public GameObject chargeFireballPrefab;
     //The slashprefab with collider size and sprite
     public GameObject slashPrefab;
+
+    public GameObject areaAttackSpawn;
+    public GameObject areaAttackPrefab;
 
     public GameObject chargeAttackSpawn;
     public GameObject chargeAttackPrefab;
@@ -83,6 +88,29 @@ public class attackScript : MonoBehaviour {
             {
                 chargeAttackSpawn = Instantiate(chargeAttackPrefab, new Vector3(myScript.charPosition.x, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0))) as GameObject;
             }
+        }
+        if(myScript.chargeShot)
+        {
+            if (myScript.directionFacing == 1)
+            {
+                chargeFireballSpawn = Instantiate(chargeFireballPrefab, new Vector3(myScript.charPosition.x, myScript.charPosition.y + 1.5f, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 90))) as GameObject;
+            }
+            if (myScript.directionFacing == 2)
+            {
+                chargeFireballSpawn = Instantiate(chargeFireballPrefab, new Vector3(myScript.charPosition.x - 0.9f, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 180))) as GameObject;
+            }
+            if (myScript.directionFacing == 3)
+            {
+                chargeFireballSpawn = Instantiate(chargeFireballPrefab, new Vector3(myScript.charPosition.x, myScript.charPosition.y - 1.5f, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -90))) as GameObject;
+            }
+            if (myScript.directionFacing == 4)
+            {
+                chargeFireballSpawn = Instantiate(chargeFireballPrefab, new Vector3(myScript.charPosition.x + 0.9f, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0))) as GameObject;
+            }
+        }
+        if(myScript.areaAttack)
+        {
+            areaAttackSpawn = Instantiate(areaAttackPrefab, new Vector3(myScript.charPosition.x, myScript.charPosition.y, myScript.charPosition.z), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y))) as GameObject;
         }
 
     }

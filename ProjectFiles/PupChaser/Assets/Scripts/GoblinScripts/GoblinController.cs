@@ -184,7 +184,7 @@ public class GoblinController : MonoBehaviour {
 		goblinHealthBar.transform.position = new Vector3 (transform.position.x, transform.position.y + 1.1f, transform.position.z);
 
 		float distFromPlayer = Vector2.Distance(playerController.transform.position, transform.position);
-		if (distFromPlayer >= 60)
+		if (distFromPlayer >= 55)
 		{
 			Destroy(goblinHealthBar);
 			Destroy(randomLocation);
