@@ -13,10 +13,12 @@ public class PlayerController : MonoBehaviour {
 
     //Boolean for if player has charged attack long enough
     public bool isCharge;
+    public bool hasDoneAreaAttack;
 
     //Bool for attack script to know when to charge attack
     public bool chargeAttack;
-
+    public bool chargeShot;
+    public bool areaAttack;
     //Bool used for attack scripts and cooldowns
     public bool attack;
     public float chargeCooldown;
@@ -395,7 +397,15 @@ public class PlayerController : MonoBehaviour {
                     rBody.AddForce(Vector3.right * 5000);
                 }
             }
-            else if ((Input.GetKeyUp(KeyCode.X) || Input.GetButtonDown("AButton")) && !isCharge && attackCooldown < 0 && shootCooldown < 0)
+            else if((Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("BButton")) && isCharge && shootCooldown < 0 )
+            {
+                chargeCooldown = 0.5f;
+                isCharge = false;
+                shootCooldown = 0.2f;
+                chargeTime = 0.0f;
+                chargeShot = true;
+            }
+            else if ((Input.GetKeyDown(KeyCode.X) || Input.GetButtonDown("AButton")) && !isCharge && attackCooldown < 0 && shootCooldown < 0)
             {
                 playerAnimation.SetBool("Attack", true);
                 attack = true;
@@ -404,12 +414,20 @@ public class PlayerController : MonoBehaviour {
 				SoundController.PlaySound(sounds.playerSword);
             }
             
-            else if((Input.GetKeyDown(KeyCode.Z)  || Input.GetButtonDown("BButton")) && attackCooldown < 0 && shootCooldown < 0)
+            else if((Input.GetKeyDown(KeyCode.Z)  || Input.GetButtonDown("BButton")) && !isCharge && attackCooldown < 0 && shootCooldown < 0)
             {
                 canShoot = false;
                 playerAnimation.SetBool("isShooting", true);
                 shootCooldown = 0.2f;
 				SoundController.PlaySound(sounds.playerFireball);
+            }
+            else if((Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("XButton")) && isCharge)
+            {
+                areaAttack = true;
+                invincible = true;
+                invincibilityCoolDown = 0.2f;
+                chargeTime = 0;
+                isCharge = false;
             }
             //Letting the animator know that we arent attacking.
             else
@@ -418,12 +436,14 @@ public class PlayerController : MonoBehaviour {
                 playerAnimation.SetBool("ChargeAttack", false); 
                 attack = false;
                 chargeAttack = false;
+                chargeShot = false;
+                areaAttack = false;
                 attackCooldown -= Time.deltaTime;
             }
 
 
             //Statement used to check if attack has been input, if so we tell the animator, update our global variable and reset the cooldown
-            if ((Input.GetKey(KeyCode.X) || triggerMovement > 0) && (attackCooldown <= 0.0f))
+            if ((Input.GetKey(KeyCode.C) || triggerMovement > 0) && (attackCooldown <= 0.0f))
             {
                 chargeTime += Time.deltaTime;
             }
