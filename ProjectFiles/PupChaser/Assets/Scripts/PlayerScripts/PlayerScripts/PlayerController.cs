@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
 
     //Time for charge attack to charge
     public float chargeTime;
+    public Vector3 dir;
 
     //Boolean for if player has charged attack long enough
     public bool isCharge;
@@ -55,7 +56,8 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.name == "explosion(Clone)")
+
+        if (other.name == "explosion(Clone)")
         {
             if(!invincible)
             {
@@ -65,6 +67,9 @@ public class PlayerController : MonoBehaviour {
             invincible = true;
             invincibilityCoolDown = 0.5f;
             SoundController.PlaySound(sounds.playerHurt);
+            dir = (charPosition - other.transform.position).normalized;
+            dir *= Time.fixedDeltaTime * 150 * 1000f;
+            GetComponent<Rigidbody2D>().AddForce(dir);
         }
         if (other.tag == "heart")
         {
@@ -90,6 +95,9 @@ public class PlayerController : MonoBehaviour {
             invincible = true;
             invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
+            dir = (charPosition - other.transform.position).normalized;
+            dir *= Time.fixedDeltaTime * 150 * 1000f;
+            GetComponent<Rigidbody2D>().AddForce(dir);
         }
         if(other.gameObject.name == "leaf(Clone)")
         {
@@ -101,6 +109,9 @@ public class PlayerController : MonoBehaviour {
             invincible = true;
             invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
+            dir = (charPosition - other.transform.position).normalized;
+            dir *= Time.fixedDeltaTime * 150 * 1000f;
+            GetComponent<Rigidbody2D>().AddForce(dir);
         }
         if (other.gameObject.name == "rock(Clone)")
         {
@@ -123,7 +134,10 @@ public class PlayerController : MonoBehaviour {
             invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
-		}
+            dir = (charPosition - other.transform.position).normalized;
+            dir *= Time.fixedDeltaTime * 150 * 1000f;
+            GetComponent<Rigidbody2D>().AddForce(dir);
+        }
 		if (other.gameObject.name == "iceShard(Clone)")
 		{
             if (!invincible)
@@ -134,7 +148,10 @@ public class PlayerController : MonoBehaviour {
             invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
-		}
+            dir = (charPosition - other.transform.position).normalized;
+            dir *= Time.fixedDeltaTime * 150 * 1000f;
+            GetComponent<Rigidbody2D>().AddForce(dir);
+        }
 		if (other.gameObject.name == "lightning(Clone)")
 		{
             if (!invincible)
@@ -145,7 +162,10 @@ public class PlayerController : MonoBehaviour {
             invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
-		}
+            dir = (charPosition - other.transform.position).normalized;
+            dir *= Time.fixedDeltaTime * 150 * 1000f;
+            GetComponent<Rigidbody2D>().AddForce(dir);
+        }
 
 		if (other.gameObject.name == "Spider Enemy(Clone)")
 		{
@@ -158,7 +178,10 @@ public class PlayerController : MonoBehaviour {
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
-		}
+            dir = (charPosition - other.transform.position).normalized;
+            dir *= Time.fixedDeltaTime * 150 * 1000f;
+            GetComponent<Rigidbody2D>().AddForce(dir);
+        }
 
 		if (other.gameObject.name == "spider web(Clone)")
 		{
@@ -170,7 +193,10 @@ public class PlayerController : MonoBehaviour {
 			invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
-		}
+            dir = (charPosition - other.transform.position).normalized;
+            dir *= Time.fixedDeltaTime * 150 * 1000f;
+            GetComponent<Rigidbody2D>().AddForce(dir);
+        }
 		if (other.gameObject.name == "weakAttack(Clone)")
 		{
             if (!invincible)
@@ -182,7 +208,10 @@ public class PlayerController : MonoBehaviour {
             invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
-		}
+            dir = (charPosition - other.transform.position).normalized;
+            dir *= Time.fixedDeltaTime * 150 * 1000f;
+            GetComponent<Rigidbody2D>().AddForce(dir);
+        }
 		if (other.gameObject.name == "mediumAttack(Clone)")
 		{
             if (!invincible)
@@ -194,7 +223,10 @@ public class PlayerController : MonoBehaviour {
             invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
-		}
+            dir = (charPosition - other.transform.position).normalized;
+            dir *= Time.fixedDeltaTime * 150 * 1000f;
+            GetComponent<Rigidbody2D>().AddForce(dir);
+        }
 		if (other.gameObject.name == "strongAttack(Clone)")
 		{
             if (!invincible)
@@ -206,7 +238,10 @@ public class PlayerController : MonoBehaviour {
             invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
-		}
+            dir = (charPosition - other.transform.position).normalized;
+            dir *= Time.fixedDeltaTime * 150 * 1000f;
+            GetComponent<Rigidbody2D>().AddForce(dir);
+        }
 		if (other.gameObject.name == "explosion(Clone)")
 		{
             if (!invincible)
@@ -217,7 +252,10 @@ public class PlayerController : MonoBehaviour {
             invincible = true;
 			invincibilityCoolDown = 0.5f;
 			SoundController.PlaySound(sounds.playerHurt);
-		}
+            dir = (charPosition - other.transform.position).normalized;
+            dir *= Time.fixedDeltaTime * 150 * 1000f;
+            GetComponent<Rigidbody2D>().AddForce(dir);
+        }
 
 		if (other.gameObject.name == "spikesup(Clone)")
 		{
