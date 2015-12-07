@@ -120,12 +120,19 @@ public class GoblinController : MonoBehaviour {
 	
 	void OnTriggerEnter2D (Collider2D col)
 	{
-		if(col.gameObject.name == "Slice(Clone)" || col.gameObject.name == "ChargeAttack(Clone)" || col.gameObject.name == "PlayerFireBall(Clone)")
+		if(col.gameObject.name == "Slice(Clone)" || col.gameObject.name == "ChargeAttack(Clone)" || col.gameObject.name == "PlayerFireBall(Clone)" || col.gameObject.name == "ChargedFireBall(Clone)" || col.gameObject.name == "AreaAttackPrefab(Clone)")
 		{
 			Vector3 dir = (transform.position - playerController.charPosition).normalized;
-			dir *= speed * Time.fixedDeltaTime * 120f;
-			
-			GetComponent<Rigidbody2D>().AddForce(dir, fMode);
+            if (col.gameObject.name == "ChargedFireBall(Clone)")
+            {
+                dir *= speed * Time.fixedDeltaTime * 200f;
+            }
+            else
+            {
+                dir *= speed * Time.fixedDeltaTime * 120f;
+            }
+
+            GetComponent<Rigidbody2D>().AddForce(dir, fMode);
 
 			if (col.gameObject.name == "Slice(Clone)")
 			{
@@ -157,7 +164,27 @@ public class GoblinController : MonoBehaviour {
                     killGoblin(true);
                 }
             }
-		}
+            else if (col.gameObject.name == "ChargedFireBall(Clone)")
+            {
+                SoundController.PlaySound(sounds.goblinHurt);
+                currentGoblinHealth = currentGoblinHealth - 1;
+                updateHealthBar();
+                if (currentGoblinHealth <= 0)
+                {
+                    killGoblin(true);
+                }
+            }
+            else if (col.gameObject.name == "AreaAttackPrefab(Clone)")
+            {
+                SoundController.PlaySound(sounds.goblinHurt);
+                currentGoblinHealth = currentGoblinHealth - 1;
+                updateHealthBar();
+                if (currentGoblinHealth <= 0)
+                {
+                    killGoblin(true);
+                }
+            }
+        }
 	}
 
 	public void killGoblin(bool normalDeath)
