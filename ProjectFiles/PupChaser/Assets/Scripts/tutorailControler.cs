@@ -2,13 +2,13 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class titleScreenController : MonoBehaviour {
-
+public class tutorailControler : MonoBehaviour {
+	
 	public Text pressKeyText;
-
+	
 	private float flashTime = 0.3f;
 	private float flashTimer;
-
+	
 	// Use this for initialization
 	void Start () {
 		flashTimer = flashTime;
@@ -20,13 +20,13 @@ public class titleScreenController : MonoBehaviour {
 		if (flashTimer < 0) {
 			flashTimer = flashTime;
 			if (pressKeyText.text == "") {
-				pressKeyText.text = "Press any key to begin";
+				pressKeyText.text = "press any button to continue";
 			} else {
 				pressKeyText.text = "";
 			}
 		}
 		if (Input.anyKey) {
-			Application.LoadLevel("tutorial");
+			Application.LoadLevel("Level2");
 		}
 	}
 }
