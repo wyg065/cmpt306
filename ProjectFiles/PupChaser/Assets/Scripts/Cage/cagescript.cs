@@ -79,6 +79,13 @@ public class cagescript : MonoBehaviour {
 				Destroy(gameObjects[i]);
 			}
 
+			gameObjects = GameObject.FindGameObjectsWithTag ("tempspikes");
+			
+			for(var i = 0 ; i < gameObjects.Length ; i ++)
+			{
+				Destroy(gameObjects[i]);
+			}
+
 			/**
 			anim.SetBool("Die", true);
 			ec.enabled = false ;
