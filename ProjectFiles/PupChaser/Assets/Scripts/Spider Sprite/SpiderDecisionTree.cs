@@ -17,10 +17,15 @@ public class SpiderDecisionTree : MonoBehaviour {
 	private GameObject snakeHealthBar;
 
 	public GameObject heartPrefab;
+	Vector3 dir ; 
 
+	private Rigidbody2D rb ;
+	private PlayerController Player ;
 
 	// Use this for initialization
 	void Start () {
+		rb = GetComponent<Rigidbody2D>();
+		Player = GetComponent<PlayerController>();
 
 		d = GetComponentInChildren<Dplayer2> ();
 		dd = GetComponentInChildren<Dplayer> ();
