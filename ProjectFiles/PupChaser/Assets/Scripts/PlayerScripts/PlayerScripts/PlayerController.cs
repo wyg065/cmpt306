@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
     //Boolean for if player has charged attack long enough
     public bool isCharge;
     public bool hasDoneAreaAttack;
-
+    public bool hasPlayed;
     //Bool for attack script to know when to charge attack
     public bool chargeAttack;
     public bool chargeShot;
@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour {
         }
         if (other.tag == "heart")
         {
+            SoundController.PlaySound(sounds.playerCollectHeart);
             if (healthPoints + 3 > 20)
             {
                 healthBarSlider.value = 20;
@@ -243,6 +244,10 @@ public class PlayerController : MonoBehaviour {
 		Application.LoadLevel(Application.loadedLevel);
 	}
 
+    public void playChargeSound()
+    {
+        SoundController.PlaySound(sounds.playerCharged);
+    }
 
     // Use this for initialization
     void Start ()
@@ -251,7 +256,7 @@ public class PlayerController : MonoBehaviour {
         rBody = GetComponent<Rigidbody2D>();
         charPosition = transform.position;
         healthPoints = 20;
-
+        hasPlayed = false;
         dead = false;
         isCharge = false;
         canShoot = true;
@@ -276,9 +281,6 @@ public class PlayerController : MonoBehaviour {
         yMovement = Input.GetAxis("LeftStickVertical");
 
         triggerMovement = Input.GetAxis("RightTrigger");
-
-        print(triggerMovement);
-
         //Update character position for other scripts
         charPosition = transform.position;
         if (healthPoints < 1 || healthBarSlider.value < 1) 
@@ -325,6 +327,12 @@ public class PlayerController : MonoBehaviour {
             if (chargeTime >= 1.0f)
             {
                 isCharge = true;
+                if(!hasPlayed)
+                {
+                    SoundController.PlaySound(sounds.playerCharged);
+                    hasPlayed = true;
+                }
+
                 GetComponent<SpriteRenderer>().color = Color.cyan;
             }
             if (chargeTime > 1.2)
@@ -356,6 +364,7 @@ public class PlayerController : MonoBehaviour {
             if ((Input.GetKeyUp(KeyCode.X) || Input.GetButtonUp("AButton")) && isCharge && attackCooldown < 0)
             {
                 //do charged attack animation
+                hasPlayed = false;
                 isCharge = false;
                 chargeAttack = true;
                 chargeTime = 0.0f;
@@ -399,6 +408,8 @@ public class PlayerController : MonoBehaviour {
             }
             else if((Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("BButton")) && isCharge && shootCooldown < 0 )
             {
+                hasPlayed = false;
+                SoundController.PlaySound(sounds.playerBigFireball);
                 chargeCooldown = 0.5f;
                 isCharge = false;
                 shootCooldown = 0.2f;
@@ -423,6 +434,8 @@ public class PlayerController : MonoBehaviour {
             }
             else if((Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("XButton")) && isCharge)
             {
+                hasPlayed = false;
+                SoundController.PlaySound(sounds.playerShield);
                 areaAttack = true;
                 invincible = true;
                 invincibilityCoolDown = 0.2f;
