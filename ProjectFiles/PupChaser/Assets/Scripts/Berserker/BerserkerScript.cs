@@ -70,6 +70,30 @@ public class BerserkerScript : MonoBehaviour
 
             rb.AddForce(dir, fMode);
         }
+        if (other.gameObject.name == "AreaAttackPrefab(Clone)")
+        {
+            healthPoints--;
+            Vector3 dir = (transform.position - Player.charPosition).normalized;
+            dir *= Time.fixedDeltaTime * 40000f;
+            updateHealthBar();
+            rb.AddForce(dir, fMode);
+        }
+        if (other.gameObject.name == "ChargedFireBall(Clone)")
+        {
+            if (healthPoints - 2 <= 0)
+            {
+                healthPoints = 0;
+            }
+            else
+            {
+                healthPoints -= 2;
+            }
+            Vector3 dir = (transform.position - Player.charPosition).normalized;
+            dir *= Time.fixedDeltaTime * 200000f;
+            updateHealthBar();
+
+            rb.AddForce(dir, fMode);
+        }
         if (other.gameObject.name == "ChargeAttack(Clone)")
         {
             if (healthPoints - 3 <= 0)
