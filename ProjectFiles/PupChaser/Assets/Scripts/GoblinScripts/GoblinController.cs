@@ -125,7 +125,7 @@ public class GoblinController : MonoBehaviour {
 			Vector3 dir = (transform.position - playerController.charPosition).normalized;
             if (col.gameObject.name == "ChargedFireBall(Clone)")
             {
-                dir *= speed * Time.fixedDeltaTime * 200f;
+                dir *= speed * Time.fixedDeltaTime * 150f;
             }
             else
             {
