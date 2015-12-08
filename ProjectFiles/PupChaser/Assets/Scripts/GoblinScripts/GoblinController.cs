@@ -196,10 +196,7 @@ public class GoblinController : MonoBehaviour {
 
 		if (normalDeath) {
 			SoundController.PlaySound (sounds.goblinDie);
-		} else {
-			SoundController.PlaySound (sounds.goblinExplode);
 		}
-
 		Destroy (randomLocation);
 		Destroy (goblinHealthBar);
 		Destroy(gameObject);
