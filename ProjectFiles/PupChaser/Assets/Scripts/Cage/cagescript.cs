@@ -14,13 +14,19 @@ public class cagescript : MonoBehaviour {
 
 	private bigbosscontrol ec  ;
 
+	private bool b ; 
+
 	//loads health bar, and gives reference tho that specific health bar a.k.a snakeHelathBar
 
 	GameObject[] gameObjects;
 
+	public GameObject webPrefab ; 
+	public GameObject spawnedweb ;
+
 	// Use this for initialization
 	void Start () {
 	
+		b = false;
 		health = 100; 
 		snakeHealthBar = (GameObject)Instantiate (healthBar, new Vector3 (transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
 		updateHealthBar ();
@@ -91,8 +97,17 @@ public class cagescript : MonoBehaviour {
 			ec.enabled = false ;
 			**/
 
+			if (b== false )
+			{
+				spawnedweb = GameObject.Instantiate(webPrefab ,  transform.position , transform.rotation) as GameObject  ;
+				b =true  ;
+				Destroy(gameObject);
+			}
+
+
 		}
 	}
+
 
 
 	void OnTriggerEnter2D (Collider2D other )
