@@ -21,7 +21,7 @@ public class cagescript : MonoBehaviour {
 	GameObject[] gameObjects;
 
 	public GameObject webPrefab ; 
-	public GameObject spawnedweb ; 
+	public GameObject spawnedweb ;
 
 	// Use this for initialization
 	void Start () {
