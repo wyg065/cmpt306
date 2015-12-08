@@ -36,6 +36,7 @@ public class GoblinAI : MonoBehaviour {
 	public GameObject explosionColliderPrefab;
 	public GameObject explosionCollider;
 	public bool explosionColliderCreated;
+	public bool explodeSoundPlayed;
 
 	//friends stuff
 	public float friendsThreshold;
@@ -61,6 +62,7 @@ public class GoblinAI : MonoBehaviour {
 		playDetonateAnim = false;
 		kamiKaziHasBeenInRange = false;
 		explosionColliderCreated = false;
+		explodeSoundPlayed = false;
 
 		player = FindObjectOfType<PlayerController> ();
 		goblinController = FindObjectOfType<GoblinController> ();
@@ -388,6 +390,11 @@ public class GoblinAI : MonoBehaviour {
 		StartCoroutine (detonateLag ());
 		if (playDetonateAnim)
 		{
+			if(!explodeSoundPlayed)
+			{
+				SoundController.PlaySound (sounds.goblinExplode);
+				explodeSoundPlayed = true;
+			}
 			GetComponent<SpriteRenderer>().color = Color.white;
 			goblinAnimation.timeToDetonate = true;
 			if(!explosionColliderCreated)
