@@ -398,6 +398,11 @@ public class PlayerController : MonoBehaviour {
                 playerAnimation.SetBool("isMoving", false);
             }
 
+			//for reseting the game
+			if (Input.GetButtonDown("Select")) {
+				Application.LoadLevel("titleScren");
+			}
+
             //Code for attack and charge attack.
             if ((Input.GetKeyUp(KeyCode.X) || Input.GetButtonUp("AButton")) && isCharge && attackCooldown < 0)
             {
