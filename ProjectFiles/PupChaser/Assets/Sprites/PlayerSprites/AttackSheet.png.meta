@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 9640b5c405deff74ab05bec5e302f75c
+timeCreated: 1449703259
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: AttackSheet_3
+    21300002: AttackSheet_4
+    21300004: AttackSheet_5
+    21300006: AttackSheet_7
+    21300008: AttackSheet_8
+    21300010: AttackSheet_9
+    21300012: AttackSheet_13
+    21300014: AttackSheet_14
+    21300016: AttackSheet_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: AttackSheet_3
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 435
+        width: 77
+        height: 83
+      alignment: 9
+      pivot: {x: .791591108, y: .239892438}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackSheet_4
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 431
+        width: 40
+        height: 104
+      alignment: 9
+      pivot: {x: .586356342, y: .19277221}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackSheet_5
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 432
+        width: 73
+        height: 81
+      alignment: 9
+      pivot: {x: .227920324, y: .254792005}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackSheet_7
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 318
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: .762821794, y: .634580135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackSheet_8
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 302
+        width: 34
+        height: 91
+      alignment: 9
+      pivot: {x: .525399625, y: .689792871}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackSheet_9
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 313
+        width: 57
+        height: 74
+      alignment: 9
+      pivot: {x: .272748441, y: .616696715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackSheet_13
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 206
+        width: 64
+        height: 58
+      alignment: 9
+      pivot: {x: .688903332, y: .380888581}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackSheet_14
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 204
+        width: 69
+        height: 46
+      alignment: 9
+      pivot: {x: .750306964, y: .499999672}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackSheet_15
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 171
+        width: 55
+        height: 72
+      alignment: 9
+      pivot: {x: .67271173, y: .691901505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
