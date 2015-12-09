@@ -101,7 +101,7 @@ public class AreaAttackScript : MonoBehaviour {
     void Start ()
     {
         destroy = false;
-        counter = 0.6f;
+        counter = 0.3f;
         Player = FindObjectOfType<PlayerController>();
         GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
     }

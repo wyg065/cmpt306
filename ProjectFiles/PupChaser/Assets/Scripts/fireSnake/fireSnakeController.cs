@@ -171,7 +171,7 @@ public class fireSnakeController : MonoBehaviour {
 		{
 			SoundController.PlaySound (sounds.snakeDie);
 			Vector3 dir = (transform.position - playerScriptReference.charPosition).normalized;
-			dir *= speed * Time.fixedDeltaTime * 180f;
+			dir *= speed * Time.fixedDeltaTime * 30f;
 			
 			rb.AddForce(dir, fMode);
 			health--;
@@ -181,7 +181,7 @@ public class fireSnakeController : MonoBehaviour {
         {
             SoundController.PlaySound(sounds.snakeDie);
             Vector3 dir = (transform.position - playerScriptReference.charPosition).normalized;
-            dir *= speed * Time.fixedDeltaTime * 200f;
+            dir *= speed * Time.fixedDeltaTime * 30f;
 
             rb.AddForce(dir, fMode);
             health--;

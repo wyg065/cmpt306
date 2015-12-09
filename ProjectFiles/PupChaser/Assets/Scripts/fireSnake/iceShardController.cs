@@ -45,6 +45,9 @@ public class iceShardController : MonoBehaviour {
 		if (col.gameObject.name == "PlayerFireBall(Clone)") {
 			Destroy(gameObject);
 		}
+		if (col.gameObject.tag == "collider") {
+			Destroy(gameObject);
+		}
 	}
 	
 	// Update is called once per frame
