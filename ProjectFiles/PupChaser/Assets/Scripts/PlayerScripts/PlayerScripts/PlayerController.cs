@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
+
     //Attack cooldown for character, might want to change this system later, not sure if there is a better way.
 	public float attackCooldown;
 
