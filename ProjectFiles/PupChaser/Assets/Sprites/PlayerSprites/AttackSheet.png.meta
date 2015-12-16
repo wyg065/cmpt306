@@ -1,21 +1,18 @@
 fileFormatVersion: 2
-guid: 3981b773b18b63b419d0475ae580144c
-timeCreated: 1448741602
+guid: 9640b5c405deff74ab05bec5e302f75c
+timeCreated: 1449703259
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: AttackSheet_0
-    21300002: AttackSheet_1
-    21300004: AttackSheet_2
-    21300006: AttackSheet_3
-    21300008: AttackSheet_4
-    21300010: AttackSheet_5
-    21300012: AttackSheet_6
-    21300014: AttackSheet_7
-    21300016: AttackSheet_8
-    21300018: AttackSheet_9
-    21300020: AttackSheet_10
-    21300022: AttackSheet_11
+    21300000: AttackSheet_3
+    21300002: AttackSheet_4
+    21300004: AttackSheet_5
+    21300006: AttackSheet_7
+    21300008: AttackSheet_8
+    21300010: AttackSheet_9
+    21300012: AttackSheet_13
+    21300014: AttackSheet_14
+    21300016: AttackSheet_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -62,125 +59,95 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: AttackSheet_0
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 430
-        width: 92
-        height: 103
-      alignment: 9
-      pivot: {x: .725276113, y: .248478264}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: AttackSheet_1
-      rect:
-        serializedVersion: 2
-        x: 374
-        y: 425
-        width: 82
-        height: 117
-      alignment: 9
-      pivot: {x: .510531187, y: .204766423}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: AttackSheet_2
-      rect:
-        serializedVersion: 2
-        x: 460
-        y: 430
-        width: 82
-        height: 88
-      alignment: 9
-      pivot: {x: .226189211, y: .225231513}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: AttackSheet_3
       rect:
         serializedVersion: 2
-        x: 279
-        y: 313
-        width: 96
-        height: 86
+        x: 280
+        y: 435
+        width: 77
+        height: 83
       alignment: 9
-      pivot: {x: .778857529, y: .610454798}
+      pivot: {x: .791591108, y: .239892438}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: AttackSheet_4
       rect:
         serializedVersion: 2
-        x: 391
-        y: 295
-        width: 66
-        height: 103
+        x: 392
+        y: 431
+        width: 40
+        height: 104
       alignment: 9
-      pivot: {x: .408410728, y: .676065087}
+      pivot: {x: .586356342, y: .19277221}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: AttackSheet_5
       rect:
         serializedVersion: 2
-        x: 468
-        y: 307
-        width: 69
-        height: 89
+        x: 462
+        y: 432
+        width: 73
+        height: 81
       alignment: 9
-      pivot: {x: .324785769, y: .57762301}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: AttackSheet_6
-      rect:
-        serializedVersion: 2
-        x: 495
-        y: 156
-        width: 92
-        height: 115
-      alignment: 9
-      pivot: {x: .556318879, y: .530036747}
+      pivot: {x: .227920324, y: .254792005}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: AttackSheet_7
       rect:
         serializedVersion: 2
-        x: 384
-        y: 184
-        width: 93
-        height: 83
+        x: 302
+        y: 318
+        width: 69
+        height: 77
       alignment: 9
-      pivot: {x: .676425755, y: .499999821}
+      pivot: {x: .762821794, y: .634580135}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: AttackSheet_8
       rect:
         serializedVersion: 2
-        x: 287
-        y: 195
-        width: 93
-        height: 78
+        x: 402
+        y: 302
+        width: 34
+        height: 91
       alignment: 9
-      pivot: {x: .759995997, y: .389287114}
+      pivot: {x: .525399625, y: .689792871}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: AttackSheet_9
       rect:
         serializedVersion: 2
-        x: 343
-        y: 99
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        x: 474
+        y: 313
+        width: 57
+        height: 74
+      alignment: 9
+      pivot: {x: .272748441, y: .616696715}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: AttackSheet_10
+    - name: AttackSheet_13
       rect:
         serializedVersion: 2
-        x: 397
-        y: 98
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        x: 310
+        y: 206
+        width: 64
+        height: 58
+      alignment: 9
+      pivot: {x: .688903332, y: .380888581}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: AttackSheet_11
+    - name: AttackSheet_14
       rect:
         serializedVersion: 2
-        x: 452
-        y: 101
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        x: 394
+        y: 204
+        width: 69
+        height: 46
+      alignment: 9
+      pivot: {x: .750306964, y: .499999672}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackSheet_15
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 171
+        width: 55
+        height: 72
+      alignment: 9
+      pivot: {x: .67271173, y: .691901505}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
